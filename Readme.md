@@ -5,7 +5,7 @@ Possibili criteri **aggiuntivi**:
 - [ ] Numero di utenti durante la singola simulazione (varia ?); +++
 
 Cosa studiare:
-- [ ] Delay
-- [ ] throught put
-- [ ] fairness
-- [ ] perdita pacchetti
+- [ ] Delay;
+- [ ] throught put;
+- [ ] fairness;
+- [ ] perdita pacchetti;
