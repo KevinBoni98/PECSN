@@ -32,6 +32,7 @@ public:
 protected:
     virtual void initialize();
     virtual void handle_message(cMessage*);
+    virtual void updateCQI();
 };
 
 } /* namespace pecsn_project */

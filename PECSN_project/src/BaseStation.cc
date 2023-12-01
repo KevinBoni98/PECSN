@@ -31,6 +31,7 @@ BaseStation::~BaseStation() {
 
 void BaseStation::initialize(){
     //inizializzo array dei valori in byte dei CQI
+    EV<<par("CQIArrayLength").intValue()<<endl;
     int len = par("CQIArrayLength").intValue();
     CQITable = new int[len];
     std::string toParse = par("CQIValues").str();
@@ -54,7 +55,14 @@ void BaseStation::initialize(){
 
 
 }
-void BaseStation::handle_message(cMessage *msg){
 
+void BaseStation::updateCQI(){
+
+}
+
+void BaseStation::handle_message(cMessage *msg){
+    if(strcmp(msg->getName(),"CQI")){
+        updateCQI();
+    }
 }
 } /* namespace pecsn_project */

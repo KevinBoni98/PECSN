@@ -14,6 +14,7 @@
 // 
 #include <omnetpp.h>
 #include <vector>
+#include "CQImsg_m.h"
 #ifndef USER_H_
 #define USER_H_
 
@@ -22,12 +23,18 @@ using namespace omnetpp;
 namespace pecsn_project {
 
 class User : public cSimpleModule{
+private:
+    int id;
+    int rngIndex;
+    int cqi;
+    std::string distribution;
 public:
     User();
     virtual ~User();
 protected:
     virtual void initialize();
     virtual void handle_message(cMessage*);
+    virtual void sendCQI();
 };
 
 } /* namespace pecsn_project */
