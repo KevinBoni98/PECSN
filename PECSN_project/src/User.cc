@@ -33,10 +33,33 @@ User::~User() {
 }
 void User::initialize()
 {
+    id = getIndex();
+    rngIndex = id;
+    distribution = par("CQIdistribution").stringValue();
 
+
+    sendCQI();
 }
 
 void User::handle_message(cMessage *msg){
+
+
+}
+
+void User::sendCQI(){
+    /*if(par("useBinomialDistribution").boolValue()){
+
+    }*/
+    //else
+    if (distribution.compare("uniform") == 0){
+        cqi = intuniform(1, 15, rngIndex);
+    }
+
+    CQImsg * msg = new CQImsg("CQI");
+    msg->setNewCQI(cqi);
+    EV<<"packet name: "<<msg->getName()<<endl;
+    send(msg,"CQI_out");
+    EV<<"sending cqi = "<<msg->getNewCQI()<<endl;
 
 }
 
