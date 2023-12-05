@@ -1,4 +1,4 @@
-//
+ //
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU Lesser General Public License as published by
 // the Free Software Foundation, either version 3 of the License, or
@@ -41,7 +41,7 @@ void User::initialize()
     sendCQI();
 }
 
-void User::handle_message(cMessage *msg){
+void User::handleMessage(cMessage *msg){
 
 
 }
@@ -53,6 +53,9 @@ void User::sendCQI(){
     //else
     if (distribution.compare("uniform") == 0){
         cqi = intuniform(1, 15, rngIndex);
+    }
+    else if (distribution.compare("binomial") == 0){
+
     }
 
     CQImsg * msg = new CQImsg("CQI");

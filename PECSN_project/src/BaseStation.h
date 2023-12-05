@@ -18,8 +18,8 @@
 #include <omnetpp.h>
 #include <vector>
 #include <sstream>
-#include "Frame_m.h"
 #include "Packet_m.h"
+#include "Frame_m.h"
 #include "CQImsg_m.h"
 
 using namespace omnetpp;
