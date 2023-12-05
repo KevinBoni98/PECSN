@@ -38,7 +38,7 @@ void PacketGenerator::initialize(){
     //setta altri parametri?
 }
 
-void PacketGenerator::handle_message(cMessage *msg){
+void PacketGenerator::handleMessage(cMessage *msg){
     if (msg->isSelfMessage()){
         //generate packet, assign index of this PG
         //send(packet)

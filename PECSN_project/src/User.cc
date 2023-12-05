@@ -41,9 +41,17 @@ void User::initialize()
     sendCQI();
 }
 
-void User::handle_message(cMessage *msg){
-
-
+void User::handleMessage(cMessage *msg){
+    EV<<"rfs"<<endl;
+    Frame *frame = check_and_cast<Frame*>(msg);
+    std::vector<Packet*> pl = frame->getPacketList();
+    EV<<"size: "<<pl.size()<<endl;
+    while(pl.size() != 0){
+        Packet * p = pl.back();
+        pl.pop_back();
+        EV<<"packet length: "<<p->getLength()<<endl;
+    }
+    sendCQI();
 }
 
 void User::sendCQI(){
@@ -53,6 +61,9 @@ void User::sendCQI(){
     //else
     if (distribution.compare("uniform") == 0){
         cqi = intuniform(1, 15, rngIndex);
+    }
+    else if (distribution.compare("binomial") == 0){
+
     }
 
     CQImsg * msg = new CQImsg("CQI");
