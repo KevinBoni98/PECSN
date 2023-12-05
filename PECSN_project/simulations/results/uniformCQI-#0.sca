@@ -1,0 +1,49 @@
+version 3
+run uniformCQI-0-20231203-19:07:27-17584
+attr configname uniformCQI
+attr datetime 20231203-19:07:27
+attr datetimef 20231203-190727
+attr experiment uniformCQI
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Network
+attr processid 17584
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config **.Users[*].CQIdistribution "\"uniform\""
+config network Network
+config cpu-time-limit 60s
+config num-rngs 600
+config **.CQIArrayLength 15
+config **.CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
+config **.frameSize 25
+
+par Network.BS typename "\"pecsn_project.BaseStation\""
+par Network.BS CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
+par Network.BS CQIArrayLength 15
+par Network.BS frameSize 25
+par Network.Users[0] typename "\"pecsn_project.User\""
+par Network.Users[0] CQIdistribution "\"uniform\""
+par Network.Users[1] typename "\"pecsn_project.User\""
+par Network.Users[1] CQIdistribution "\"uniform\""
+par Network.Users[2] typename "\"pecsn_project.User\""
+par Network.Users[2] CQIdistribution "\"uniform\""
+par Network.Users[3] typename "\"pecsn_project.User\""
+par Network.Users[3] CQIdistribution "\"uniform\""
+par Network.Users[4] typename "\"pecsn_project.User\""
+par Network.Users[4] CQIdistribution "\"uniform\""
+par Network.PG[0] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[1] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[2] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[3] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[4] typename "\"pecsn_project.PacketGenerator\""
+par Network typename "\"pecsn_project.simulations.Network\""
+par Network N_USERS 5
+par Network lambda 10
+

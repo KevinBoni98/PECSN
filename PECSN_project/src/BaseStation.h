@@ -18,6 +18,9 @@
 #include <omnetpp.h>
 #include <vector>
 #include <sstream>
+#include "Frame_m.h"
+#include "Packet_m.h"
+#include "CQImsg_m.h"
 
 using namespace omnetpp;
 
@@ -26,13 +29,15 @@ namespace pecsn_project {
 class BaseStation : public cSimpleModule{
 private:
     int *CQITable;
+    int *currentCQI;
+    int nUsers;
 public:
     BaseStation();
     virtual ~BaseStation();
 protected:
     virtual void initialize();
-    virtual void handle_message(cMessage*);
-    virtual void updateCQI();
+    virtual void handleMessage(cMessage*);
+    virtual void updateCQI(int,int);
 };
 
 } /* namespace pecsn_project */

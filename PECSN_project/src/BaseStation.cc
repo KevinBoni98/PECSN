@@ -30,6 +30,11 @@ BaseStation::~BaseStation() {
 }
 
 void BaseStation::initialize(){
+    nUsers = getParentModule()->par("N_USERS");
+    currentCQI = new int[nUsers];
+    for (int i = 0; i < nUsers; i++){
+        currentCQI[i] = 0;
+    }
     //inizializzo array dei valori in byte dei CQI
     EV<<par("CQIArrayLength").intValue()<<endl;
     int len = par("CQIArrayLength").intValue();
@@ -44,9 +49,7 @@ void BaseStation::initialize(){
         ss >> temp;
         EV<<temp<<endl;
         if (std::stringstream(temp) >> found){
-            EV<<"found: "<<found<<endl;
             CQITable[i] = found;
-            EV<<"value "<<i<<": "<<CQITable[i]<<endl;
             i++;
             if (i >= len) break;
         }
@@ -56,13 +59,18 @@ void BaseStation::initialize(){
 
 }
 
-void BaseStation::updateCQI(){
-
+void BaseStation::updateCQI(int cqi, int id){
+    currentCQI[id] = cqi;
 }
 
-void BaseStation::handle_message(cMessage *msg){
-    if(strcmp(msg->getName(),"CQI")){
-        updateCQI();
+void BaseStation::handleMessage(cMessage *msg){
+
+    if(strcmp(msg->getName(),"CQI") == 0){
+
+        CQImsg *m = check_and_cast<CQImsg*>(msg);
+
+        updateCQI(m->getNewCQI(), m->getArrivalGate()->getIndex());
     }
+    //if(str)
 }
 } /* namespace pecsn_project */

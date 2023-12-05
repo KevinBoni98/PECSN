@@ -36,7 +36,7 @@ namespace pecsn_project {
  * {
  *     int destination;
  *     int length;
- *     simtime_t arrivalTime;
+ *     simtime_t arrivalTime; //same as time of generation
  * }
  * </pre>
  */

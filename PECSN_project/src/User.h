@@ -15,6 +15,7 @@
 #include <omnetpp.h>
 #include <vector>
 #include "CQImsg_m.h"
+#include "Frame_m.h"
 #ifndef USER_H_
 #define USER_H_
 
@@ -33,7 +34,7 @@ public:
     virtual ~User();
 protected:
     virtual void initialize();
-    virtual void handle_message(cMessage*);
+    virtual void handleMessage(cMessage*);
     virtual void sendCQI();
 };
 
