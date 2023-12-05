@@ -19,6 +19,7 @@ namespace pecsn_project;
 // TODO generated message class
 //
 packet Packet {
+    //S
     int destination;
     int length;
     simtime_t arrivalTime; //same as time of generation
