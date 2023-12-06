@@ -55,6 +55,9 @@ void BaseStation::initialize(){
         }
         temp = "";
     }
+    //scheduling timer for frame
+    double time = par("timeSlot").doubleValueInUnit("s");
+    scheduleAt(simTime() + time, beep);
 
 
 }

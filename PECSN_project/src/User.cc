@@ -33,29 +33,47 @@ User::~User() {
 }
 void User::initialize()
 {
+    registerSignal("packetDelay");
+    registerSignal("throughput");
+    int multiplier = getParentModule()->par("CQIRngMultiplier");
+    nUsers = getParentModule()->par("N_USERS");
     id = getIndex();
-    rngIndex = id;
+
+    rngIndex = id + multiplier*nUsers;
     distribution = par("CQIdistribution").stringValue();
-
-
+    p = (double)(id+1)/(double)nUsers;
+    EV<<"p = "<<p<<endl;
     sendCQI();
 }
 
 void User::handleMessage(cMessage *msg){
-
+    Frame *frame = check_and_cast<Frame*>(msg);
+    std::vector<Packet*> pl = frame->getPacketList();
+    EV<<"size: "<<pl.size()<<endl;
+    long bytesReceived = 0;
+    while(pl.size() != 0){
+        Packet * p = pl.back();
+        pl.pop_back();
+        if (p->getDestination() == id){
+            simtime_t elapsed = simTime() - p->getArrivalTime();
+            emit(delay, elapsed.dbl());
+            bytesReceived += p->getLength();
+        }
+        EV<<"packet length: "<<p->getLength()<<endl;
+    }
+    emit(throughput, bytesReceived);
+    sendCQI();
 
 }
 
 void User::sendCQI(){
-    /*if(par("useBinomialDistribution").boolValue()){
 
-    }*/
-    //else
     if (distribution.compare("uniform") == 0){
         cqi = intuniform(1, 15, rngIndex);
     }
     else if (distribution.compare("binomial") == 0){
-
+        cqi = binomial(14, p, rngIndex);
+        cqi +=1;
     }
 
     CQImsg * msg = new CQImsg("CQI");

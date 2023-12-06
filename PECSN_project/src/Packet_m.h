@@ -27,11 +27,8 @@ class Packet;
 namespace pecsn_project {
 
 /**
- * Class generated from <tt>Packet.msg:21</tt> by opp_msgtool.
+ * Class generated from <tt>Packet.msg:6</tt> by opp_msgtool.
  * <pre>
- * //
- * // TODO generated message class
- * //
  * packet Packet
  * {
  *     int destination;
