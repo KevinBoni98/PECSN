@@ -31,6 +31,8 @@ private:
     int *CQITable;
     int *currentCQI;
     int nUsers;
+    cMessage *beep;
+
 public:
     BaseStation();
     virtual ~BaseStation();
@@ -38,6 +40,10 @@ protected:
     virtual void initialize();
     virtual void handleMessage(cMessage*);
     virtual void updateCQI(int,int);
+    virtual void scheduleSelfMessage();
+    virtual void assembleFrame();
+    virtual void sendFrame();
+    virtual void storePacket(cMessage*);
 };
 
 } /* namespace pecsn_project */

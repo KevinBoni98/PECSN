@@ -56,12 +56,13 @@ void User::handleMessage(cMessage *msg){
         pl.pop_back();
         if (p->getDestination() == id){
             simtime_t elapsed = simTime() - p->getArrivalTime();
-            emit(delay, elapsed.dbl());
+            emit(packetDelay, elapsed.dbl());
             bytesReceived += p->getLength();
         }
         EV<<"packet length: "<<p->getLength()<<endl;
     }
     emit(throughput, bytesReceived);
+    delete(msg);
     sendCQI();
 
 }

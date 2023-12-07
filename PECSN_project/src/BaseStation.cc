@@ -30,6 +30,7 @@ BaseStation::~BaseStation() {
 }
 
 void BaseStation::initialize(){
+    beep = new cMessage("beep");
     nUsers = getParentModule()->par("N_USERS");
     currentCQI = new int[nUsers];
     for (int i = 0; i < nUsers; i++){
@@ -56,9 +57,29 @@ void BaseStation::initialize(){
         temp = "";
     }
     //scheduling timer for frame
+    scheduleSelfMessage();
+
+
+}
+
+void BaseStation::scheduleSelfMessage(){
     double time = par("timeSlot").doubleValueInUnit("s");
     scheduleAt(simTime() + time, beep);
+}
 
+void BaseStation::assembleFrame(){
+
+}
+
+void BaseStation::sendFrame(){
+    assembleFrame();
+    //...
+
+    scheduleSelfMessage();
+
+}
+
+void BaseStation::storePacket(cMessage *msg){
 
 }
 
@@ -67,6 +88,9 @@ void BaseStation::updateCQI(int cqi, int id){
 }
 
 void BaseStation::handleMessage(cMessage *msg){
+    if (msg->isSelfMessage()){
+        sendFrame();
+    }
 
     if(strcmp(msg->getName(),"CQI") == 0){
 
@@ -74,6 +98,8 @@ void BaseStation::handleMessage(cMessage *msg){
 
         updateCQI(m->getNewCQI(), m->getArrivalGate()->getIndex());
     }
-    //if(str)
+    if (strcmp(msg->getName(), "Packet") == 0){
+        storePacket(msg);
+    }
 }
 } /* namespace pecsn_project */
