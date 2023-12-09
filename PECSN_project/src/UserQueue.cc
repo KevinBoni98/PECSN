@@ -13,40 +13,26 @@
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
 
-#ifndef BASESTATION_H_
-#define BASESTATION_H_
-#include <omnetpp.h>
-#include <vector>
-#include <sstream>
-#include "Packet_m.h"
-#include "Frame_m.h"
-#include "CQImsg_m.h"
 #include "UserQueue.h"
-
 using namespace omnetpp;
-
 namespace pecsn_project {
 
-class BaseStation : public cSimpleModule{
-private:
-    int *CQITable;
-    int *currentCQI;
-    int nUsers;
-    cMessage *beep;
 
-public:
-    BaseStation();
-    virtual ~BaseStation();
-protected:
-    virtual void initialize();
-    virtual void handleMessage(cMessage*);
-    virtual void updateCQI(int,int);
-    virtual void scheduleSelfMessage();
-    virtual void assembleFrame();
-    virtual void sendFrame();
-    virtual void storePacket(cMessage*);
-};
+UserQueue::UserQueue(const char *name):cQueue(name) {
+    byteSent = 0;
+}
 
-} /* namespace pecsn_project */
+UserQueue::~UserQueue() {
+    // TODO Auto-generated destructor stub
+}
 
-#endif /* BASESTATION_H_ */
+int UserQueue::queuecmp(cObject* _a,cObject* _b) {
+    UserQueue *a = omnetpp::check_and_cast<UserQueue*>(_a);
+    UserQueue *b = omnetpp::check_and_cast<UserQueue*>(_b);
+    if (a->byteSent < b->byteSent)
+        return -1;
+    if (a->byteSent == b->byteSent)
+        return 0;
+   return 1;
+}
+}

@@ -12,41 +12,26 @@
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see http://www.gnu.org/licenses/.
 // 
+#ifndef USERQUEUE_H_
+#define USERQUEUE_H_
 
-#ifndef BASESTATION_H_
-#define BASESTATION_H_
 #include <omnetpp.h>
-#include <vector>
-#include <sstream>
-#include "Packet_m.h"
-#include "Frame_m.h"
-#include "CQImsg_m.h"
-#include "UserQueue.h"
+
 
 using namespace omnetpp;
 
 namespace pecsn_project {
 
-class BaseStation : public cSimpleModule{
-private:
-    int *CQITable;
-    int *currentCQI;
-    int nUsers;
-    cMessage *beep;
-
+class UserQueue: public omnetpp::cQueue {
 public:
-    BaseStation();
-    virtual ~BaseStation();
-protected:
-    virtual void initialize();
-    virtual void handleMessage(cMessage*);
-    virtual void updateCQI(int,int);
-    virtual void scheduleSelfMessage();
-    virtual void assembleFrame();
-    virtual void sendFrame();
-    virtual void storePacket(cMessage*);
+    int RBsize;
+    long byteSent;
+
+    UserQueue(const char *name);
+    virtual ~UserQueue();
+
+    static int queuecmp(cObject *a, cObject *b);
 };
+}
 
-} /* namespace pecsn_project */
-
-#endif /* BASESTATION_H_ */
+#endif /* USERQUEUE_H_ */

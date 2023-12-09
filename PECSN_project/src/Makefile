@@ -37,6 +37,7 @@ OBJS = \
     $O/BaseStation.o \
     $O/PacketGenerator.o \
     $O/User.o \
+    $O/UserQueue.o \
     $O/CQImsg_m.o \
     $O/Frame_m.o \
     $O/Packet_m.o
