@@ -32,8 +32,8 @@ namespace pecsn_project {
  * packet Packet
  * {
  *     int destination;
- *     int length;
- *     simtime_t arrivalTime; //same as time of generation
+ *     int size;
+ *     simtime_t arrivalTime;
  * }
  * </pre>
  */
@@ -41,7 +41,7 @@ class Packet : public ::omnetpp::cPacket
 {
   protected:
     int destination = 0;
-    int length = 0;
+    int size = 0;
     ::omnetpp::simtime_t arrivalTime = SIMTIME_ZERO;
 
   private:
@@ -62,8 +62,8 @@ class Packet : public ::omnetpp::cPacket
     virtual int getDestination() const;
     virtual void setDestination(int destination);
 
-    virtual int getLength() const;
-    virtual void setLength(int length);
+    virtual int getSize() const;
+    virtual void setSize(int size);
 
     virtual ::omnetpp::simtime_t getArrivalTime() const;
     virtual void setArrivalTime(::omnetpp::simtime_t arrivalTime);
