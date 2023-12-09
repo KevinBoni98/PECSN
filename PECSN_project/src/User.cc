@@ -57,9 +57,9 @@ void User::handleMessage(cMessage *msg){
         if (p->getDestination() == id){
             simtime_t elapsed = simTime() - p->getArrivalTime();
             emit(packetDelay, elapsed.dbl());
-            bytesReceived += p->getLength();
+            bytesReceived += p->getSize();
         }
-        EV<<"packet length: "<<p->getLength()<<endl;
+        EV<<"packet size: "<<p->getSize()<<endl;
     }
     emit(throughput, bytesReceived);
     delete(msg);

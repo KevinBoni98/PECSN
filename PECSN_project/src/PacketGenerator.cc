@@ -14,6 +14,7 @@
 // 
 
 #include "PacketGenerator.h"
+#include "Packet_m.h"
 using namespace omnetpp;
 
 
@@ -31,19 +32,34 @@ PacketGenerator::PacketGenerator() {
 PacketGenerator::~PacketGenerator() {
     // TODO Auto-generated destructor stub
 }
+
 void PacketGenerator::initialize(){
     beep = new cMessage("beep");
-    //double time = exponential(parameters)
-    //scheduleAt(simTime()+time,beep);
-    //setta altri parametri?
+    // get user of the system
+    int numUser = par("NUM_USER").intValue();
+    indexArrivalTimeGen = getIndex()+numUser*2;
+    indexPkgSizeGen = getIndex()+numUser*3;
+    lambda =  par("LAMBDA").doubleValue();
+    simtime_t time = exponential(1/lambda,indexArrivalTimeGen);
+    scheduleAt(simTime()+time,beep);
 }
 
 void PacketGenerator::handle_message(cMessage *msg){
     if (msg->isSelfMessage()){
-        //generate packet, assign index of this PG
-        //send(packet)
-        //double time = exponential(parameters)
-        //scheduleAt(simTime()+time,beep);
+        // Generate packet
+        Packet *packet = check_and_cast<Packet*>( new cMessage("Packet"));
+        // destination
+        packet->setDestination(getIndex());
+        // arrivaltime
+        simtime_t arrivalTime = exponential(1/lambda,indexArrivalTimeGen);        
+        packet->setArrivalTime(arrivalTime);
+        // size
+        int size = intuniform(1/* min size */, 15/* max size */, indexPkgSizeGen);
+        packet->setSize(size);
+        // Send packet
+        send(packet, "out");
+        // Schedule the next self-message
+        scheduleAt(simTime() + arrivalTime, beep);
     }
 }
 
