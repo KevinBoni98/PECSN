@@ -25,14 +25,10 @@ namespace pecsn_project {
 
 class User : public cSimpleModule{
 private:
-    simsignal_t packetDelay;
-    simsignal_t throughput;
     int id;
-    int nUsers;
     int rngIndex;
     int cqi;
     std::string distribution;
-    double p;
 public:
     User();
     virtual ~User();

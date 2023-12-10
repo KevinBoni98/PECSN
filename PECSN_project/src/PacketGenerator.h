@@ -25,9 +25,6 @@ namespace pecsn_project {
 class PacketGenerator : public cSimpleModule{
 private:
     cMessage *beep;
-    int indexArrivalTimeGen;
-    int indexPkgSizeGen;
-    double  lambda;
 public:
     PacketGenerator();
     virtual ~PacketGenerator();

@@ -19,20 +19,10 @@ namespace pecsn_project {
 
 
 UserQueue::UserQueue(const char *name):cQueue(name) {
-    byteSent = 0;
 }
 
 UserQueue::~UserQueue() {
     // TODO Auto-generated destructor stub
 }
 
-int UserQueue::queuecmp(cObject* _a,cObject* _b) {
-    UserQueue *a = omnetpp::check_and_cast<UserQueue*>(_a);
-    UserQueue *b = omnetpp::check_and_cast<UserQueue*>(_b);
-    if (a->byteSent < b->byteSent)
-        return -1;
-    if (a->byteSent == b->byteSent)
-        return 0;
-   return 1;
-}
 }

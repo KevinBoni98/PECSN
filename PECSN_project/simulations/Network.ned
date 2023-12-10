@@ -10,9 +10,6 @@ network Network
     parameters:
         int N_USERS = default(5);
 		int lambda = default(10);
-		int CQIRngMultiplier = default(0);
-		int PktSizeRngMultiplier = CQIRngMultiplier+1;
-		int PktGenerationRngMultiplier = PktSizeRngMultiplier+1;
 		
         @display("bgb=764,368");
     submodules:
