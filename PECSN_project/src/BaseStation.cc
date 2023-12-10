@@ -74,13 +74,15 @@ void BaseStation::assembleFrame(){
 void BaseStation::sendFrame(){
     assembleFrame();
     //...
-
+    //for()
+    //send(frame,"frame_out")
+    //record statistics
     scheduleSelfMessage();
 
 }
 
 void BaseStation::storePacket(cMessage *msg){
-
+    //store packet in queue
 }
 
 void BaseStation::updateCQI(int cqi, int id){

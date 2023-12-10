@@ -25,6 +25,7 @@ namespace pecsn_project {
 
 class User : public cSimpleModule{
 private:
+    simsignal_t packetsReceived;
     simsignal_t packetDelay;
     simsignal_t throughput;
     int id;
