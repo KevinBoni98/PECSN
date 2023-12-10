@@ -44,20 +44,22 @@ void PacketGenerator::initialize(){
     scheduleAt(simTime()+time,beep);
 }
 
-void PacketGenerator::handle_message(cMessage *msg){
+void PacketGenerator::handleMessage(cMessage *msg){
     if (msg->isSelfMessage()){
         // Generate packet
-        Packet *packet = check_and_cast<Packet*>( new cMessage("Packet"));
+        Packet *packet =  new Packet("Packet");
         // destination
         packet->setDestination(getIndex());
         // arrivaltime
         simtime_t arrivalTime = exponential(1/lambda,indexArrivalTimeGen);        
         packet->setArrivalTime(arrivalTime);
+        
         // size
         int size = intuniform(1/* min size */, 15/* max size */, indexPkgSizeGen);
-        packet->setSize(size);
+        packet->setLength(size);
+        EV<<"size: "<<size<<endl;
         // Send packet
-        send(packet, "out");
+        send(packet, "packet_out");
         // Schedule the next self-message
         scheduleAt(simTime() + arrivalTime, beep);
     }

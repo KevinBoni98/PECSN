@@ -23,17 +23,27 @@ class Packet;
 
 }  // namespace pecsn_project
 
+// cplusplus {{
+#include <vector>
+
+typedef std::vector<int> IntVector;
+// }}
+
 
 namespace pecsn_project {
 
 /**
- * Class generated from <tt>Packet.msg:6</tt> by opp_msgtool.
+ * Class generated from <tt>Packet.msg:29</tt> by opp_msgtool.
  * <pre>
+ * //
+ * // TODO generated message class
+ * //
  * packet Packet
  * {
  *     int destination;
- *     int size;
- *     simtime_t arrivalTime;
+ *     int length;
+ *     IntVector RBs;
+ *     simtime_t arrivalTime; //same as time of generation
  * }
  * </pre>
  */
@@ -41,7 +51,8 @@ class Packet : public ::omnetpp::cPacket
 {
   protected:
     int destination = 0;
-    int size = 0;
+    int length = 0;
+    ::IntVector RBs;
     ::omnetpp::simtime_t arrivalTime = SIMTIME_ZERO;
 
   private:
@@ -62,8 +73,12 @@ class Packet : public ::omnetpp::cPacket
     virtual int getDestination() const;
     virtual void setDestination(int destination);
 
-    virtual int getSize() const;
-    virtual void setSize(int size);
+    virtual int getLength() const;
+    virtual void setLength(int length);
+
+    virtual const ::IntVector& getRBs() const;
+    virtual ::IntVector& getRBsForUpdate() { return const_cast<::IntVector&>(const_cast<Packet*>(this)->getRBs());}
+    virtual void setRBs(const ::IntVector& RBs);
 
     virtual ::omnetpp::simtime_t getArrivalTime() const;
     virtual void setArrivalTime(::omnetpp::simtime_t arrivalTime);
@@ -78,6 +93,8 @@ inline void doParsimUnpacking(omnetpp::cCommBuffer *b, Packet& obj) {obj.parsimU
 
 namespace omnetpp {
 
+inline any_ptr toAnyPtr(const IntVector *p) {if (auto obj = as_cObject(p)) return any_ptr(obj); else return any_ptr(p);}
+template<> inline IntVector *fromAnyPtr(any_ptr ptr) { return ptr.get<IntVector>(); }
 template<> inline pecsn_project::Packet *fromAnyPtr(any_ptr ptr) { return check_and_cast<pecsn_project::Packet*>(ptr.get<cObject>()); }
 
 }  // namespace omnetpp

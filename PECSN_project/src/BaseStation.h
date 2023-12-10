@@ -34,6 +34,12 @@ private:
     int nUsers;
     cMessage *beep;
 
+    UserQueue** queues;
+    cQueue *RRqueues;
+    Frame *frame;
+    simsignal_t simFrame;
+
+
 public:
     BaseStation();
     virtual ~BaseStation();
@@ -43,6 +49,8 @@ protected:
     virtual void updateCQI(int,int);
     virtual void scheduleSelfMessage();
     virtual void assembleFrame();
+    virtual bool insertIntoFrame(Frame*, UserQueue*);
+    virtual void clearFrame();
     virtual void sendFrame();
     virtual void storePacket(cMessage*);
 };
