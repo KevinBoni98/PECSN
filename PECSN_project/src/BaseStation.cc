@@ -30,7 +30,7 @@ BaseStation::~BaseStation() {
 }
 
 void BaseStation::initialize(){
-    registerSignal("simFrame");
+    simFrame = registerSignal("simFrame");
     beep = new cMessage("beep");
     nUsers = getParentModule()->par("NUM_USER");
     currentCQI = new int[nUsers];

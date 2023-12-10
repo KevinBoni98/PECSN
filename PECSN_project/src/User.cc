@@ -33,9 +33,9 @@ User::~User() {
 }
 void User::initialize()
 {
-    registerSignal("packetDelay");
-    registerSignal("throughput");
-    registerSignal("packetsReceived");
+    packetDelay = registerSignal("packetDelay");
+    throughput = registerSignal("throughput");
+    packetsReceived = registerSignal("packetsReceived");
     int multiplier = getParentModule()->par("CQIRngMultiplier");
     nUsers = getParentModule()->par("NUM_USER");
     id = getIndex();

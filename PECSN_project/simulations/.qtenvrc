@@ -1,6 +1,6 @@
 [General]
-last-configname=binomialCQI
-last-runnumber=1
+last-configname=uniformCQI
+last-runnumber=0
 
 [RunModeProfiles]
 ="======"
