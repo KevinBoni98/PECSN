@@ -37,7 +37,7 @@ void User::initialize()
     registerSignal("throughput");
     registerSignal("packetsReceived");
     int multiplier = getParentModule()->par("CQIRngMultiplier");
-    nUsers = getParentModule()->par("N_USERS");
+    nUsers = getParentModule()->par("NUM_USER");
     id = getIndex();
 
     rngIndex = id + multiplier*nUsers;
@@ -50,7 +50,7 @@ void User::initialize()
 void User::handleMessage(cMessage *msg){
     Frame *frame = check_and_cast<Frame*>(msg);
     std::vector<Packet*> pl = frame->getPacketList();
-    EV<<"size: "<<pl.size()<<endl;
+    EV<<"total size:\t"<<pl.size()<<endl;
     long bytesReceived = 0;
     long pR = 0;
     while(pl.size() != 0){
@@ -60,9 +60,9 @@ void User::handleMessage(cMessage *msg){
             pR++;
             simtime_t elapsed = simTime() - p->getArrivalTime();//arrival time = generation time = arrival at base station
             emit(packetDelay, elapsed.dbl());
-            bytesReceived += p->getSize();
+            bytesReceived += p->getLength();
+            EV<<"packet size: "<<p->getLength()<<endl;
         }
-        EV<<"packet size: "<<p->getSize()<<endl;
     }
     emit(packetsReceived, pR);
     emit(throughput, bytesReceived);

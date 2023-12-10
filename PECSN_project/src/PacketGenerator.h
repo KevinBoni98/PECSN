@@ -32,7 +32,7 @@ public:
     PacketGenerator();
     virtual ~PacketGenerator();
 protected:
-    virtual void handle_message(cMessage*);
+    virtual void handleMessage(cMessage*);
     virtual void initialize();
 };
 

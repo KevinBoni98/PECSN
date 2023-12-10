@@ -30,14 +30,15 @@ BaseStation::~BaseStation() {
 }
 
 void BaseStation::initialize(){
+    registerSignal("simFrame");
     beep = new cMessage("beep");
-    nUsers = getParentModule()->par("N_USERS");
+    nUsers = getParentModule()->par("NUM_USER");
     currentCQI = new int[nUsers];
     for (int i = 0; i < nUsers; i++){
         currentCQI[i] = 0;
     }
     //inizializzo array dei valori in byte dei CQI
-    EV<<par("CQIArrayLength").intValue()<<endl;
+    EV<<"CQIArrayLength:\t"<<par("CQIArrayLength").intValue()<<endl;
     int len = par("CQIArrayLength").intValue();
     CQITable = new int[len];
     std::string toParse = par("CQIValues").str();
@@ -48,7 +49,7 @@ void BaseStation::initialize(){
     int i = 0;
     while (!ss.eof()) {
         ss >> temp;
-        EV<<temp<<endl;
+        EV<<"temp:\t"<<temp<<endl;
         if (std::stringstream(temp) >> found){
             CQITable[i] = found;
             i++;
@@ -56,7 +57,7 @@ void BaseStation::initialize(){
         }
         temp = "";
     }
-
+    frame = new Frame;
     queues = new UserQueue*[nUsers];
     RRqueues = new cQueue("RoundRobinQueues");
     // default behavior of cQueue --> FIFO
@@ -73,11 +74,13 @@ void BaseStation::initialize(){
 }
 
 void BaseStation::scheduleSelfMessage(){
-    double time = par("timeSlot").doubleValueInUnit("s");
+    EV<<par("timeSlot")<<endl;
+    double time = par("timeSlot").doubleValue();
     scheduleAt(simTime() + time, beep);
 }
 
 void BaseStation::clearFrame(){
+    EV<<"clearFrame..."<<endl;
     frame->setRBslotsUsed(0);
     std::vector<Packet*> packets = frame->getPacketList();
     while(packets.size()) {
@@ -86,6 +89,7 @@ void BaseStation::clearFrame(){
         delete(p);
     }
     frame->setPacketList(packets);
+    EV<<"end clearFrame..."<<endl;
 }
 
 bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
@@ -164,7 +168,7 @@ void BaseStation::assembleFrame(){
         if(queue->isEmpty())
             // no packets to transmit
             continue;
-
+        EV<<"qualcosa vedo"<<endl;
         servedUsers.push_back(queue);
         readyToSend = insertIntoFrame(frame, queue);
     }
@@ -179,21 +183,24 @@ void BaseStation::assembleFrame(){
 }
 
 void BaseStation::sendFrame(){
+    EV<<"sendFrame..."<<endl;
     assembleFrame();
     int occupiedSlots = frame->getRBslotsUsed();
-
+    EV<<"occupiedSlots:\t"<<occupiedSlots<<endl;
     emit(simFrame, occupiedSlots);
 
     for (int i = 0; i < nUsers; i++){
         Frame *f = new Frame(*frame);
-        send(f, "out", i);
+        send(f, "frame_out", i);
     }
 
     scheduleSelfMessage();
 }
 
 void BaseStation::storePacket(cMessage *msg){
-    //store packet in queue
+    Packet *packet = check_and_cast<Packet*>(msg);
+    packet->setArrivalTime(simTime());
+    queues[packet->getDestination()]->insert(packet);
 }
 
 void BaseStation::updateCQI(int cqi, int id){

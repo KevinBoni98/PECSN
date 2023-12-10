@@ -8,7 +8,7 @@ import pecsn_project.PacketGenerator;
 network Network
 {
     parameters:
-        int N_USERS = default(5);
+        int NUM_USER = default(5);
 		int lambda = default(10);
 		int CQIRngMultiplier = default(0);
 		int PktSizeRngMultiplier = CQIRngMultiplier+1;
@@ -19,15 +19,15 @@ network Network
         BS: BaseStation {
             @display("p=363,178");
         }
-        Users[N_USERS]: User {
+        Users[NUM_USER]: User {
             @display("p=81,178");
         }
-        PG[N_USERS]: PacketGenerator {
+        PG[NUM_USER]: PacketGenerator {
 
             @display("p=686,178");
         }
     connections:
-        for i=0..N_USERS-1 {
+        for i=0..NUM_USER-1 {
             BS.frame_out++ --> Users[i].frame_in;
             BS.CQI_in++ <-- Users[i].CQI_out;
             BS.packet_in++ <-- PG[i].packet_out;
