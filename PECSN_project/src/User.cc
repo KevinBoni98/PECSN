@@ -35,6 +35,7 @@ void User::initialize()
 {
     registerSignal("packetDelay");
     registerSignal("throughput");
+    registerSignal("packetsReceived");
     int multiplier = getParentModule()->par("CQIRngMultiplier");
     nUsers = getParentModule()->par("N_USERS");
     id = getIndex();
@@ -51,16 +52,19 @@ void User::handleMessage(cMessage *msg){
     std::vector<Packet*> pl = frame->getPacketList();
     EV<<"size: "<<pl.size()<<endl;
     long bytesReceived = 0;
+    long pR = 0;
     while(pl.size() != 0){
         Packet * p = pl.back();
         pl.pop_back();
         if (p->getDestination() == id){
-            simtime_t elapsed = simTime() - p->getArrivalTime();
+            pR++;
+            simtime_t elapsed = simTime() - p->getArrivalTime();//arrival time = generation time = arrival at base station
             emit(packetDelay, elapsed.dbl());
             bytesReceived += p->getSize();
         }
         EV<<"packet size: "<<p->getSize()<<endl;
     }
+    emit(packetsReceived, pR);
     emit(throughput, bytesReceived);
     delete(msg);
     sendCQI();
