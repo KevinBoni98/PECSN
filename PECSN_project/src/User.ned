@@ -8,7 +8,7 @@ simple User
     parameters:
         @signal[packetDelay](type="double");
         @statistic[packetDelayStat](title="Packet delay"; source="packetDelay"; record=vector,stats;);
-        @signal[packetsReceived](type="double");
+        @signal[packetsReceived](type="int");
         @statistic[packetsReceivedStat](title="Packets received per timeslot"; source="packetsReceived"; record=vector,stats;);
         @signal[throughput](type="double");
         @statistic[throughputStat](title="Throughput"; source="throughput"; record=vector,stats;);

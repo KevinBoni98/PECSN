@@ -51,8 +51,8 @@ void User::handleMessage(cMessage *msg){
     Frame *frame = check_and_cast<Frame*>(msg);
     std::vector<Packet*> pl = frame->getPacketList();
     EV<<"total size:\t"<<pl.size()<<endl;
-    long bytesReceived = 0;
-    long pR = 0;
+    double bytesReceived = 0;
+    int pR = 0;
     while(pl.size() != 0){
         Packet * p = pl.back();
         pl.pop_back();
@@ -64,6 +64,7 @@ void User::handleMessage(cMessage *msg){
             EV<<"packet size: "<<p->getLength()<<endl;
         }
     }
+    EV<<"packets received by id = "<<id<<": "<<pR<<endl;
     emit(packetsReceived, pR);
     emit(throughput, bytesReceived);
     delete(msg);
