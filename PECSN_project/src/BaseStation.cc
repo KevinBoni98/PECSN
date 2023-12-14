@@ -96,7 +96,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
     int occupiedSlots = frame->getRBslotsUsed();
     std::vector<Packet*> packets = frame->getPacketList();
     int RBsize = queue->RBsize;
-    EV<<"l'RBsize di questa queue è "<<RBsize<<endl;
+    EV<<"l'RBsize di questa queue e' "<<RBsize<<endl;
     int emptySlots;
     int freeSpace;
     int freeBytesFromLastRB = 0;
@@ -116,6 +116,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
             if(!emptySlots){
                 // no more empty spots --> frame is full and ready
                 frame->setPacketList(packets);
+                EV<<"finito spazio"<<endl;
                 return true;
             }
             break;
@@ -152,9 +153,12 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
     // update packets in the frame
     frame->setPacketList(packets);
-    if (emptySlots == 0)
+    if (emptySlots == 0){
         // frame is ready
+        EV<<"frame is ready"<<endl;
         return true;
+    }
+    EV<<"still some spots to fill"<<endl;
     // otherwise the frame has still some empty spot to fill
     return false;
 }
@@ -163,19 +167,24 @@ void BaseStation::assembleFrame(){
     clearFrame();
     std::vector<UserQueue*> servedUsers;
     bool readyToSend = false;
-    int fullLoop = 0;
-    while (readyToSend && fullLoop < nUsers){
+    int fullLoop = 0; //exit loop if i have checked all users and they have nothing to send
+    EV<<"entro nel loop"<<endl;
+    while (!readyToSend && fullLoop < nUsers){
         UserQueue *queue = check_and_cast<UserQueue*>(RRqueues->get(toServe));
-        if(queue->isEmpty())
-        // no packets to transmit
+        if(queue->isEmpty()){
+            EV<<"niente da trasmettere"<<endl;
+            fullLoop++;
             continue;
+        }
+        // no packets to transmit
+
         EV<<"qualcosa vedo"<<endl;
         servedUsers.push_back(queue);
         readyToSend = insertIntoFrame(frame, queue);
-        if (readyToSend){
+        if (!readyToSend){
             EV<<"ho servito l'utente con id "<<toServe<<endl;
             if (toServe == nUsers-1) toServe = 0;
-            else toServe++;
+            else toServe++; //toServe tracks the next user that needs serving
             fullLoop++;
         }
     }

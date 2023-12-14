@@ -10,7 +10,7 @@ simple User
         @statistic[packetDelayStat](title="Packet delay"; source="packetDelay"; record=vector,stats;);
         @signal[packetsReceived](type="int");
         @statistic[packetsReceivedStat](title="Packets received per timeslot"; source="packetsReceived"; record=vector,stats;);
-        @signal[throughput](type="double");
+        @signal[throughput](type="int");
         @statistic[throughputStat](title="Throughput"; source="throughput"; record=vector,stats;);
         
         //@signal[userThroughputTotal](type="double");

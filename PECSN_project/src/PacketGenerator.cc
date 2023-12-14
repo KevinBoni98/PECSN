@@ -57,7 +57,6 @@ void PacketGenerator::handleMessage(cMessage *msg){
         // size
         int size = intuniform(1/* min size */, 15/* max size */, indexPkgSizeGen);
         packet->setLength(size);
-        EV<<"size: "<<size<<endl;
         // Send packet
         send(packet, "packet_out");
         // Schedule the next self-message
