@@ -96,7 +96,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
     int occupiedSlots = frame->getRBslotsUsed();
     std::vector<Packet*> packets = frame->getPacketList();
     int RBsize = queue->RBsize;
-
+    EV<<"l'RBsize di questa queue è "<<RBsize<<endl;
     int emptySlots;
     int freeSpace;
     int freeBytesFromLastRB = 0;
@@ -163,7 +163,23 @@ void BaseStation::assembleFrame(){
     clearFrame();
     std::vector<UserQueue*> servedUsers;
     bool readyToSend = false;
-    for (int i = 0; i < nUsers && !readyToSend; i++){
+    int fullLoop = 0;
+    while (readyToSend && fullLoop < nUsers){
+        UserQueue *queue = check_and_cast<UserQueue*>(RRqueues->get(toServe));
+        if(queue->isEmpty())
+        // no packets to transmit
+            continue;
+        EV<<"qualcosa vedo"<<endl;
+        servedUsers.push_back(queue);
+        readyToSend = insertIntoFrame(frame, queue);
+        if (readyToSend){
+            EV<<"ho servito l'utente con id "<<toServe<<endl;
+            if (toServe == nUsers-1) toServe = 0;
+            else toServe++;
+            fullLoop++;
+        }
+    }
+    /*for (int i = 0; i < nUsers && !readyToSend; i++){
         UserQueue *queue = check_and_cast<UserQueue*>(RRqueues->get(i));
         if(queue->isEmpty())
             // no packets to transmit
@@ -171,7 +187,7 @@ void BaseStation::assembleFrame(){
         EV<<"qualcosa vedo"<<endl;
         servedUsers.push_back(queue);
         readyToSend = insertIntoFrame(frame, queue);
-    }
+    }*/
     for (int i = 0; i < servedUsers.size(); i++) {
         UserQueue *q = servedUsers[i];
         // we implement the Round Robin policy simply by considering a FIFO queue (using RRqueues)
@@ -204,7 +220,9 @@ void BaseStation::storePacket(cMessage *msg){
 }
 
 void BaseStation::updateCQI(int cqi, int id){
-    currentCQI[id] = cqi;
+    UserQueue *uq = queues[id];
+    uq->RBsize = CQITable[cqi-1];
+    EV<<"ora l'utente con id "<<id<<" ha cqi = "<<cqi<<", che corrisponde a "<<CQITable[cqi-1]<<" RBsize"<<endl;
 }
 
 void BaseStation::handleMessage(cMessage *msg){
@@ -217,6 +235,7 @@ void BaseStation::handleMessage(cMessage *msg){
         CQImsg *m = check_and_cast<CQImsg*>(msg);
 
         updateCQI(m->getNewCQI(), m->getArrivalGate()->getIndex());
+        delete(msg);
     }
     if (strcmp(msg->getName(), "Packet") == 0){
         storePacket(msg);
