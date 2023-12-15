@@ -92,6 +92,8 @@ void BaseStation::clearFrame(){
     EV<<"end clearFrame..."<<endl;
 }
 
+// insertIntoFrame insert packet of the user queue into the frame and 
+// return true if there is space of the frame  
 bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
     int occupiedSlots = frame->getRBslotsUsed();
     std::vector<Packet*> packets = frame->getPacketList();
@@ -179,12 +181,13 @@ void BaseStation::assembleFrame(){
         // no packets to transmit
 
         EV<<"qualcosa vedo"<<endl;
-        servedUsers.push_back(queue);
         readyToSend = insertIntoFrame(frame, queue);
         if (!readyToSend){
             EV<<"ho servito l'utente con id "<<toServe<<endl;
-            if (toServe == nUsers-1) toServe = 0;
-            else toServe++; //toServe tracks the next user that needs serving
+            if (toServe == nUsers-1) 
+                toServe = 0;
+            else 
+                toServe++; //toServe tracks the next user that needs serving
             fullLoop++;
         }
     }
