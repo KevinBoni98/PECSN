@@ -179,7 +179,6 @@ void BaseStation::assembleFrame(){
             continue;
         }
         // no packets to transmit
-
         EV<<"qualcosa vedo"<<endl;
         readyToSend = insertIntoFrame(frame, queue);
         if (!readyToSend){
@@ -191,22 +190,6 @@ void BaseStation::assembleFrame(){
             fullLoop++;
         }
     }
-    /*for (int i = 0; i < nUsers && !readyToSend; i++){
-        UserQueue *queue = check_and_cast<UserQueue*>(RRqueues->get(i));
-        if(queue->isEmpty())
-            // no packets to transmit
-            continue;
-        EV<<"qualcosa vedo"<<endl;
-        servedUsers.push_back(queue);
-        readyToSend = insertIntoFrame(frame, queue);
-    }
-    for (int i = 0; i < servedUsers.size(); i++) {
-        UserQueue *q = servedUsers[i];
-        // we implement the Round Robin policy simply by considering a FIFO queue (using RRqueues)
-        // backlogged users are served cyclically, in a fixed order
-        RRqueues->remove(q);
-        RRqueues->insert(q);
-    }*/
     servedUsers.clear();
 }
 
