@@ -196,14 +196,14 @@ void BaseStation::assembleFrame(){
         EV<<"qualcosa vedo"<<endl;
         servedUsers.push_back(queue);
         readyToSend = insertIntoFrame(frame, queue);
-    }*/
+    }
     for (int i = 0; i < servedUsers.size(); i++) {
         UserQueue *q = servedUsers[i];
         // we implement the Round Robin policy simply by considering a FIFO queue (using RRqueues)
         // backlogged users are served cyclically, in a fixed order
         RRqueues->remove(q);
         RRqueues->insert(q);
-    }
+    }*/
     servedUsers.clear();
 }
 
@@ -227,6 +227,7 @@ void BaseStation::storePacket(cMessage *msg){
     packet->setArrivalTime(simTime());
     queues[packet->getDestination()]->insert(packet);
 }
+
 
 void BaseStation::updateCQI(int cqi, int id){
     UserQueue *uq = queues[id];

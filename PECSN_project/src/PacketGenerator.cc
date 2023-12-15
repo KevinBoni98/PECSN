@@ -37,8 +37,8 @@ void PacketGenerator::initialize(){
     beep = new cMessage("beep");
     // get user of the system
     int numUser = par("NUM_USER").intValue();
-    indexArrivalTimeGen = getIndex()+numUser*2;
-    indexPkgSizeGen = getIndex()+numUser*3;
+    indexArrivalTimeGen = getIndex()+numUser*1;
+    indexPkgSizeGen = getIndex()+numUser*2;
     lambda =  par("LAMBDA").doubleValue();
     simtime_t time = exponential(1/lambda,indexArrivalTimeGen);
     scheduleAt(simTime()+time,beep);
