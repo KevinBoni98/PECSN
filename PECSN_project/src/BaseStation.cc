@@ -37,6 +37,7 @@ void BaseStation::initialize(){
     for (int i = 0; i < nUsers; i++){
         currentCQI[i] = 0;
     }
+    toServe = 0;
     //inizializzo array dei valori in byte dei CQI
     EV<<"CQIArrayLength:\t"<<par("CQIArrayLength").intValue()<<endl;
     int len = par("CQIArrayLength").intValue();
@@ -98,6 +99,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
     int occupiedSlots = frame->getRBslotsUsed();
         std::vector<Packet*> packets = frame->getPacketList();
         int RBsize = queue->RBsize;
+        EV<<"RBsize\t"<<RBsize<<endl;
 
         int emptySlots;
         int freeSpace;
@@ -113,6 +115,8 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
             currentPacket = check_and_cast<Packet*>(queue->get(0));
             packetSize = currentPacket->getLength();
 
+            EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
+            EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
             if(packetSize > freeSpace + freeBytesFromLastRB){
                 break;
             }
@@ -122,24 +126,23 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
             if (RBoccupiedByPacket > 0) {
                 // we start filling a new RB of the frame
-                int RBoccupied = std::ceil(RBoccupiedByPacket);
-                for(int i = 0; i < RBoccupied; ++i){
-                    // keep track of each RB (of the frame) occupied by the packet into the RBs vector of the packet
-                    // and increase the counter of the occupied slots into the frame
-                    occupiedSlots++;
-                }
+                int RBoccupied = std::floor(RBoccupiedByPacket);
+                occupiedSlots += RBoccupied;
                 // compute #freeBytes left from the last occupied RB
                 freeBytesFromLastRB = (RBsize - ((packetSize - freeBytesFromLastRB) % RBsize));
             } else {
                 // the new packet fits into the current RB of the frame
                 freeBytesFromLastRB -= packetSize;
             }
-
+            EV<<"packetSize\t"<<packetSize<<endl;
+            EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
+            EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
             frame->setRBslotsUsed(occupiedSlots);
             // insert current packet into the frame
             packets.push_back(currentPacket);
             // remove current packet from the queue
             queue->remove(currentPacket);
+            EV<<"----------------------"<<endl;
         }
 
         // update packets in the frame
@@ -213,7 +216,7 @@ void BaseStation::handleMessage(cMessage *msg){
         CQImsg *m = check_and_cast<CQImsg*>(msg);
 
         updateCQI(m->getNewCQI(), m->getArrivalGate()->getIndex());
-        delete(msg);
+        //delete(msg);
     }
     if (strcmp(msg->getName(), "Packet") == 0){
         storePacket(msg);
