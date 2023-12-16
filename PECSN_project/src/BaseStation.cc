@@ -97,61 +97,65 @@ void BaseStation::clearFrame(){
 // return true if there is space of the frame  
 bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
     int occupiedSlots = frame->getRBslotsUsed();
-        std::vector<Packet*> packets = frame->getPacketList();
-        int RBsize = queue->RBsize;
-        EV<<"RBsize\t"<<RBsize<<endl;
+    std::vector<Packet*> packets = frame->getPacketList();
+    int RBsize = queue->RBsize;
+    EV<<"RBsize\t"<<RBsize<<endl;
+    bool isInsertOne = false;
+    int emptySlots;
+    int freeSpace;
+    int freeBytesFromLastRB = 0;
+    int packetSize;
 
-        int emptySlots;
-        int freeSpace;
-        int freeBytesFromLastRB = 0;
-        int packetSize;
+    Packet* currentPacket;
+    while(!queue->isEmpty()){
+        // each frame is composed by 25 RBs
+        emptySlots = 25 - occupiedSlots;
+        freeSpace = emptySlots * RBsize;
 
-        Packet* currentPacket;
-        while(!queue->isEmpty()){
-            // each frame is composed by 25 RBs
-            emptySlots = 25 - occupiedSlots;
-            freeSpace = emptySlots * RBsize;
+        currentPacket = check_and_cast<Packet*>(queue->get(0));
+        packetSize = currentPacket->getLength();
 
-            currentPacket = check_and_cast<Packet*>(queue->get(0));
-            packetSize = currentPacket->getLength();
-
-            EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
-            EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
-            if(packetSize > freeSpace + freeBytesFromLastRB){
-                break;
-            }
-            // #RBs occupied by current packet (packets from the same user can share the same RB)
-            float RBoccupiedByPacket = ((float)(packetSize - freeBytesFromLastRB)) / RBsize;
-
-
-            if (RBoccupiedByPacket > 0) {
-                // we start filling a new RB of the frame
-                int RBoccupied = std::floor(RBoccupiedByPacket);
-                occupiedSlots += RBoccupied;
-                // compute #freeBytes left from the last occupied RB
-                freeBytesFromLastRB = (RBsize - ((packetSize - freeBytesFromLastRB) % RBsize));
-            } else {
-                // the new packet fits into the current RB of the frame
-                freeBytesFromLastRB -= packetSize;
-            }
-            EV<<"packetSize\t"<<packetSize<<endl;
-            EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
-            EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
-            frame->setRBslotsUsed(occupiedSlots);
-            // insert current packet into the frame
-            packets.push_back(currentPacket);
-            // remove current packet from the queue
-            queue->remove(currentPacket);
-            EV<<"----------------------"<<endl;
+        EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
+        EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
+        if(packetSize > freeSpace + freeBytesFromLastRB){
+            break;
         }
+        isInsertOne = true;
+        // #RBs occupied by current packet (packets from the same user can share the same RB)
+        float RBoccupiedByPacket = ((float)(packetSize - freeBytesFromLastRB)) / RBsize;
 
-        // update packets in the frame
-        frame->setPacketList(packets);
-        if (emptySlots == 0)
-            // frame is ready
-            return true;
-        // otherwise the frame has still some empty spot to fill
-        return false;
+
+        if (RBoccupiedByPacket > 0) {
+            // we start filling a new RB of the frame
+            int RBoccupied = std::floor(RBoccupiedByPacket);
+            occupiedSlots += RBoccupied;
+            // compute #freeBytes left from the last occupied RB
+            freeBytesFromLastRB = (RBsize - ((packetSize - freeBytesFromLastRB) % RBsize));
+        } else {
+            // the new packet fits into the current RB of the frame
+            freeBytesFromLastRB -= packetSize;
+        }
+        EV<<"packetSize\t"<<packetSize<<endl;
+        EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
+        EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
+        // insert current packet into the frame
+        packets.push_back(currentPacket);
+        // remove current packet from the queue
+        queue->remove(currentPacket);
+        EV<<"----------------------"<<endl;
+    }
+    if (isInsertOne && occupiedSlots == frame->getRBslotsUsed()){
+        occupiedSlots++;
+    }
+    frame->setRBslotsUsed(occupiedSlots);
+
+    // update packets in the frame
+    frame->setPacketList(packets);
+    if (emptySlots == 0)
+        // frame is ready
+        return true;
+    // otherwise the frame has still some empty spot to fill
+    return false;
 }
 
 void BaseStation::assembleFrame(){
