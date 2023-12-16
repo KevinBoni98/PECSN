@@ -1,0 +1,1084 @@
+version 3
+run binomialCQI-0-20231216-17:51:32-2772
+attr configname binomialCQI
+attr datetime 20231216-17:51:32
+attr datetimef 20231216-175132
+attr experiment binomialCQI
+attr inifile omnetpp.ini
+attr iterationvars "$simulationTime=70s, $nUser=25, $lambda=25"
+attr iterationvarsd simulationTime=70s/nUser=25/lambda=25
+attr iterationvarsf simulationTime=70s,nUser=25,lambda=25-
+attr measurement "$simulationTime=70s, $nUser=25, $lambda=25"
+attr network Network
+attr processid 2772
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar lambda 25
+itervar nUser 25
+itervar simulationTime 70s
+config **.Users[*].CQIdistribution "\"binomial\""
+config network Network
+config cpu-time-limit 60s
+config sim-time-limit 70s
+config num-rngs 600
+config repeat 10
+config seed-set 0
+config **.NUM_USER 25
+config **.LAMBDA 25
+config **.CQIArrayLength 15
+config **.CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
+config **.frameSize 25
+config **.timeSlot 0.1
+
+par Network.BS typename "\"pecsn_project.BaseStation\""
+par Network.BS CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
+par Network.BS CQIArrayLength 15
+par Network.BS frameSize 25
+par Network.BS timeSlot 0.1
+statistic Network.BS simFrameStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source simFrame
+attr title "Occupied frame slots"
+par Network.Users[0] typename "\"pecsn_project.User\""
+par Network.Users[0] CQIdistribution "\"binomial\""
+statistic Network.Users[0] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[0] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[0] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[1] typename "\"pecsn_project.User\""
+par Network.Users[1] CQIdistribution "\"binomial\""
+statistic Network.Users[1] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[1] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[1] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[2] typename "\"pecsn_project.User\""
+par Network.Users[2] CQIdistribution "\"binomial\""
+statistic Network.Users[2] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[2] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[2] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[3] typename "\"pecsn_project.User\""
+par Network.Users[3] CQIdistribution "\"binomial\""
+statistic Network.Users[3] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[3] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[3] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[4] typename "\"pecsn_project.User\""
+par Network.Users[4] CQIdistribution "\"binomial\""
+statistic Network.Users[4] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[4] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[4] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[5] typename "\"pecsn_project.User\""
+par Network.Users[5] CQIdistribution "\"binomial\""
+statistic Network.Users[5] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[5] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[5] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[6] typename "\"pecsn_project.User\""
+par Network.Users[6] CQIdistribution "\"binomial\""
+statistic Network.Users[6] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[6] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[6] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[7] typename "\"pecsn_project.User\""
+par Network.Users[7] CQIdistribution "\"binomial\""
+statistic Network.Users[7] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[7] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[7] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[8] typename "\"pecsn_project.User\""
+par Network.Users[8] CQIdistribution "\"binomial\""
+statistic Network.Users[8] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[8] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[8] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[9] typename "\"pecsn_project.User\""
+par Network.Users[9] CQIdistribution "\"binomial\""
+statistic Network.Users[9] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[9] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[9] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[10] typename "\"pecsn_project.User\""
+par Network.Users[10] CQIdistribution "\"binomial\""
+statistic Network.Users[10] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[10] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[10] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[11] typename "\"pecsn_project.User\""
+par Network.Users[11] CQIdistribution "\"binomial\""
+statistic Network.Users[11] throughputStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[11] packetsReceivedStat:stats
+field count 1
+field mean 0
+field stddev nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[11] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[12] typename "\"pecsn_project.User\""
+par Network.Users[12] CQIdistribution "\"binomial\""
+statistic Network.Users[12] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[12] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[12] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[13] typename "\"pecsn_project.User\""
+par Network.Users[13] CQIdistribution "\"binomial\""
+statistic Network.Users[13] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[13] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[13] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[14] typename "\"pecsn_project.User\""
+par Network.Users[14] CQIdistribution "\"binomial\""
+statistic Network.Users[14] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[14] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[14] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[15] typename "\"pecsn_project.User\""
+par Network.Users[15] CQIdistribution "\"binomial\""
+statistic Network.Users[15] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[15] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[15] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[16] typename "\"pecsn_project.User\""
+par Network.Users[16] CQIdistribution "\"binomial\""
+statistic Network.Users[16] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[16] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[16] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[17] typename "\"pecsn_project.User\""
+par Network.Users[17] CQIdistribution "\"binomial\""
+statistic Network.Users[17] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[17] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[17] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[18] typename "\"pecsn_project.User\""
+par Network.Users[18] CQIdistribution "\"binomial\""
+statistic Network.Users[18] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[18] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[18] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[19] typename "\"pecsn_project.User\""
+par Network.Users[19] CQIdistribution "\"binomial\""
+statistic Network.Users[19] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[19] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[19] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[20] typename "\"pecsn_project.User\""
+par Network.Users[20] CQIdistribution "\"binomial\""
+statistic Network.Users[20] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[20] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[20] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[21] typename "\"pecsn_project.User\""
+par Network.Users[21] CQIdistribution "\"binomial\""
+statistic Network.Users[21] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[21] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[21] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[22] typename "\"pecsn_project.User\""
+par Network.Users[22] CQIdistribution "\"binomial\""
+statistic Network.Users[22] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[22] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[22] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[23] typename "\"pecsn_project.User\""
+par Network.Users[23] CQIdistribution "\"binomial\""
+statistic Network.Users[23] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[23] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[23] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[24] typename "\"pecsn_project.User\""
+par Network.Users[24] CQIdistribution "\"binomial\""
+statistic Network.Users[24] throughputStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[24] packetsReceivedStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[24] packetDelayStat:stats
+field count 0
+field mean nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.PG[0] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[0] NUM_USER 25
+par Network.PG[0] LAMBDA 25
+par Network.PG[1] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[1] NUM_USER 25
+par Network.PG[1] LAMBDA 25
+par Network.PG[2] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[2] NUM_USER 25
+par Network.PG[2] LAMBDA 25
+par Network.PG[3] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[3] NUM_USER 25
+par Network.PG[3] LAMBDA 25
+par Network.PG[4] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[4] NUM_USER 25
+par Network.PG[4] LAMBDA 25
+par Network.PG[5] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[5] NUM_USER 25
+par Network.PG[5] LAMBDA 25
+par Network.PG[6] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[6] NUM_USER 25
+par Network.PG[6] LAMBDA 25
+par Network.PG[7] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[7] NUM_USER 25
+par Network.PG[7] LAMBDA 25
+par Network.PG[8] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[8] NUM_USER 25
+par Network.PG[8] LAMBDA 25
+par Network.PG[9] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[9] NUM_USER 25
+par Network.PG[9] LAMBDA 25
+par Network.PG[10] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[10] NUM_USER 25
+par Network.PG[10] LAMBDA 25
+par Network.PG[11] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[11] NUM_USER 25
+par Network.PG[11] LAMBDA 25
+par Network.PG[12] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[12] NUM_USER 25
+par Network.PG[12] LAMBDA 25
+par Network.PG[13] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[13] NUM_USER 25
+par Network.PG[13] LAMBDA 25
+par Network.PG[14] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[14] NUM_USER 25
+par Network.PG[14] LAMBDA 25
+par Network.PG[15] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[15] NUM_USER 25
+par Network.PG[15] LAMBDA 25
+par Network.PG[16] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[16] NUM_USER 25
+par Network.PG[16] LAMBDA 25
+par Network.PG[17] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[17] NUM_USER 25
+par Network.PG[17] LAMBDA 25
+par Network.PG[18] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[18] NUM_USER 25
+par Network.PG[18] LAMBDA 25
+par Network.PG[19] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[19] NUM_USER 25
+par Network.PG[19] LAMBDA 25
+par Network.PG[20] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[20] NUM_USER 25
+par Network.PG[20] LAMBDA 25
+par Network.PG[21] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[21] NUM_USER 25
+par Network.PG[21] LAMBDA 25
+par Network.PG[22] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[22] NUM_USER 25
+par Network.PG[22] LAMBDA 25
+par Network.PG[23] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[23] NUM_USER 25
+par Network.PG[23] LAMBDA 25
+par Network.PG[24] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[24] NUM_USER 25
+par Network.PG[24] LAMBDA 25
+par Network typename "\"pecsn_project.simulations.Network\""
+par Network NUM_USER 25
+par Network lambda 10
+par Network CQIRngMultiplier 0
+par Network PktSizeRngMultiplier 1
+par Network PktGenerationRngMultiplier 2
+

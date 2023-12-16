@@ -1,0 +1,186 @@
+version 3
+run binomialCQI-0-20231216-17:51:32-2772
+attr configname binomialCQI
+attr datetime 20231216-17:51:32
+attr datetimef 20231216-175132
+attr experiment binomialCQI
+attr inifile omnetpp.ini
+attr iterationvars "$simulationTime=70s, $nUser=25, $lambda=25"
+attr iterationvarsd simulationTime=70s/nUser=25/lambda=25
+attr iterationvarsf simulationTime=70s,nUser=25,lambda=25-
+attr measurement "$simulationTime=70s, $nUser=25, $lambda=25"
+attr network Network
+attr processid 2772
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar lambda 25
+itervar nUser 25
+itervar simulationTime 70s
+config **.Users[*].CQIdistribution "\"binomial\""
+config network Network
+config cpu-time-limit 60s
+config sim-time-limit 70s
+config num-rngs 600
+config repeat 10
+config seed-set 0
+config **.NUM_USER 25
+config **.LAMBDA 25
+config **.CQIArrayLength 15
+config **.CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
+config **.frameSize 25
+config **.timeSlot 0.1
+
+vector 0 Network.BS simFrameStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source simFrame
+attr title "Occupied frame slots"
+vector 1 Network.Users[0] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 2 Network.Users[0] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 3 Network.Users[1] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 4 Network.Users[1] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 5 Network.Users[2] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 6 Network.Users[2] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 7 Network.Users[3] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 8 Network.Users[3] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 9 Network.Users[4] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 10 Network.Users[4] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 11 Network.Users[5] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 12 Network.Users[5] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 13 Network.Users[6] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 14 Network.Users[6] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 15 Network.Users[7] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 16 Network.Users[7] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 17 Network.Users[8] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 18 Network.Users[8] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 19 Network.Users[9] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 20 Network.Users[9] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 21 Network.Users[10] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 22 Network.Users[10] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 23 Network.Users[11] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 24 Network.Users[11] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+0	152	0.1	0
+1	153	0.1	0
+2	153	0.1	0
+3	154	0.1	0
+4	154	0.1	0
+5	155	0.1	0
+6	155	0.1	0
+7	156	0.1	0
+8	156	0.1	0
+9	157	0.1	0
+10	157	0.1	0
+11	158	0.1	0
+12	158	0.1	0
+13	159	0.1	0
+14	159	0.1	0
+15	160	0.1	0
+16	160	0.1	0
+17	161	0.1	0
+18	161	0.1	0
+19	162	0.1	0
+20	162	0.1	0
+21	163	0.1	0
+22	163	0.1	0
+23	164	0.1	0
+24	164	0.1	0
+
