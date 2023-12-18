@@ -51,11 +51,11 @@ void PacketGenerator::handleMessage(cMessage *msg){
         // destination
         packet->setDestination(getIndex());
         // arrivaltime
-        simtime_t arrivalTime = exponential(1/lambda,indexArrivalTimeGen);        
-        packet->setArrivalTime(arrivalTime);
+        simtime_t arrivalTime = exponential(1/lambda,indexArrivalTimeGen);
+        packet->setArrivalTime(simTime());
         
         // size
-        int size = intuniform(1/* min size */, 15/* max size */, indexPkgSizeGen);
+        int size = intuniform(1/* min size */, 75/* max size */, indexPkgSizeGen);
         packet->setLength(size);
         // Send packet
         send(packet, "packet_out");

@@ -30,7 +30,9 @@ BaseStation::~BaseStation() {
 }
 
 void BaseStation::initialize(){
+    toServe = 0;
     simFrame = registerSignal("simFrame");
+    packetsInQueue = registerSignal("packetsInQueue");
     beep = new cMessage("beep");
     nUsers = getParentModule()->par("NUM_USER");
     currentCQI = new int[nUsers];
@@ -206,6 +208,12 @@ void BaseStation::updateCQI(int cqi, int id){
 void BaseStation::handleMessage(cMessage *msg){
     if (msg->isSelfMessage()){
         sendFrame();
+        int nQueues = getParentModule()->par("NUM_USER");
+        double numPacketInQueue = 0;
+        for(int i = 0; i < nQueues; i++)
+            numPacketInQueue += queues[i]->getLength();
+
+       emit(packetsInQueue, numPacketInQueue);
     }
 
     if(strcmp(msg->getName(),"CQI") == 0){

@@ -1,0 +1,275 @@
+version 3
+run binomialCQI-0-20231218-14:52:54-2260
+attr configname binomialCQI
+attr datetime 20231218-14:52:54
+attr datetimef 20231218-145254
+attr experiment binomialCQI
+attr inifile omnetpp.ini
+attr iterationvars "$simulationTime=70s, $nUser=5, $lambda=25"
+attr iterationvarsd simulationTime=70s/nUser=5/lambda=25
+attr iterationvarsf simulationTime=70s,nUser=5,lambda=25-
+attr measurement "$simulationTime=70s, $nUser=5, $lambda=25"
+attr network Network
+attr processid 2260
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+itervar lambda 25
+itervar nUser 5
+itervar simulationTime 70s
+config **.Users[*].CQIdistribution "\"binomial\""
+config network Network
+config sim-time-limit 70s
+config num-rngs 600
+config repeat 10
+config seed-set 0
+config **.NUM_USER 5
+config **.LAMBDA 25
+config **.CQIArrayLength 15
+config **.CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
+config **.frameSize 25
+config **.timeSlot 0.001
+
+par Network.BS typename "\"pecsn_project.BaseStation\""
+par Network.BS CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
+par Network.BS CQIArrayLength 15
+par Network.BS frameSize 25
+par Network.BS timeSlot 0.001
+statistic Network.BS simFrameStat:stats
+field count 70000
+field mean 0.2408
+field stddev 1.9805302237387
+field min 0
+field max 25
+field sum 16856
+field sqrsum 278630
+attr "" ""
+attr recordingmode stats
+attr source simFrame
+attr title "Occupied frame slots"
+statistic Network.BS packetsInQueueStat:stats
+field count 70000
+field mean 5.7873857142857
+field stddev 5.1712272696102
+field min 0
+field max 35
+field sum 405117
+field sqrsum 4216453
+attr "" ""
+attr recordingmode stats
+attr source packetsInQueue
+attr title "Packets In Queue"
+par Network.Users[0] typename "\"pecsn_project.User\""
+par Network.Users[0] CQIdistribution "\"binomial\""
+statistic Network.Users[0] throughputStat:stats
+field count 70000
+field mean 0.92092857142857
+field stddev 10.139049081898
+field min 0
+field max 347
+field sum 64465
+field sqrsum 7255287
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[0] packetsReceivedStat:stats
+field count 70000
+field mean 0.0249
+field stddev 0.26288695043276
+field min 0
+field max 10
+field sum 1743
+field sqrsum 4881
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[0] packetDelayStat:stats
+field count 1743
+field mean 0.059455631408002
+field stddev 0.069781034461365
+field min 7.9552e-07
+field max 0.435798861191
+field sum 103.63116554415
+field sqrsum 14.643938587182
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[1] typename "\"pecsn_project.User\""
+par Network.Users[1] CQIdistribution "\"binomial\""
+statistic Network.Users[1] throughputStat:stats
+field count 70000
+field mean 0.92954285714286
+field stddev 10.62806087746
+field min 0
+field max 473
+field sum 65068
+field sqrsum 7967268
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[1] packetsReceivedStat:stats
+field count 70000
+field mean 0.024885714285714
+field stddev 0.27204839632589
+field min 0
+field max 11
+field sum 1742
+field sqrsum 5224
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[1] packetDelayStat:stats
+field count 1742
+field mean 0.0519915742248
+field stddev 0.063595732565023
+field min 2.815349e-06
+field max 0.479452683002
+field sum 90.569322299602
+field sqrsum 11.750171988869
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[2] typename "\"pecsn_project.User\""
+par Network.Users[2] CQIdistribution "\"binomial\""
+statistic Network.Users[2] throughputStat:stats
+field count 70000
+field mean 0.9697
+field stddev 11.101464495548
+field min 0
+field max 510
+field sum 67879
+field sqrsum 8692675
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[2] packetsReceivedStat:stats
+field count 70000
+field mean 0.025071428571429
+field stddev 0.2747745866792
+field min 0
+field max 13
+field sum 1755
+field sqrsum 5329
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[2] packetDelayStat:stats
+field count 1755
+field mean 0.043104219283285
+field stddev 0.049226285455327
+field min 6.249332e-06
+field max 0.34278433121
+field sum 75.647904842166
+field sqrsum 7.5110843518831
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[3] typename "\"pecsn_project.User\""
+par Network.Users[3] CQIdistribution "\"binomial\""
+statistic Network.Users[3] throughputStat:stats
+field count 70000
+field mean 0.94998571428571
+field stddev 10.918311688899
+field min 0
+field max 429
+field sum 66499
+field sqrsum 8407721
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[3] packetsReceivedStat:stats
+field count 70000
+field mean 0.025114285714286
+field stddev 0.27002439040326
+field min 0
+field max 11
+field sum 1758
+field sqrsum 5148
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[3] packetDelayStat:stats
+field count 1758
+field mean 0.03925069979382
+field stddev 0.044391636206884
+field min 2.165021e-06
+field max 0.282374940609
+field sum 69.002730237536
+field sqrsum 6.1707801600309
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.Users[4] typename "\"pecsn_project.User\""
+par Network.Users[4] CQIdistribution "\"binomial\""
+statistic Network.Users[4] throughputStat:stats
+field count 70000
+field mean 1.0082142857143
+field stddev 11.229958903857
+field min 0
+field max 572
+field sum 70575
+field sqrsum 8898867
+attr "" ""
+attr recordingmode stats
+attr source throughput
+attr title Throughput
+statistic Network.Users[4] packetsReceivedStat:stats
+field count 70000
+field mean 0.025642857142857
+field stddev 0.27258145236337
+field min 0
+field max 13
+field sum 1795
+field sqrsum 5247
+attr "" ""
+attr recordingmode stats
+attr source packetsReceived
+attr title "Packets received per timeslot"
+statistic Network.Users[4] packetDelayStat:stats
+field count 1795
+field mean 0.03936451126416
+field stddev 0.043312385727782
+field min 6.141265e-06
+field max 0.314947039326
+field sum 70.659297719167
+field sqrsum 6.1469459078171
+attr "" ""
+attr recordingmode stats
+attr source packetDelay
+attr title "Packet delay"
+par Network.PG[0] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[0] NUM_USER 5
+par Network.PG[0] LAMBDA 25
+par Network.PG[1] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[1] NUM_USER 5
+par Network.PG[1] LAMBDA 25
+par Network.PG[2] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[2] NUM_USER 5
+par Network.PG[2] LAMBDA 25
+par Network.PG[3] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[3] NUM_USER 5
+par Network.PG[3] LAMBDA 25
+par Network.PG[4] typename "\"pecsn_project.PacketGenerator\""
+par Network.PG[4] NUM_USER 5
+par Network.PG[4] LAMBDA 25
+par Network typename "\"pecsn_project.simulations.Network\""
+par Network NUM_USER 5
+par Network lambda 10
+par Network CQIRngMultiplier 0
+par Network PktSizeRngMultiplier 1
+par Network PktGenerationRngMultiplier 2
+
