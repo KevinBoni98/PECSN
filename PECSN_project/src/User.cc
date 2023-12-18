@@ -43,14 +43,14 @@ void User::initialize()
     rngIndex = id + multiplier*nUsers;
     distribution = par("CQIdistribution").stringValue();
     p = (double)(id+1)/(double)nUsers;
-    EV<<"p = "<<p<<endl;
+    //EV<<"p = "<<p<<endl;
     sendCQI();
 }
 
 void User::handleMessage(cMessage *msg){
     Frame *frame = check_and_cast<Frame*>(msg);
     std::vector<Packet*> pl = frame->getPacketList();
-    EV<<"total size:\t"<<pl.size()<<endl;
+    //EV<<"total size:\t"<<pl.size()<<endl;
     long bytesReceived = 0;
     long pR = 0;
     while(pl.size() != 0){
@@ -61,7 +61,7 @@ void User::handleMessage(cMessage *msg){
             simtime_t elapsed = simTime() - p->getArrivalTime();//arrival time = generation time = arrival at base station
             emit(packetDelay, elapsed.dbl());
             bytesReceived += p->getLength();
-            EV<<"packet size: "<<p->getLength()<<endl;
+            //EV<<"packet size: "<<p->getLength()<<endl;
         }
     }
     emit(packetsReceived, pR);
@@ -83,9 +83,9 @@ void User::sendCQI(){
 
     CQImsg * msg = new CQImsg("CQI");
     msg->setNewCQI(cqi);
-    EV<<"packet name: "<<msg->getName()<<endl;
+    //EV<<"packet name: "<<msg->getName()<<endl;
     send(msg,"CQI_out");
-    EV<<"sending cqi = "<<msg->getNewCQI()<<endl;
+    //EV<<"sending cqi = "<<msg->getNewCQI()<<endl;
 
 }
 

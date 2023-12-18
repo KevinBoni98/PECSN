@@ -40,7 +40,7 @@ void BaseStation::initialize(){
         currentCQI[i] = 0;
     }
     //inizializzo array dei valori in byte dei CQI
-    EV<<"CQIArrayLength:\t"<<par("CQIArrayLength").intValue()<<endl;
+    //EV<<"CQIArrayLength:\t"<<par("CQIArrayLength").intValue()<<endl;
     int len = par("CQIArrayLength").intValue();
     CQITable = new int[len];
     std::string toParse = par("CQIValues").str();
@@ -51,7 +51,7 @@ void BaseStation::initialize(){
     int i = 0;
     while (!ss.eof()) {
         ss >> temp;
-        EV<<"temp:\t"<<temp<<endl;
+        //EV<<"temp:\t"<<temp<<endl;
         if (std::stringstream(temp) >> found){
             CQITable[i] = found;
             i++;
@@ -76,7 +76,7 @@ void BaseStation::initialize(){
 }
 
 void BaseStation::scheduleSelfMessage(){
-    EV<<par("timeSlot")<<endl;
+    //EV<<par("timeSlot")<<endl;
     double time = par("timeSlot").doubleValue();
     scheduleAt(simTime() + time, beep);
 }
@@ -114,7 +114,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
             currentPacket = check_and_cast<Packet*>(queue->get(0));
             packetSize = currentPacket->getLength();
-
+            EV<<"packet di dimensione "<<packetSize<<endl;
             if(packetSize > freeSpace + freeBytesFromLastRB){
                 break;
             }
@@ -139,6 +139,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
             frame->setRBslotsUsed(occupiedSlots);
             // insert current packet into the frame
+            EV<<"lo inserisco"<<endl;
             packets.push_back(currentPacket);
             // remove current packet from the queue
             queue->remove(currentPacket);
@@ -161,14 +162,19 @@ void BaseStation::assembleFrame(){
     while (!readyToSend && fullLoop < nUsers){
         UserQueue *queue = check_and_cast<UserQueue*>(RRqueues->get(toServe));
         if(queue->isEmpty()){
-            EV<<"niente da trasmettere"<<endl;
+            EV<<"niente da trasmettere per utente "<<toServe<<endl;
+            if (toServe == nUsers-1)
+                toServe = 0;
+            else
+                toServe++; //toServe tracks the next user that needs serving
             fullLoop++;
             continue;
         }
         // no packets to transmit
-        EV<<"qualcosa vedo"<<endl;
+        //EV<<"qualcosa vedo"<<endl;
+        EV<<"sto servendo l'utente con id "<<toServe<<endl;
         readyToSend = insertIntoFrame(frame, queue);
-        EV<<"ho servito l'utente con id "<<toServe<<endl;
+
         if (toServe == nUsers-1) 
             toServe = 0;
         else 
