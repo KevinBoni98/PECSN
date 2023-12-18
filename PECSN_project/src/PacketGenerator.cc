@@ -37,8 +37,8 @@ void PacketGenerator::initialize(){
     beep = new cMessage("beep");
     // get user of the system
     int numUser = par("NUM_USER").intValue();
-    indexArrivalTimeGen = getIndex()+numUser*2;
-    indexPkgSizeGen = getIndex()+numUser*3;
+    indexArrivalTimeGen = getIndex()+numUser*1;
+    indexPkgSizeGen = getIndex()+numUser*2;
     lambda =  par("LAMBDA").doubleValue();
     simtime_t time = exponential(1/lambda,indexArrivalTimeGen);
     scheduleAt(simTime()+time,beep);
@@ -57,7 +57,6 @@ void PacketGenerator::handleMessage(cMessage *msg){
         // size
         int size = intuniform(1/* min size */, 15/* max size */, indexPkgSizeGen);
         packet->setLength(size);
-        EV<<"size: "<<size<<endl;
         // Send packet
         send(packet, "packet_out");
         // Schedule the next self-message

@@ -33,7 +33,7 @@ private:
     int *currentCQI;
     int nUsers;
     cMessage *beep;
-
+    int toServe;
     UserQueue** queues;
     cQueue *RRqueues;
     Frame *frame;

@@ -37,6 +37,7 @@ void BaseStation::initialize(){
     for (int i = 0; i < nUsers; i++){
         currentCQI[i] = 0;
     }
+    toServe = 0;
     //inizializzo array dei valori in byte dei CQI
     EV<<"CQIArrayLength:\t"<<par("CQIArrayLength").intValue()<<endl;
     int len = par("CQIArrayLength").intValue();
@@ -92,11 +93,14 @@ void BaseStation::clearFrame(){
     EV<<"end clearFrame..."<<endl;
 }
 
+// insertIntoFrame insert packet of the user queue into the frame and 
+// return true if there is space of the frame  
 bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
     int occupiedSlots = frame->getRBslotsUsed();
     std::vector<Packet*> packets = frame->getPacketList();
     int RBsize = queue->RBsize;
-
+    EV<<"RBsize\t"<<RBsize<<endl;
+    bool isInsertOne = false;
     int emptySlots;
     int freeSpace;
     int freeBytesFromLastRB = 0;
@@ -111,44 +115,39 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
         currentPacket = check_and_cast<Packet*>(queue->get(0));
         packetSize = currentPacket->getLength();
 
+        EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
+        EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
         if(packetSize > freeSpace + freeBytesFromLastRB){
-            // not enough space to fit the packet into the frame
-            if(!emptySlots){
-                // no more empty spots --> frame is full and ready
-                frame->setPacketList(packets);
-                return true;
-            }
             break;
         }
+        isInsertOne = true;
         // #RBs occupied by current packet (packets from the same user can share the same RB)
         float RBoccupiedByPacket = ((float)(packetSize - freeBytesFromLastRB)) / RBsize;
 
-        std::vector<int> RBs = currentPacket->getRBs();
-        if (freeBytesFromLastRB > 0) {
-            RBs.push_back(occupiedSlots);
-        }
+
         if (RBoccupiedByPacket > 0) {
             // we start filling a new RB of the frame
-            int RBoccupied = std::ceil(RBoccupiedByPacket);
-            for(int i = 0; i < RBoccupied; ++i){
-                // keep track of each RB (of the frame) occupied by the packet into the RBs vector of the packet
-                // and increase the counter of the occupied slots into the frame
-                RBs.push_back(++occupiedSlots);
-            }
+            int RBoccupied = std::floor(RBoccupiedByPacket);
+            occupiedSlots += RBoccupied;
             // compute #freeBytes left from the last occupied RB
             freeBytesFromLastRB = (RBsize - ((packetSize - freeBytesFromLastRB) % RBsize));
         } else {
             // the new packet fits into the current RB of the frame
             freeBytesFromLastRB -= packetSize;
         }
-
-        currentPacket->setRBs(RBs);
-        frame->setRBslotsUsed(occupiedSlots);
+        EV<<"packetSize\t"<<packetSize<<endl;
+        EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
+        EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
         // insert current packet into the frame
         packets.push_back(currentPacket);
         // remove current packet from the queue
         queue->remove(currentPacket);
+        EV<<"----------------------"<<endl;
     }
+    if (isInsertOne && occupiedSlots == frame->getRBslotsUsed()){
+        occupiedSlots++;
+    }
+    frame->setRBslotsUsed(occupiedSlots);
 
     // update packets in the frame
     frame->setPacketList(packets);
@@ -161,25 +160,26 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
 void BaseStation::assembleFrame(){
     clearFrame();
-    std::vector<UserQueue*> servedUsers;
     bool readyToSend = false;
-    for (int i = 0; i < nUsers && !readyToSend; i++){
-        UserQueue *queue = check_and_cast<UserQueue*>(RRqueues->get(i));
-        if(queue->isEmpty())
-            // no packets to transmit
+    int fullLoop = 0; //exit loop if i have checked all users and they have nothing to send
+    EV<<"entro nel loop"<<endl;
+    while (!readyToSend && fullLoop < nUsers){
+        UserQueue *queue = check_and_cast<UserQueue*>(RRqueues->get(toServe));
+        if(queue->isEmpty()){
+            EV<<"niente da trasmettere"<<endl;
+            fullLoop++;
             continue;
+        }
+        // no packets to transmit
         EV<<"qualcosa vedo"<<endl;
-        servedUsers.push_back(queue);
         readyToSend = insertIntoFrame(frame, queue);
+        EV<<"ho servito l'utente con id "<<toServe<<endl;
+        if (toServe == nUsers-1) 
+            toServe = 0;
+        else 
+            toServe++; //toServe tracks the next user that needs serving
+        fullLoop++;
     }
-    for (int i = 0; i < servedUsers.size(); i++) {
-        UserQueue *q = servedUsers[i];
-        // we implement the Round Robin policy simply by considering a FIFO queue (using RRqueues)
-        // backlogged users are served cyclically, in a fixed order
-        RRqueues->remove(q);
-        RRqueues->insert(q);
-    }
-    servedUsers.clear();
 }
 
 void BaseStation::sendFrame(){
@@ -203,8 +203,11 @@ void BaseStation::storePacket(cMessage *msg){
     queues[packet->getDestination()]->insert(packet);
 }
 
+
 void BaseStation::updateCQI(int cqi, int id){
-    currentCQI[id] = cqi;
+    UserQueue *uq = queues[id];
+    uq->RBsize = CQITable[cqi-1];
+    EV<<"ora l'utente con id "<<id<<" ha cqi = "<<cqi<<", che corrisponde a "<<CQITable[cqi-1]<<" RBsize"<<endl;
 }
 
 void BaseStation::handleMessage(cMessage *msg){
@@ -217,6 +220,7 @@ void BaseStation::handleMessage(cMessage *msg){
         CQImsg *m = check_and_cast<CQImsg*>(msg);
 
         updateCQI(m->getNewCQI(), m->getArrivalGate()->getIndex());
+        //delete(msg);
     }
     if (strcmp(msg->getName(), "Packet") == 0){
         storePacket(msg);

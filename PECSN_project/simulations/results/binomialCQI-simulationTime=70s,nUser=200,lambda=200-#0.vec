@@ -1,0 +1,8780 @@
+version 3
+run binomialCQI-240-20231215-10:39:46-2560
+attr configname binomialCQI
+attr datetime 20231215-10:39:46
+attr datetimef 20231215-103946
+attr experiment binomialCQI
+attr inifile omnetpp.ini
+attr iterationvars "$simulationTime=70s, $nUser=200, $lambda=200"
+attr iterationvarsd simulationTime=70s/nUser=200/lambda=200
+attr iterationvarsf simulationTime=70s,nUser=200,lambda=200-
+attr measurement "$simulationTime=70s, $nUser=200, $lambda=200"
+attr network Network
+attr processid 2560
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 240
+attr seedset 0
+itervar lambda 200
+itervar nUser 200
+itervar simulationTime 70s
+config **.Users[*].CQIdistribution "\"binomial\""
+config network Network
+config cpu-time-limit 60s
+config sim-time-limit 70s
+config num-rngs 600
+config repeat 10
+config seed-set 0
+config **.NUM_USER 200
+config **.LAMBDA 200
+config **.CQIArrayLength 15
+config **.CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
+config **.frameSize 25
+config **.timeSlot 0.1
+
+vector 0 Network.BS simFrameStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source simFrame
+attr title "Occupied frame slots"
+vector 1 Network.Users[0] packetDelayStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetDelay
+attr title "Packet delay"
+vector 2 Network.Users[0] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 3 Network.Users[0] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 4 Network.Users[1] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 5 Network.Users[1] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 6 Network.Users[2] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 7 Network.Users[2] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 8 Network.Users[3] packetDelayStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetDelay
+attr title "Packet delay"
+vector 9 Network.Users[3] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 10 Network.Users[3] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 11 Network.Users[4] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 12 Network.Users[4] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 13 Network.Users[5] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 14 Network.Users[5] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 15 Network.Users[6] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 16 Network.Users[6] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 17 Network.Users[7] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 18 Network.Users[7] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 19 Network.Users[8] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 20 Network.Users[8] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 21 Network.Users[9] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 22 Network.Users[9] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 23 Network.Users[10] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 24 Network.Users[10] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 25 Network.Users[11] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 26 Network.Users[11] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 27 Network.Users[12] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 28 Network.Users[12] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 29 Network.Users[13] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 30 Network.Users[13] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 31 Network.Users[14] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 32 Network.Users[14] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 33 Network.Users[15] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 34 Network.Users[15] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 35 Network.Users[16] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 36 Network.Users[16] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 37 Network.Users[17] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 38 Network.Users[17] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 39 Network.Users[18] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 40 Network.Users[18] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 41 Network.Users[19] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 42 Network.Users[19] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 43 Network.Users[20] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 44 Network.Users[20] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 45 Network.Users[21] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 46 Network.Users[21] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 47 Network.Users[22] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 48 Network.Users[22] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 49 Network.Users[23] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 50 Network.Users[23] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 51 Network.Users[24] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 52 Network.Users[24] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 53 Network.Users[25] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 54 Network.Users[25] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 55 Network.Users[26] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 56 Network.Users[26] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 57 Network.Users[27] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 58 Network.Users[27] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 59 Network.Users[28] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 60 Network.Users[28] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 61 Network.Users[29] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 62 Network.Users[29] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 63 Network.Users[30] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 64 Network.Users[30] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 65 Network.Users[31] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 66 Network.Users[31] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 67 Network.Users[32] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 68 Network.Users[32] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 69 Network.Users[33] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 70 Network.Users[33] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 71 Network.Users[34] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 72 Network.Users[34] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 73 Network.Users[35] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 74 Network.Users[35] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 75 Network.Users[36] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 76 Network.Users[36] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 77 Network.Users[37] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 78 Network.Users[37] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 79 Network.Users[38] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 80 Network.Users[38] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 81 Network.Users[39] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 82 Network.Users[39] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 83 Network.Users[40] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 84 Network.Users[40] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 85 Network.Users[41] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 86 Network.Users[41] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 87 Network.Users[42] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 88 Network.Users[42] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 89 Network.Users[43] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 90 Network.Users[43] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 91 Network.Users[44] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 92 Network.Users[44] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 93 Network.Users[45] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 94 Network.Users[45] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 95 Network.Users[46] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 96 Network.Users[46] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 97 Network.Users[47] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 98 Network.Users[47] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 99 Network.Users[48] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 100 Network.Users[48] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 101 Network.Users[49] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 102 Network.Users[49] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 103 Network.Users[50] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 104 Network.Users[50] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 105 Network.Users[51] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 106 Network.Users[51] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 107 Network.Users[52] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 108 Network.Users[52] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 109 Network.Users[53] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 110 Network.Users[53] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 111 Network.Users[54] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 112 Network.Users[54] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 113 Network.Users[55] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 114 Network.Users[55] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 115 Network.Users[56] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 116 Network.Users[56] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 117 Network.Users[57] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 118 Network.Users[57] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 119 Network.Users[58] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 120 Network.Users[58] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 121 Network.Users[59] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 122 Network.Users[59] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 123 Network.Users[60] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 124 Network.Users[60] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 125 Network.Users[61] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 126 Network.Users[61] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 127 Network.Users[62] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 128 Network.Users[62] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 129 Network.Users[63] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 130 Network.Users[63] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 131 Network.Users[64] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 132 Network.Users[64] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 133 Network.Users[65] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 134 Network.Users[65] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 135 Network.Users[66] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 136 Network.Users[66] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 137 Network.Users[67] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 138 Network.Users[67] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 139 Network.Users[68] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 140 Network.Users[68] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 141 Network.Users[69] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 142 Network.Users[69] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 143 Network.Users[70] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 144 Network.Users[70] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 145 Network.Users[71] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 146 Network.Users[71] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 147 Network.Users[72] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 148 Network.Users[72] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 149 Network.Users[73] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 150 Network.Users[73] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 151 Network.Users[74] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 152 Network.Users[74] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 153 Network.Users[75] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 154 Network.Users[75] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 155 Network.Users[76] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 156 Network.Users[76] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 157 Network.Users[77] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 158 Network.Users[77] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 159 Network.Users[78] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 160 Network.Users[78] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 161 Network.Users[79] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 162 Network.Users[79] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 163 Network.Users[80] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 164 Network.Users[80] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 165 Network.Users[81] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 166 Network.Users[81] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 167 Network.Users[82] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 168 Network.Users[82] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 169 Network.Users[83] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 170 Network.Users[83] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 171 Network.Users[84] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 172 Network.Users[84] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 173 Network.Users[85] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 174 Network.Users[85] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 175 Network.Users[86] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 176 Network.Users[86] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 177 Network.Users[87] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 178 Network.Users[87] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 179 Network.Users[88] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 180 Network.Users[88] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 181 Network.Users[89] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 182 Network.Users[89] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 183 Network.Users[90] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 184 Network.Users[90] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 185 Network.Users[91] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 186 Network.Users[91] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 187 Network.Users[92] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 188 Network.Users[92] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 189 Network.Users[93] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 190 Network.Users[93] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 191 Network.Users[94] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 192 Network.Users[94] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 193 Network.Users[95] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 194 Network.Users[95] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 195 Network.Users[96] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 196 Network.Users[96] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 197 Network.Users[97] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 198 Network.Users[97] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 199 Network.Users[98] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 200 Network.Users[98] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 201 Network.Users[99] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 202 Network.Users[99] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 203 Network.Users[100] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 204 Network.Users[100] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 205 Network.Users[101] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 206 Network.Users[101] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 207 Network.Users[102] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 208 Network.Users[102] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 209 Network.Users[103] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 210 Network.Users[103] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 211 Network.Users[104] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 212 Network.Users[104] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 213 Network.Users[105] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 214 Network.Users[105] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 215 Network.Users[106] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 216 Network.Users[106] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 217 Network.Users[107] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 218 Network.Users[107] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 219 Network.Users[108] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 220 Network.Users[108] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 221 Network.Users[109] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 222 Network.Users[109] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 223 Network.Users[110] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 224 Network.Users[110] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 225 Network.Users[111] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 226 Network.Users[111] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 227 Network.Users[112] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 228 Network.Users[112] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 229 Network.Users[113] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 230 Network.Users[113] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 231 Network.Users[114] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 232 Network.Users[114] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 233 Network.Users[115] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 234 Network.Users[115] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 235 Network.Users[116] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 236 Network.Users[116] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 237 Network.Users[117] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 238 Network.Users[117] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 239 Network.Users[118] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 240 Network.Users[118] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 241 Network.Users[119] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 242 Network.Users[119] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 243 Network.Users[120] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 244 Network.Users[120] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 245 Network.Users[121] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 246 Network.Users[121] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 247 Network.Users[122] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 248 Network.Users[122] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 249 Network.Users[123] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 250 Network.Users[123] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 251 Network.Users[124] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 252 Network.Users[124] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 253 Network.Users[125] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 254 Network.Users[125] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 255 Network.Users[126] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 256 Network.Users[126] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 257 Network.Users[127] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 258 Network.Users[127] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 259 Network.Users[128] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 260 Network.Users[128] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 261 Network.Users[129] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 262 Network.Users[129] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 263 Network.Users[130] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 264 Network.Users[130] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 265 Network.Users[131] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 266 Network.Users[131] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 267 Network.Users[132] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 268 Network.Users[132] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 269 Network.Users[133] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 270 Network.Users[133] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 271 Network.Users[134] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 272 Network.Users[134] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 273 Network.Users[135] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 274 Network.Users[135] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 275 Network.Users[136] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 276 Network.Users[136] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 277 Network.Users[137] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 278 Network.Users[137] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 279 Network.Users[138] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 280 Network.Users[138] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 281 Network.Users[139] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 282 Network.Users[139] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 283 Network.Users[140] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 284 Network.Users[140] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 285 Network.Users[141] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 286 Network.Users[141] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 287 Network.Users[142] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 288 Network.Users[142] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 289 Network.Users[143] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 290 Network.Users[143] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 291 Network.Users[144] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 292 Network.Users[144] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 293 Network.Users[145] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 294 Network.Users[145] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 295 Network.Users[146] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 296 Network.Users[146] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 297 Network.Users[147] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 298 Network.Users[147] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 299 Network.Users[148] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 300 Network.Users[148] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 301 Network.Users[149] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 302 Network.Users[149] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 303 Network.Users[150] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 304 Network.Users[150] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 305 Network.Users[151] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 306 Network.Users[151] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 307 Network.Users[152] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 308 Network.Users[152] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 309 Network.Users[153] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 310 Network.Users[153] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 311 Network.Users[154] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 312 Network.Users[154] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 313 Network.Users[155] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 314 Network.Users[155] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 315 Network.Users[156] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 316 Network.Users[156] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 317 Network.Users[157] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 318 Network.Users[157] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 319 Network.Users[158] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 320 Network.Users[158] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 321 Network.Users[159] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 322 Network.Users[159] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 323 Network.Users[160] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 324 Network.Users[160] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 325 Network.Users[161] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 326 Network.Users[161] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 327 Network.Users[162] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 328 Network.Users[162] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 329 Network.Users[163] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 330 Network.Users[163] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 331 Network.Users[164] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 332 Network.Users[164] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 333 Network.Users[165] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 334 Network.Users[165] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 335 Network.Users[166] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 336 Network.Users[166] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 337 Network.Users[167] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 338 Network.Users[167] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 339 Network.Users[168] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 340 Network.Users[168] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 341 Network.Users[169] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 342 Network.Users[169] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 343 Network.Users[170] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 344 Network.Users[170] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 345 Network.Users[171] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 346 Network.Users[171] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 347 Network.Users[172] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 348 Network.Users[172] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 349 Network.Users[173] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 350 Network.Users[173] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 351 Network.Users[174] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 352 Network.Users[174] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 353 Network.Users[175] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 354 Network.Users[175] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 355 Network.Users[176] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 356 Network.Users[176] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 357 Network.Users[177] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 358 Network.Users[177] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 359 Network.Users[178] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 360 Network.Users[178] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 361 Network.Users[179] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 362 Network.Users[179] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 363 Network.Users[180] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 364 Network.Users[180] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 365 Network.Users[181] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 366 Network.Users[181] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 367 Network.Users[182] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 368 Network.Users[182] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 369 Network.Users[183] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 370 Network.Users[183] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 371 Network.Users[184] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 372 Network.Users[184] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 373 Network.Users[185] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 374 Network.Users[185] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 375 Network.Users[186] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 376 Network.Users[186] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 377 Network.Users[187] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 378 Network.Users[187] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 379 Network.Users[188] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 380 Network.Users[188] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 381 Network.Users[189] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 382 Network.Users[189] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 383 Network.Users[190] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 384 Network.Users[190] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 385 Network.Users[191] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 386 Network.Users[191] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 387 Network.Users[192] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 388 Network.Users[192] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 389 Network.Users[193] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 390 Network.Users[193] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 391 Network.Users[194] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 392 Network.Users[194] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 393 Network.Users[195] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 394 Network.Users[195] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 395 Network.Users[196] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 396 Network.Users[196] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 397 Network.Users[197] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 398 Network.Users[197] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 399 Network.Users[198] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 400 Network.Users[198] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 401 Network.Users[199] packetsReceivedStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetsReceived
+attr title "Packets received per timeslot"
+vector 402 Network.Users[199] throughputStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source throughput
+attr title Throughput
+vector 403 Network.Users[12] packetDelayStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetDelay
+attr title "Packet delay"
+0	8399	0.1	25
+0	16872	0.2	25
+0	25257	0.3	25
+0	33578	0.4	25
+0	41979	0.5	25
+0	50340	0.6	25
+0	58583	0.7	25
+0	66876	0.8	25
+1	8400	0.1	0.066693440049
+1	8400	0.1	0.070959215482
+1	8400	0.1	0.07375499593
+1	8400	0.1	0.075244397202
+1	8400	0.1	0.079756584675
+1	8400	0.1	0.080560710321
+1	8400	0.1	0.081845164928
+1	8400	0.1	0.085252677444
+2	8400	0.1	8
+2	16873	0.2	0
+2	25258	0.3	0
+2	33579	0.4	0
+2	41980	0.5	0
+2	50341	0.6	0
+2	58584	0.7	0
+2	66877	0.8	0
+3	8400	0.1	76
+3	16873	0.2	0
+3	25258	0.3	0
+3	33579	0.4	0
+3	41980	0.5	0
+3	50341	0.6	0
+3	58584	0.7	0
+3	66877	0.8	0
+4	8401	0.1	0
+4	16874	0.2	0
+4	25259	0.3	0
+4	33580	0.4	0
+4	41981	0.5	0
+4	50342	0.6	0
+4	58585	0.7	0
+4	66878	0.8	0
+5	8401	0.1	0
+5	16874	0.2	0
+5	25259	0.3	0
+5	33580	0.4	0
+5	41981	0.5	0
+5	50342	0.6	0
+5	58585	0.7	0
+5	66878	0.8	0
+6	8402	0.1	0
+6	16875	0.2	0
+6	25260	0.3	0
+6	33581	0.4	0
+6	41982	0.5	0
+6	50343	0.6	0
+6	58586	0.7	0
+6	66879	0.8	0
+7	8402	0.1	0
+7	16875	0.2	0
+7	25260	0.3	0
+7	33581	0.4	0
+7	41982	0.5	0
+7	50343	0.6	0
+7	58586	0.7	0
+7	66879	0.8	0
+8	8403	0.1	0.09058391269
+8	16876	0.2	0.117210785018
+8	16876	0.2	0.123041629094
+8	16876	0.2	0.124206378218
+8	16876	0.2	0.133993233814
+8	16876	0.2	0.151484139597
+8	16876	0.2	0.169428230799
+8	16876	0.2	0.174337008941
+8	16876	0.2	0.174748662241
+8	16876	0.2	0.177743367422
+8	16876	0.2	0.184035368279
+8	16876	0.2	0.185082424828
+9	8403	0.1	1
+9	16876	0.2	11
+9	25261	0.3	0
+9	33582	0.4	0
+9	41983	0.5	0
+9	50344	0.6	0
+9	58587	0.7	0
+9	66880	0.8	0
+10	8403	0.1	3
+10	16876	0.2	74
+10	25261	0.3	0
+10	33582	0.4	0
+10	41983	0.5	0
+10	50344	0.6	0
+10	58587	0.7	0
+10	66880	0.8	0
+11	8404	0.1	0
+11	16877	0.2	0
+11	25262	0.3	0
+11	33583	0.4	0
+11	41984	0.5	0
+11	50345	0.6	0
+11	58588	0.7	0
+11	66881	0.8	0
+12	8404	0.1	0
+12	16877	0.2	0
+12	25262	0.3	0
+12	33583	0.4	0
+12	41984	0.5	0
+12	50345	0.6	0
+12	58588	0.7	0
+12	66881	0.8	0
+13	8405	0.1	0
+13	16878	0.2	0
+13	25263	0.3	0
+13	33584	0.4	0
+13	41985	0.5	0
+13	50346	0.6	0
+13	58589	0.7	0
+13	66882	0.8	0
+14	8405	0.1	0
+14	16878	0.2	0
+14	25263	0.3	0
+14	33584	0.4	0
+14	41985	0.5	0
+14	50346	0.6	0
+14	58589	0.7	0
+14	66882	0.8	0
+15	8406	0.1	0
+15	16879	0.2	0
+15	25264	0.3	0
+15	33585	0.4	0
+15	41986	0.5	0
+15	50347	0.6	0
+15	58590	0.7	0
+15	66883	0.8	0
+16	8406	0.1	0
+16	16879	0.2	0
+16	25264	0.3	0
+16	33585	0.4	0
+16	41986	0.5	0
+16	50347	0.6	0
+16	58590	0.7	0
+16	66883	0.8	0
+17	8407	0.1	0
+17	16880	0.2	0
+17	25265	0.3	0
+17	33586	0.4	0
+17	41987	0.5	0
+17	50348	0.6	0
+17	58591	0.7	0
+17	66884	0.8	0
+18	8407	0.1	0
+18	16880	0.2	0
+18	25265	0.3	0
+18	33586	0.4	0
+18	41987	0.5	0
+18	50348	0.6	0
+18	58591	0.7	0
+18	66884	0.8	0
+19	8408	0.1	0
+19	16881	0.2	0
+19	25266	0.3	0
+19	33587	0.4	0
+19	41988	0.5	0
+19	50349	0.6	0
+19	58592	0.7	0
+19	66885	0.8	0
+20	8408	0.1	0
+20	16881	0.2	0
+20	25266	0.3	0
+20	33587	0.4	0
+20	41988	0.5	0
+20	50349	0.6	0
+20	58592	0.7	0
+20	66885	0.8	0
+21	8409	0.1	0
+21	16882	0.2	0
+21	25267	0.3	0
+21	33588	0.4	0
+21	41989	0.5	0
+21	50350	0.6	0
+21	58593	0.7	0
+21	66886	0.8	0
+22	8409	0.1	0
+22	16882	0.2	0
+22	25267	0.3	0
+22	33588	0.4	0
+22	41989	0.5	0
+22	50350	0.6	0
+22	58593	0.7	0
+22	66886	0.8	0
+23	8410	0.1	0
+23	16883	0.2	0
+23	25268	0.3	0
+23	33589	0.4	0
+23	41990	0.5	0
+23	50351	0.6	0
+23	58594	0.7	0
+23	66887	0.8	0
+24	8410	0.1	0
+24	16883	0.2	0
+24	25268	0.3	0
+24	33589	0.4	0
+24	41990	0.5	0
+24	50351	0.6	0
+24	58594	0.7	0
+24	66887	0.8	0
+25	8411	0.1	0
+25	16884	0.2	0
+25	25269	0.3	0
+25	33590	0.4	0
+25	41991	0.5	0
+25	50352	0.6	0
+25	58595	0.7	0
+25	66888	0.8	0
+26	8411	0.1	0
+26	16884	0.2	0
+26	25269	0.3	0
+26	33590	0.4	0
+26	41991	0.5	0
+26	50352	0.6	0
+26	58595	0.7	0
+26	66888	0.8	0
+27	8412	0.1	0
+27	16885	0.2	1
+27	25270	0.3	11
+27	33591	0.4	12
+27	41992	0.5	19
+27	50353	0.6	13
+27	58596	0.7	10
+27	66889	0.8	40
+28	8412	0.1	0
+28	16885	0.2	3
+28	25270	0.3	76
+28	33591	0.4	81
+28	41992	0.5	162
+28	50353	0.6	82
+28	58596	0.7	85
+28	66889	0.8	284
+29	8413	0.1	0
+29	16886	0.2	0
+29	25271	0.3	0
+29	33592	0.4	0
+29	41993	0.5	0
+29	50354	0.6	0
+29	58597	0.7	0
+29	66890	0.8	0
+30	8413	0.1	0
+30	16886	0.2	0
+30	25271	0.3	0
+30	33592	0.4	0
+30	41993	0.5	0
+30	50354	0.6	0
+30	58597	0.7	0
+30	66890	0.8	0
+31	8414	0.1	0
+31	16887	0.2	0
+31	25272	0.3	0
+31	33593	0.4	0
+31	41994	0.5	0
+31	50355	0.6	0
+31	58598	0.7	0
+31	66891	0.8	0
+32	8414	0.1	0
+32	16887	0.2	0
+32	25272	0.3	0
+32	33593	0.4	0
+32	41994	0.5	0
+32	50355	0.6	0
+32	58598	0.7	0
+32	66891	0.8	0
+33	8415	0.1	0
+33	16888	0.2	0
+33	25273	0.3	0
+33	33594	0.4	0
+33	41995	0.5	0
+33	50356	0.6	0
+33	58599	0.7	0
+33	66892	0.8	0
+34	8415	0.1	0
+34	16888	0.2	0
+34	25273	0.3	0
+34	33594	0.4	0
+34	41995	0.5	0
+34	50356	0.6	0
+34	58599	0.7	0
+34	66892	0.8	0
+35	8416	0.1	0
+35	16889	0.2	0
+35	25274	0.3	0
+35	33595	0.4	0
+35	41996	0.5	0
+35	50357	0.6	0
+35	58600	0.7	0
+35	66893	0.8	0
+36	8416	0.1	0
+36	16889	0.2	0
+36	25274	0.3	0
+36	33595	0.4	0
+36	41996	0.5	0
+36	50357	0.6	0
+36	58600	0.7	0
+36	66893	0.8	0
+37	8417	0.1	0
+37	16890	0.2	0
+37	25275	0.3	0
+37	33596	0.4	0
+37	41997	0.5	0
+37	50358	0.6	0
+37	58601	0.7	0
+37	66894	0.8	0
+38	8417	0.1	0
+38	16890	0.2	0
+38	25275	0.3	0
+38	33596	0.4	0
+38	41997	0.5	0
+38	50358	0.6	0
+38	58601	0.7	0
+38	66894	0.8	0
+39	8418	0.1	0
+39	16891	0.2	0
+39	25276	0.3	0
+39	33597	0.4	0
+39	41998	0.5	0
+39	50359	0.6	0
+39	58602	0.7	0
+39	66895	0.8	0
+40	8418	0.1	0
+40	16891	0.2	0
+40	25276	0.3	0
+40	33597	0.4	0
+40	41998	0.5	0
+40	50359	0.6	0
+40	58602	0.7	0
+40	66895	0.8	0
+41	8419	0.1	0
+41	16892	0.2	0
+41	25277	0.3	0
+41	33598	0.4	0
+41	41999	0.5	0
+41	50360	0.6	0
+41	58603	0.7	0
+41	66896	0.8	0
+42	8419	0.1	0
+42	16892	0.2	0
+42	25277	0.3	0
+42	33598	0.4	0
+42	41999	0.5	0
+42	50360	0.6	0
+42	58603	0.7	0
+42	66896	0.8	0
+43	8420	0.1	0
+43	16893	0.2	0
+43	25278	0.3	0
+43	33599	0.4	0
+43	42000	0.5	0
+43	50361	0.6	0
+43	58604	0.7	0
+43	66897	0.8	0
+44	8420	0.1	0
+44	16893	0.2	0
+44	25278	0.3	0
+44	33599	0.4	0
+44	42000	0.5	0
+44	50361	0.6	0
+44	58604	0.7	0
+44	66897	0.8	0
+45	8421	0.1	0
+45	16894	0.2	0
+45	25279	0.3	0
+45	33600	0.4	0
+45	42001	0.5	0
+45	50362	0.6	0
+45	58605	0.7	0
+45	66898	0.8	0
+46	8421	0.1	0
+46	16894	0.2	0
+46	25279	0.3	0
+46	33600	0.4	0
+46	42001	0.5	0
+46	50362	0.6	0
+46	58605	0.7	0
+46	66898	0.8	0
+47	8422	0.1	0
+47	16895	0.2	0
+47	25280	0.3	0
+47	33601	0.4	0
+47	42002	0.5	0
+47	50363	0.6	0
+47	58606	0.7	0
+47	66899	0.8	0
+48	8422	0.1	0
+48	16895	0.2	0
+48	25280	0.3	0
+48	33601	0.4	0
+48	42002	0.5	0
+48	50363	0.6	0
+48	58606	0.7	0
+48	66899	0.8	0
+49	8423	0.1	0
+49	16896	0.2	0
+49	25281	0.3	0
+49	33602	0.4	0
+49	42003	0.5	0
+49	50364	0.6	0
+49	58607	0.7	0
+49	66900	0.8	0
+50	8423	0.1	0
+50	16896	0.2	0
+50	25281	0.3	0
+50	33602	0.4	0
+50	42003	0.5	0
+50	50364	0.6	0
+50	58607	0.7	0
+50	66900	0.8	0
+51	8424	0.1	0
+51	16897	0.2	0
+51	25282	0.3	0
+51	33603	0.4	0
+51	42004	0.5	0
+51	50365	0.6	0
+51	58608	0.7	0
+51	66901	0.8	0
+52	8424	0.1	0
+52	16897	0.2	0
+52	25282	0.3	0
+52	33603	0.4	0
+52	42004	0.5	0
+52	50365	0.6	0
+52	58608	0.7	0
+52	66901	0.8	0
+53	8425	0.1	0
+53	16898	0.2	0
+53	25283	0.3	0
+53	33604	0.4	0
+53	42005	0.5	0
+53	50366	0.6	0
+53	58609	0.7	0
+53	66902	0.8	0
+54	8425	0.1	0
+54	16898	0.2	0
+54	25283	0.3	0
+54	33604	0.4	0
+54	42005	0.5	0
+54	50366	0.6	0
+54	58609	0.7	0
+54	66902	0.8	0
+55	8426	0.1	0
+55	16899	0.2	0
+55	25284	0.3	0
+55	33605	0.4	0
+55	42006	0.5	0
+55	50367	0.6	0
+55	58610	0.7	0
+55	66903	0.8	0
+56	8426	0.1	0
+56	16899	0.2	0
+56	25284	0.3	0
+56	33605	0.4	0
+56	42006	0.5	0
+56	50367	0.6	0
+56	58610	0.7	0
+56	66903	0.8	0
+57	8427	0.1	0
+57	16900	0.2	0
+57	25285	0.3	0
+57	33606	0.4	0
+57	42007	0.5	0
+57	50368	0.6	0
+57	58611	0.7	0
+57	66904	0.8	0
+58	8427	0.1	0
+58	16900	0.2	0
+58	25285	0.3	0
+58	33606	0.4	0
+58	42007	0.5	0
+58	50368	0.6	0
+58	58611	0.7	0
+58	66904	0.8	0
+59	8428	0.1	0
+59	16901	0.2	0
+59	25286	0.3	0
+59	33607	0.4	0
+59	42008	0.5	0
+59	50369	0.6	0
+59	58612	0.7	0
+59	66905	0.8	0
+60	8428	0.1	0
+60	16901	0.2	0
+60	25286	0.3	0
+60	33607	0.4	0
+60	42008	0.5	0
+60	50369	0.6	0
+60	58612	0.7	0
+60	66905	0.8	0
+61	8429	0.1	0
+61	16902	0.2	0
+61	25287	0.3	0
+61	33608	0.4	0
+61	42009	0.5	0
+61	50370	0.6	0
+61	58613	0.7	0
+61	66906	0.8	0
+62	8429	0.1	0
+62	16902	0.2	0
+62	25287	0.3	0
+62	33608	0.4	0
+62	42009	0.5	0
+62	50370	0.6	0
+62	58613	0.7	0
+62	66906	0.8	0
+63	8430	0.1	0
+63	16903	0.2	0
+63	25288	0.3	0
+63	33609	0.4	0
+63	42010	0.5	0
+63	50371	0.6	0
+63	58614	0.7	0
+63	66907	0.8	0
+64	8430	0.1	0
+64	16903	0.2	0
+64	25288	0.3	0
+64	33609	0.4	0
+64	42010	0.5	0
+64	50371	0.6	0
+64	58614	0.7	0
+64	66907	0.8	0
+65	8431	0.1	0
+65	16904	0.2	0
+65	25289	0.3	0
+65	33610	0.4	0
+65	42011	0.5	0
+65	50372	0.6	0
+65	58615	0.7	0
+65	66908	0.8	0
+66	8431	0.1	0
+66	16904	0.2	0
+66	25289	0.3	0
+66	33610	0.4	0
+66	42011	0.5	0
+66	50372	0.6	0
+66	58615	0.7	0
+66	66908	0.8	0
+67	8432	0.1	0
+67	16905	0.2	0
+67	25290	0.3	0
+67	33611	0.4	0
+67	42012	0.5	0
+67	50373	0.6	0
+67	58616	0.7	0
+67	66909	0.8	0
+68	8432	0.1	0
+68	16905	0.2	0
+68	25290	0.3	0
+68	33611	0.4	0
+68	42012	0.5	0
+68	50373	0.6	0
+68	58616	0.7	0
+68	66909	0.8	0
+69	8433	0.1	0
+69	16906	0.2	0
+69	25291	0.3	0
+69	33612	0.4	0
+69	42013	0.5	0
+69	50374	0.6	0
+69	58617	0.7	0
+69	66910	0.8	0
+70	8433	0.1	0
+70	16906	0.2	0
+70	25291	0.3	0
+70	33612	0.4	0
+70	42013	0.5	0
+70	50374	0.6	0
+70	58617	0.7	0
+70	66910	0.8	0
+71	8434	0.1	0
+71	16907	0.2	0
+71	25292	0.3	0
+71	33613	0.4	0
+71	42014	0.5	0
+71	50375	0.6	0
+71	58618	0.7	0
+71	66911	0.8	0
+72	8434	0.1	0
+72	16907	0.2	0
+72	25292	0.3	0
+72	33613	0.4	0
+72	42014	0.5	0
+72	50375	0.6	0
+72	58618	0.7	0
+72	66911	0.8	0
+73	8435	0.1	0
+73	16908	0.2	0
+73	25293	0.3	0
+73	33614	0.4	0
+73	42015	0.5	0
+73	50376	0.6	0
+73	58619	0.7	0
+73	66912	0.8	0
+74	8435	0.1	0
+74	16908	0.2	0
+74	25293	0.3	0
+74	33614	0.4	0
+74	42015	0.5	0
+74	50376	0.6	0
+74	58619	0.7	0
+74	66912	0.8	0
+75	8436	0.1	0
+75	16909	0.2	0
+75	25294	0.3	0
+75	33615	0.4	0
+75	42016	0.5	0
+75	50377	0.6	0
+75	58620	0.7	0
+75	66913	0.8	0
+76	8436	0.1	0
+76	16909	0.2	0
+76	25294	0.3	0
+76	33615	0.4	0
+76	42016	0.5	0
+76	50377	0.6	0
+76	58620	0.7	0
+76	66913	0.8	0
+77	8437	0.1	0
+77	16910	0.2	0
+77	25295	0.3	0
+77	33616	0.4	0
+77	42017	0.5	0
+77	50378	0.6	0
+77	58621	0.7	0
+77	66914	0.8	0
+78	8437	0.1	0
+78	16910	0.2	0
+78	25295	0.3	0
+78	33616	0.4	0
+78	42017	0.5	0
+78	50378	0.6	0
+78	58621	0.7	0
+78	66914	0.8	0
+79	8438	0.1	0
+79	16911	0.2	0
+79	25296	0.3	0
+79	33617	0.4	0
+79	42018	0.5	0
+79	50379	0.6	0
+79	58622	0.7	0
+79	66915	0.8	0
+80	8438	0.1	0
+80	16911	0.2	0
+80	25296	0.3	0
+80	33617	0.4	0
+80	42018	0.5	0
+80	50379	0.6	0
+80	58622	0.7	0
+80	66915	0.8	0
+81	8439	0.1	0
+81	16912	0.2	0
+81	25297	0.3	0
+81	33618	0.4	0
+81	42019	0.5	0
+81	50380	0.6	0
+81	58623	0.7	0
+81	66916	0.8	0
+82	8439	0.1	0
+82	16912	0.2	0
+82	25297	0.3	0
+82	33618	0.4	0
+82	42019	0.5	0
+82	50380	0.6	0
+82	58623	0.7	0
+82	66916	0.8	0
+83	8440	0.1	0
+83	16913	0.2	0
+83	25298	0.3	0
+83	33619	0.4	0
+83	42020	0.5	0
+83	50381	0.6	0
+83	58624	0.7	0
+83	66917	0.8	0
+84	8440	0.1	0
+84	16913	0.2	0
+84	25298	0.3	0
+84	33619	0.4	0
+84	42020	0.5	0
+84	50381	0.6	0
+84	58624	0.7	0
+84	66917	0.8	0
+85	8441	0.1	0
+85	16914	0.2	0
+85	25299	0.3	0
+85	33620	0.4	0
+85	42021	0.5	0
+85	50382	0.6	0
+85	58625	0.7	0
+85	66918	0.8	0
+86	8441	0.1	0
+86	16914	0.2	0
+86	25299	0.3	0
+86	33620	0.4	0
+86	42021	0.5	0
+86	50382	0.6	0
+86	58625	0.7	0
+86	66918	0.8	0
+87	8442	0.1	0
+87	16915	0.2	0
+87	25300	0.3	0
+87	33621	0.4	0
+87	42022	0.5	0
+87	50383	0.6	0
+87	58626	0.7	0
+87	66919	0.8	0
+88	8442	0.1	0
+88	16915	0.2	0
+88	25300	0.3	0
+88	33621	0.4	0
+88	42022	0.5	0
+88	50383	0.6	0
+88	58626	0.7	0
+88	66919	0.8	0
+89	8443	0.1	0
+89	16916	0.2	0
+89	25301	0.3	0
+89	33622	0.4	0
+89	42023	0.5	0
+89	50384	0.6	0
+89	58627	0.7	0
+89	66920	0.8	0
+90	8443	0.1	0
+90	16916	0.2	0
+90	25301	0.3	0
+90	33622	0.4	0
+90	42023	0.5	0
+90	50384	0.6	0
+90	58627	0.7	0
+90	66920	0.8	0
+91	8444	0.1	0
+91	16917	0.2	0
+91	25302	0.3	0
+91	33623	0.4	0
+91	42024	0.5	0
+91	50385	0.6	0
+91	58628	0.7	0
+91	66921	0.8	0
+92	8444	0.1	0
+92	16917	0.2	0
+92	25302	0.3	0
+92	33623	0.4	0
+92	42024	0.5	0
+92	50385	0.6	0
+92	58628	0.7	0
+92	66921	0.8	0
+93	8445	0.1	0
+93	16918	0.2	0
+93	25303	0.3	0
+93	33624	0.4	0
+93	42025	0.5	0
+93	50386	0.6	0
+93	58629	0.7	0
+93	66922	0.8	0
+94	8445	0.1	0
+94	16918	0.2	0
+94	25303	0.3	0
+94	33624	0.4	0
+94	42025	0.5	0
+94	50386	0.6	0
+94	58629	0.7	0
+94	66922	0.8	0
+95	8446	0.1	0
+95	16919	0.2	0
+95	25304	0.3	0
+95	33625	0.4	0
+95	42026	0.5	0
+95	50387	0.6	0
+95	58630	0.7	0
+95	66923	0.8	0
+96	8446	0.1	0
+96	16919	0.2	0
+96	25304	0.3	0
+96	33625	0.4	0
+96	42026	0.5	0
+96	50387	0.6	0
+96	58630	0.7	0
+96	66923	0.8	0
+97	8447	0.1	0
+97	16920	0.2	0
+97	25305	0.3	0
+97	33626	0.4	0
+97	42027	0.5	0
+97	50388	0.6	0
+97	58631	0.7	0
+97	66924	0.8	0
+98	8447	0.1	0
+98	16920	0.2	0
+98	25305	0.3	0
+98	33626	0.4	0
+98	42027	0.5	0
+98	50388	0.6	0
+98	58631	0.7	0
+98	66924	0.8	0
+99	8448	0.1	0
+99	16921	0.2	0
+99	25306	0.3	0
+99	33627	0.4	0
+99	42028	0.5	0
+99	50389	0.6	0
+99	58632	0.7	0
+99	66925	0.8	0
+100	8448	0.1	0
+100	16921	0.2	0
+100	25306	0.3	0
+100	33627	0.4	0
+100	42028	0.5	0
+100	50389	0.6	0
+100	58632	0.7	0
+100	66925	0.8	0
+101	8449	0.1	0
+101	16922	0.2	0
+101	25307	0.3	0
+101	33628	0.4	0
+101	42029	0.5	0
+101	50390	0.6	0
+101	58633	0.7	0
+101	66926	0.8	0
+102	8449	0.1	0
+102	16922	0.2	0
+102	25307	0.3	0
+102	33628	0.4	0
+102	42029	0.5	0
+102	50390	0.6	0
+102	58633	0.7	0
+102	66926	0.8	0
+103	8450	0.1	0
+103	16923	0.2	0
+103	25308	0.3	0
+103	33629	0.4	0
+103	42030	0.5	0
+103	50391	0.6	0
+103	58634	0.7	0
+103	66927	0.8	0
+104	8450	0.1	0
+104	16923	0.2	0
+104	25308	0.3	0
+104	33629	0.4	0
+104	42030	0.5	0
+104	50391	0.6	0
+104	58634	0.7	0
+104	66927	0.8	0
+105	8451	0.1	0
+105	16924	0.2	0
+105	25309	0.3	0
+105	33630	0.4	0
+105	42031	0.5	0
+105	50392	0.6	0
+105	58635	0.7	0
+105	66928	0.8	0
+106	8451	0.1	0
+106	16924	0.2	0
+106	25309	0.3	0
+106	33630	0.4	0
+106	42031	0.5	0
+106	50392	0.6	0
+106	58635	0.7	0
+106	66928	0.8	0
+107	8452	0.1	0
+107	16925	0.2	0
+107	25310	0.3	0
+107	33631	0.4	0
+107	42032	0.5	0
+107	50393	0.6	0
+107	58636	0.7	0
+107	66929	0.8	0
+108	8452	0.1	0
+108	16925	0.2	0
+108	25310	0.3	0
+108	33631	0.4	0
+108	42032	0.5	0
+108	50393	0.6	0
+108	58636	0.7	0
+108	66929	0.8	0
+109	8453	0.1	0
+109	16926	0.2	0
+109	25311	0.3	0
+109	33632	0.4	0
+109	42033	0.5	0
+109	50394	0.6	0
+109	58637	0.7	0
+109	66930	0.8	0
+110	8453	0.1	0
+110	16926	0.2	0
+110	25311	0.3	0
+110	33632	0.4	0
+110	42033	0.5	0
+110	50394	0.6	0
+110	58637	0.7	0
+110	66930	0.8	0
+111	8454	0.1	0
+111	16927	0.2	0
+111	25312	0.3	0
+111	33633	0.4	0
+111	42034	0.5	0
+111	50395	0.6	0
+111	58638	0.7	0
+111	66931	0.8	0
+112	8454	0.1	0
+112	16927	0.2	0
+112	25312	0.3	0
+112	33633	0.4	0
+112	42034	0.5	0
+112	50395	0.6	0
+112	58638	0.7	0
+112	66931	0.8	0
+113	8455	0.1	0
+113	16928	0.2	0
+113	25313	0.3	0
+113	33634	0.4	0
+113	42035	0.5	0
+113	50396	0.6	0
+113	58639	0.7	0
+113	66932	0.8	0
+114	8455	0.1	0
+114	16928	0.2	0
+114	25313	0.3	0
+114	33634	0.4	0
+114	42035	0.5	0
+114	50396	0.6	0
+114	58639	0.7	0
+114	66932	0.8	0
+115	8456	0.1	0
+115	16929	0.2	0
+115	25314	0.3	0
+115	33635	0.4	0
+115	42036	0.5	0
+115	50397	0.6	0
+115	58640	0.7	0
+115	66933	0.8	0
+116	8456	0.1	0
+116	16929	0.2	0
+116	25314	0.3	0
+116	33635	0.4	0
+116	42036	0.5	0
+116	50397	0.6	0
+116	58640	0.7	0
+116	66933	0.8	0
+117	8457	0.1	0
+117	16930	0.2	0
+117	25315	0.3	0
+117	33636	0.4	0
+117	42037	0.5	0
+117	50398	0.6	0
+117	58641	0.7	0
+117	66934	0.8	0
+118	8457	0.1	0
+118	16930	0.2	0
+118	25315	0.3	0
+118	33636	0.4	0
+118	42037	0.5	0
+118	50398	0.6	0
+118	58641	0.7	0
+118	66934	0.8	0
+119	8458	0.1	0
+119	16931	0.2	0
+119	25316	0.3	0
+119	33637	0.4	0
+119	42038	0.5	0
+119	50399	0.6	0
+119	58642	0.7	0
+119	66935	0.8	0
+120	8458	0.1	0
+120	16931	0.2	0
+120	25316	0.3	0
+120	33637	0.4	0
+120	42038	0.5	0
+120	50399	0.6	0
+120	58642	0.7	0
+120	66935	0.8	0
+121	8459	0.1	0
+121	16932	0.2	0
+121	25317	0.3	0
+121	33638	0.4	0
+121	42039	0.5	0
+121	50400	0.6	0
+121	58643	0.7	0
+121	66936	0.8	0
+122	8459	0.1	0
+122	16932	0.2	0
+122	25317	0.3	0
+122	33638	0.4	0
+122	42039	0.5	0
+122	50400	0.6	0
+122	58643	0.7	0
+122	66936	0.8	0
+123	8460	0.1	0
+123	16933	0.2	0
+123	25318	0.3	0
+123	33639	0.4	0
+123	42040	0.5	0
+123	50401	0.6	0
+123	58644	0.7	0
+123	66937	0.8	0
+124	8460	0.1	0
+124	16933	0.2	0
+124	25318	0.3	0
+124	33639	0.4	0
+124	42040	0.5	0
+124	50401	0.6	0
+124	58644	0.7	0
+124	66937	0.8	0
+125	8461	0.1	0
+125	16934	0.2	0
+125	25319	0.3	0
+125	33640	0.4	0
+125	42041	0.5	0
+125	50402	0.6	0
+125	58645	0.7	0
+125	66938	0.8	0
+126	8461	0.1	0
+126	16934	0.2	0
+126	25319	0.3	0
+126	33640	0.4	0
+126	42041	0.5	0
+126	50402	0.6	0
+126	58645	0.7	0
+126	66938	0.8	0
+127	8462	0.1	0
+127	16935	0.2	0
+127	25320	0.3	0
+127	33641	0.4	0
+127	42042	0.5	0
+127	50403	0.6	0
+127	58646	0.7	0
+127	66939	0.8	0
+128	8462	0.1	0
+128	16935	0.2	0
+128	25320	0.3	0
+128	33641	0.4	0
+128	42042	0.5	0
+128	50403	0.6	0
+128	58646	0.7	0
+128	66939	0.8	0
+129	8463	0.1	0
+129	16936	0.2	0
+129	25321	0.3	0
+129	33642	0.4	0
+129	42043	0.5	0
+129	50404	0.6	0
+129	58647	0.7	0
+129	66940	0.8	0
+130	8463	0.1	0
+130	16936	0.2	0
+130	25321	0.3	0
+130	33642	0.4	0
+130	42043	0.5	0
+130	50404	0.6	0
+130	58647	0.7	0
+130	66940	0.8	0
+131	8464	0.1	0
+131	16937	0.2	0
+131	25322	0.3	0
+131	33643	0.4	0
+131	42044	0.5	0
+131	50405	0.6	0
+131	58648	0.7	0
+131	66941	0.8	0
+132	8464	0.1	0
+132	16937	0.2	0
+132	25322	0.3	0
+132	33643	0.4	0
+132	42044	0.5	0
+132	50405	0.6	0
+132	58648	0.7	0
+132	66941	0.8	0
+133	8465	0.1	0
+133	16938	0.2	0
+133	25323	0.3	0
+133	33644	0.4	0
+133	42045	0.5	0
+133	50406	0.6	0
+133	58649	0.7	0
+133	66942	0.8	0
+134	8465	0.1	0
+134	16938	0.2	0
+134	25323	0.3	0
+134	33644	0.4	0
+134	42045	0.5	0
+134	50406	0.6	0
+134	58649	0.7	0
+134	66942	0.8	0
+135	8466	0.1	0
+135	16939	0.2	0
+135	25324	0.3	0
+135	33645	0.4	0
+135	42046	0.5	0
+135	50407	0.6	0
+135	58650	0.7	0
+135	66943	0.8	0
+136	8466	0.1	0
+136	16939	0.2	0
+136	25324	0.3	0
+136	33645	0.4	0
+136	42046	0.5	0
+136	50407	0.6	0
+136	58650	0.7	0
+136	66943	0.8	0
+137	8467	0.1	0
+137	16940	0.2	0
+137	25325	0.3	0
+137	33646	0.4	0
+137	42047	0.5	0
+137	50408	0.6	0
+137	58651	0.7	0
+137	66944	0.8	0
+138	8467	0.1	0
+138	16940	0.2	0
+138	25325	0.3	0
+138	33646	0.4	0
+138	42047	0.5	0
+138	50408	0.6	0
+138	58651	0.7	0
+138	66944	0.8	0
+139	8468	0.1	0
+139	16941	0.2	0
+139	25326	0.3	0
+139	33647	0.4	0
+139	42048	0.5	0
+139	50409	0.6	0
+139	58652	0.7	0
+139	66945	0.8	0
+140	8468	0.1	0
+140	16941	0.2	0
+140	25326	0.3	0
+140	33647	0.4	0
+140	42048	0.5	0
+140	50409	0.6	0
+140	58652	0.7	0
+140	66945	0.8	0
+141	8469	0.1	0
+141	16942	0.2	0
+141	25327	0.3	0
+141	33648	0.4	0
+141	42049	0.5	0
+141	50410	0.6	0
+141	58653	0.7	0
+141	66946	0.8	0
+142	8469	0.1	0
+142	16942	0.2	0
+142	25327	0.3	0
+142	33648	0.4	0
+142	42049	0.5	0
+142	50410	0.6	0
+142	58653	0.7	0
+142	66946	0.8	0
+143	8470	0.1	0
+143	16943	0.2	0
+143	25328	0.3	0
+143	33649	0.4	0
+143	42050	0.5	0
+143	50411	0.6	0
+143	58654	0.7	0
+143	66947	0.8	0
+144	8470	0.1	0
+144	16943	0.2	0
+144	25328	0.3	0
+144	33649	0.4	0
+144	42050	0.5	0
+144	50411	0.6	0
+144	58654	0.7	0
+144	66947	0.8	0
+145	8471	0.1	0
+145	16944	0.2	0
+145	25329	0.3	0
+145	33650	0.4	0
+145	42051	0.5	0
+145	50412	0.6	0
+145	58655	0.7	0
+145	66948	0.8	0
+146	8471	0.1	0
+146	16944	0.2	0
+146	25329	0.3	0
+146	33650	0.4	0
+146	42051	0.5	0
+146	50412	0.6	0
+146	58655	0.7	0
+146	66948	0.8	0
+147	8472	0.1	0
+147	16945	0.2	0
+147	25330	0.3	0
+147	33651	0.4	0
+147	42052	0.5	0
+147	50413	0.6	0
+147	58656	0.7	0
+147	66949	0.8	0
+148	8472	0.1	0
+148	16945	0.2	0
+148	25330	0.3	0
+148	33651	0.4	0
+148	42052	0.5	0
+148	50413	0.6	0
+148	58656	0.7	0
+148	66949	0.8	0
+149	8473	0.1	0
+149	16946	0.2	0
+149	25331	0.3	0
+149	33652	0.4	0
+149	42053	0.5	0
+149	50414	0.6	0
+149	58657	0.7	0
+149	66950	0.8	0
+150	8473	0.1	0
+150	16946	0.2	0
+150	25331	0.3	0
+150	33652	0.4	0
+150	42053	0.5	0
+150	50414	0.6	0
+150	58657	0.7	0
+150	66950	0.8	0
+151	8474	0.1	0
+151	16947	0.2	0
+151	25332	0.3	0
+151	33653	0.4	0
+151	42054	0.5	0
+151	50415	0.6	0
+151	58658	0.7	0
+151	66951	0.8	0
+152	8474	0.1	0
+152	16947	0.2	0
+152	25332	0.3	0
+152	33653	0.4	0
+152	42054	0.5	0
+152	50415	0.6	0
+152	58658	0.7	0
+152	66951	0.8	0
+153	8475	0.1	0
+153	16948	0.2	0
+153	25333	0.3	0
+153	33654	0.4	0
+153	42055	0.5	0
+153	50416	0.6	0
+153	58659	0.7	0
+153	66952	0.8	0
+154	8475	0.1	0
+154	16948	0.2	0
+154	25333	0.3	0
+154	33654	0.4	0
+154	42055	0.5	0
+154	50416	0.6	0
+154	58659	0.7	0
+154	66952	0.8	0
+155	8476	0.1	0
+155	16949	0.2	0
+155	25334	0.3	0
+155	33655	0.4	0
+155	42056	0.5	0
+155	50417	0.6	0
+155	58660	0.7	0
+155	66953	0.8	0
+156	8476	0.1	0
+156	16949	0.2	0
+156	25334	0.3	0
+156	33655	0.4	0
+156	42056	0.5	0
+156	50417	0.6	0
+156	58660	0.7	0
+156	66953	0.8	0
+157	8477	0.1	0
+157	16950	0.2	0
+157	25335	0.3	0
+157	33656	0.4	0
+157	42057	0.5	0
+157	50418	0.6	0
+157	58661	0.7	0
+157	66954	0.8	0
+158	8477	0.1	0
+158	16950	0.2	0
+158	25335	0.3	0
+158	33656	0.4	0
+158	42057	0.5	0
+158	50418	0.6	0
+158	58661	0.7	0
+158	66954	0.8	0
+159	8478	0.1	0
+159	16951	0.2	0
+159	25336	0.3	0
+159	33657	0.4	0
+159	42058	0.5	0
+159	50419	0.6	0
+159	58662	0.7	0
+159	66955	0.8	0
+160	8478	0.1	0
+160	16951	0.2	0
+160	25336	0.3	0
+160	33657	0.4	0
+160	42058	0.5	0
+160	50419	0.6	0
+160	58662	0.7	0
+160	66955	0.8	0
+161	8479	0.1	0
+161	16952	0.2	0
+161	25337	0.3	0
+161	33658	0.4	0
+161	42059	0.5	0
+161	50420	0.6	0
+161	58663	0.7	0
+161	66956	0.8	0
+162	8479	0.1	0
+162	16952	0.2	0
+162	25337	0.3	0
+162	33658	0.4	0
+162	42059	0.5	0
+162	50420	0.6	0
+162	58663	0.7	0
+162	66956	0.8	0
+163	8480	0.1	0
+163	16953	0.2	0
+163	25338	0.3	0
+163	33659	0.4	0
+163	42060	0.5	0
+163	50421	0.6	0
+163	58664	0.7	0
+163	66957	0.8	0
+164	8480	0.1	0
+164	16953	0.2	0
+164	25338	0.3	0
+164	33659	0.4	0
+164	42060	0.5	0
+164	50421	0.6	0
+164	58664	0.7	0
+164	66957	0.8	0
+165	8481	0.1	0
+165	16954	0.2	0
+165	25339	0.3	0
+165	33660	0.4	0
+165	42061	0.5	0
+165	50422	0.6	0
+165	58665	0.7	0
+165	66958	0.8	0
+166	8481	0.1	0
+166	16954	0.2	0
+166	25339	0.3	0
+166	33660	0.4	0
+166	42061	0.5	0
+166	50422	0.6	0
+166	58665	0.7	0
+166	66958	0.8	0
+167	8482	0.1	0
+167	16955	0.2	0
+167	25340	0.3	0
+167	33661	0.4	0
+167	42062	0.5	0
+167	50423	0.6	0
+167	58666	0.7	0
+167	66959	0.8	0
+168	8482	0.1	0
+168	16955	0.2	0
+168	25340	0.3	0
+168	33661	0.4	0
+168	42062	0.5	0
+168	50423	0.6	0
+168	58666	0.7	0
+168	66959	0.8	0
+169	8483	0.1	0
+169	16956	0.2	0
+169	25341	0.3	0
+169	33662	0.4	0
+169	42063	0.5	0
+169	50424	0.6	0
+169	58667	0.7	0
+169	66960	0.8	0
+170	8483	0.1	0
+170	16956	0.2	0
+170	25341	0.3	0
+170	33662	0.4	0
+170	42063	0.5	0
+170	50424	0.6	0
+170	58667	0.7	0
+170	66960	0.8	0
+171	8484	0.1	0
+171	16957	0.2	0
+171	25342	0.3	0
+171	33663	0.4	0
+171	42064	0.5	0
+171	50425	0.6	0
+171	58668	0.7	0
+171	66961	0.8	0
+172	8484	0.1	0
+172	16957	0.2	0
+172	25342	0.3	0
+172	33663	0.4	0
+172	42064	0.5	0
+172	50425	0.6	0
+172	58668	0.7	0
+172	66961	0.8	0
+173	8485	0.1	0
+173	16958	0.2	0
+173	25343	0.3	0
+173	33664	0.4	0
+173	42065	0.5	0
+173	50426	0.6	0
+173	58669	0.7	0
+173	66962	0.8	0
+174	8485	0.1	0
+174	16958	0.2	0
+174	25343	0.3	0
+174	33664	0.4	0
+174	42065	0.5	0
+174	50426	0.6	0
+174	58669	0.7	0
+174	66962	0.8	0
+175	8486	0.1	0
+175	16959	0.2	0
+175	25344	0.3	0
+175	33665	0.4	0
+175	42066	0.5	0
+175	50427	0.6	0
+175	58670	0.7	0
+175	66963	0.8	0
+176	8486	0.1	0
+176	16959	0.2	0
+176	25344	0.3	0
+176	33665	0.4	0
+176	42066	0.5	0
+176	50427	0.6	0
+176	58670	0.7	0
+176	66963	0.8	0
+177	8487	0.1	0
+177	16960	0.2	0
+177	25345	0.3	0
+177	33666	0.4	0
+177	42067	0.5	0
+177	50428	0.6	0
+177	58671	0.7	0
+177	66964	0.8	0
+178	8487	0.1	0
+178	16960	0.2	0
+178	25345	0.3	0
+178	33666	0.4	0
+178	42067	0.5	0
+178	50428	0.6	0
+178	58671	0.7	0
+178	66964	0.8	0
+179	8488	0.1	0
+179	16961	0.2	0
+179	25346	0.3	0
+179	33667	0.4	0
+179	42068	0.5	0
+179	50429	0.6	0
+179	58672	0.7	0
+179	66965	0.8	0
+180	8488	0.1	0
+180	16961	0.2	0
+180	25346	0.3	0
+180	33667	0.4	0
+180	42068	0.5	0
+180	50429	0.6	0
+180	58672	0.7	0
+180	66965	0.8	0
+181	8489	0.1	0
+181	16962	0.2	0
+181	25347	0.3	0
+181	33668	0.4	0
+181	42069	0.5	0
+181	50430	0.6	0
+181	58673	0.7	0
+181	66966	0.8	0
+182	8489	0.1	0
+182	16962	0.2	0
+182	25347	0.3	0
+182	33668	0.4	0
+182	42069	0.5	0
+182	50430	0.6	0
+182	58673	0.7	0
+182	66966	0.8	0
+183	8490	0.1	0
+183	16963	0.2	0
+183	25348	0.3	0
+183	33669	0.4	0
+183	42070	0.5	0
+183	50431	0.6	0
+183	58674	0.7	0
+183	66967	0.8	0
+184	8490	0.1	0
+184	16963	0.2	0
+184	25348	0.3	0
+184	33669	0.4	0
+184	42070	0.5	0
+184	50431	0.6	0
+184	58674	0.7	0
+184	66967	0.8	0
+185	8491	0.1	0
+185	16964	0.2	0
+185	25349	0.3	0
+185	33670	0.4	0
+185	42071	0.5	0
+185	50432	0.6	0
+185	58675	0.7	0
+185	66968	0.8	0
+186	8491	0.1	0
+186	16964	0.2	0
+186	25349	0.3	0
+186	33670	0.4	0
+186	42071	0.5	0
+186	50432	0.6	0
+186	58675	0.7	0
+186	66968	0.8	0
+187	8492	0.1	0
+187	16965	0.2	0
+187	25350	0.3	0
+187	33671	0.4	0
+187	42072	0.5	0
+187	50433	0.6	0
+187	58676	0.7	0
+187	66969	0.8	0
+188	8492	0.1	0
+188	16965	0.2	0
+188	25350	0.3	0
+188	33671	0.4	0
+188	42072	0.5	0
+188	50433	0.6	0
+188	58676	0.7	0
+188	66969	0.8	0
+189	8493	0.1	0
+189	16966	0.2	0
+189	25351	0.3	0
+189	33672	0.4	0
+189	42073	0.5	0
+189	50434	0.6	0
+189	58677	0.7	0
+189	66970	0.8	0
+190	8493	0.1	0
+190	16966	0.2	0
+190	25351	0.3	0
+190	33672	0.4	0
+190	42073	0.5	0
+190	50434	0.6	0
+190	58677	0.7	0
+190	66970	0.8	0
+191	8494	0.1	0
+191	16967	0.2	0
+191	25352	0.3	0
+191	33673	0.4	0
+191	42074	0.5	0
+191	50435	0.6	0
+191	58678	0.7	0
+191	66971	0.8	0
+192	8494	0.1	0
+192	16967	0.2	0
+192	25352	0.3	0
+192	33673	0.4	0
+192	42074	0.5	0
+192	50435	0.6	0
+192	58678	0.7	0
+192	66971	0.8	0
+193	8495	0.1	0
+193	16968	0.2	0
+193	25353	0.3	0
+193	33674	0.4	0
+193	42075	0.5	0
+193	50436	0.6	0
+193	58679	0.7	0
+193	66972	0.8	0
+194	8495	0.1	0
+194	16968	0.2	0
+194	25353	0.3	0
+194	33674	0.4	0
+194	42075	0.5	0
+194	50436	0.6	0
+194	58679	0.7	0
+194	66972	0.8	0
+195	8496	0.1	0
+195	16969	0.2	0
+195	25354	0.3	0
+195	33675	0.4	0
+195	42076	0.5	0
+195	50437	0.6	0
+195	58680	0.7	0
+195	66973	0.8	0
+196	8496	0.1	0
+196	16969	0.2	0
+196	25354	0.3	0
+196	33675	0.4	0
+196	42076	0.5	0
+196	50437	0.6	0
+196	58680	0.7	0
+196	66973	0.8	0
+197	8497	0.1	0
+197	16970	0.2	0
+197	25355	0.3	0
+197	33676	0.4	0
+197	42077	0.5	0
+197	50438	0.6	0
+197	58681	0.7	0
+197	66974	0.8	0
+198	8497	0.1	0
+198	16970	0.2	0
+198	25355	0.3	0
+198	33676	0.4	0
+198	42077	0.5	0
+198	50438	0.6	0
+198	58681	0.7	0
+198	66974	0.8	0
+199	8498	0.1	0
+199	16971	0.2	0
+199	25356	0.3	0
+199	33677	0.4	0
+199	42078	0.5	0
+199	50439	0.6	0
+199	58682	0.7	0
+199	66975	0.8	0
+200	8498	0.1	0
+200	16971	0.2	0
+200	25356	0.3	0
+200	33677	0.4	0
+200	42078	0.5	0
+200	50439	0.6	0
+200	58682	0.7	0
+200	66975	0.8	0
+201	8499	0.1	0
+201	16972	0.2	0
+201	25357	0.3	0
+201	33678	0.4	0
+201	42079	0.5	0
+201	50440	0.6	0
+201	58683	0.7	0
+201	66976	0.8	0
+202	8499	0.1	0
+202	16972	0.2	0
+202	25357	0.3	0
+202	33678	0.4	0
+202	42079	0.5	0
+202	50440	0.6	0
+202	58683	0.7	0
+202	66976	0.8	0
+203	8500	0.1	0
+203	16973	0.2	0
+203	25358	0.3	0
+203	33679	0.4	0
+203	42080	0.5	0
+203	50441	0.6	0
+203	58684	0.7	0
+203	66977	0.8	0
+204	8500	0.1	0
+204	16973	0.2	0
+204	25358	0.3	0
+204	33679	0.4	0
+204	42080	0.5	0
+204	50441	0.6	0
+204	58684	0.7	0
+204	66977	0.8	0
+205	8501	0.1	0
+205	16974	0.2	0
+205	25359	0.3	0
+205	33680	0.4	0
+205	42081	0.5	0
+205	50442	0.6	0
+205	58685	0.7	0
+205	66978	0.8	0
+206	8501	0.1	0
+206	16974	0.2	0
+206	25359	0.3	0
+206	33680	0.4	0
+206	42081	0.5	0
+206	50442	0.6	0
+206	58685	0.7	0
+206	66978	0.8	0
+207	8502	0.1	0
+207	16975	0.2	0
+207	25360	0.3	0
+207	33681	0.4	0
+207	42082	0.5	0
+207	50443	0.6	0
+207	58686	0.7	0
+207	66979	0.8	0
+208	8502	0.1	0
+208	16975	0.2	0
+208	25360	0.3	0
+208	33681	0.4	0
+208	42082	0.5	0
+208	50443	0.6	0
+208	58686	0.7	0
+208	66979	0.8	0
+209	8503	0.1	0
+209	16976	0.2	0
+209	25361	0.3	0
+209	33682	0.4	0
+209	42083	0.5	0
+209	50444	0.6	0
+209	58687	0.7	0
+209	66980	0.8	0
+210	8503	0.1	0
+210	16976	0.2	0
+210	25361	0.3	0
+210	33682	0.4	0
+210	42083	0.5	0
+210	50444	0.6	0
+210	58687	0.7	0
+210	66980	0.8	0
+211	8504	0.1	0
+211	16977	0.2	0
+211	25362	0.3	0
+211	33683	0.4	0
+211	42084	0.5	0
+211	50445	0.6	0
+211	58688	0.7	0
+211	66981	0.8	0
+212	8504	0.1	0
+212	16977	0.2	0
+212	25362	0.3	0
+212	33683	0.4	0
+212	42084	0.5	0
+212	50445	0.6	0
+212	58688	0.7	0
+212	66981	0.8	0
+213	8505	0.1	0
+213	16978	0.2	0
+213	25363	0.3	0
+213	33684	0.4	0
+213	42085	0.5	0
+213	50446	0.6	0
+213	58689	0.7	0
+213	66982	0.8	0
+214	8505	0.1	0
+214	16978	0.2	0
+214	25363	0.3	0
+214	33684	0.4	0
+214	42085	0.5	0
+214	50446	0.6	0
+214	58689	0.7	0
+214	66982	0.8	0
+215	8506	0.1	0
+215	16979	0.2	0
+215	25364	0.3	0
+215	33685	0.4	0
+215	42086	0.5	0
+215	50447	0.6	0
+215	58690	0.7	0
+215	66983	0.8	0
+216	8506	0.1	0
+216	16979	0.2	0
+216	25364	0.3	0
+216	33685	0.4	0
+216	42086	0.5	0
+216	50447	0.6	0
+216	58690	0.7	0
+216	66983	0.8	0
+217	8507	0.1	0
+217	16980	0.2	0
+217	25365	0.3	0
+217	33686	0.4	0
+217	42087	0.5	0
+217	50448	0.6	0
+217	58691	0.7	0
+217	66984	0.8	0
+218	8507	0.1	0
+218	16980	0.2	0
+218	25365	0.3	0
+218	33686	0.4	0
+218	42087	0.5	0
+218	50448	0.6	0
+218	58691	0.7	0
+218	66984	0.8	0
+219	8508	0.1	0
+219	16981	0.2	0
+219	25366	0.3	0
+219	33687	0.4	0
+219	42088	0.5	0
+219	50449	0.6	0
+219	58692	0.7	0
+219	66985	0.8	0
+220	8508	0.1	0
+220	16981	0.2	0
+220	25366	0.3	0
+220	33687	0.4	0
+220	42088	0.5	0
+220	50449	0.6	0
+220	58692	0.7	0
+220	66985	0.8	0
+221	8509	0.1	0
+221	16982	0.2	0
+221	25367	0.3	0
+221	33688	0.4	0
+221	42089	0.5	0
+221	50450	0.6	0
+221	58693	0.7	0
+221	66986	0.8	0
+222	8509	0.1	0
+222	16982	0.2	0
+222	25367	0.3	0
+222	33688	0.4	0
+222	42089	0.5	0
+222	50450	0.6	0
+222	58693	0.7	0
+222	66986	0.8	0
+223	8510	0.1	0
+223	16983	0.2	0
+223	25368	0.3	0
+223	33689	0.4	0
+223	42090	0.5	0
+223	50451	0.6	0
+223	58694	0.7	0
+223	66987	0.8	0
+224	8510	0.1	0
+224	16983	0.2	0
+224	25368	0.3	0
+224	33689	0.4	0
+224	42090	0.5	0
+224	50451	0.6	0
+224	58694	0.7	0
+224	66987	0.8	0
+225	8511	0.1	0
+225	16984	0.2	0
+225	25369	0.3	0
+225	33690	0.4	0
+225	42091	0.5	0
+225	50452	0.6	0
+225	58695	0.7	0
+225	66988	0.8	0
+226	8511	0.1	0
+226	16984	0.2	0
+226	25369	0.3	0
+226	33690	0.4	0
+226	42091	0.5	0
+226	50452	0.6	0
+226	58695	0.7	0
+226	66988	0.8	0
+227	8512	0.1	0
+227	16985	0.2	0
+227	25370	0.3	0
+227	33691	0.4	0
+227	42092	0.5	0
+227	50453	0.6	0
+227	58696	0.7	0
+227	66989	0.8	0
+228	8512	0.1	0
+228	16985	0.2	0
+228	25370	0.3	0
+228	33691	0.4	0
+228	42092	0.5	0
+228	50453	0.6	0
+228	58696	0.7	0
+228	66989	0.8	0
+229	8513	0.1	0
+229	16986	0.2	0
+229	25371	0.3	0
+229	33692	0.4	0
+229	42093	0.5	0
+229	50454	0.6	0
+229	58697	0.7	0
+229	66990	0.8	0
+230	8513	0.1	0
+230	16986	0.2	0
+230	25371	0.3	0
+230	33692	0.4	0
+230	42093	0.5	0
+230	50454	0.6	0
+230	58697	0.7	0
+230	66990	0.8	0
+231	8514	0.1	0
+231	16987	0.2	0
+231	25372	0.3	0
+231	33693	0.4	0
+231	42094	0.5	0
+231	50455	0.6	0
+231	58698	0.7	0
+231	66991	0.8	0
+232	8514	0.1	0
+232	16987	0.2	0
+232	25372	0.3	0
+232	33693	0.4	0
+232	42094	0.5	0
+232	50455	0.6	0
+232	58698	0.7	0
+232	66991	0.8	0
+233	8515	0.1	0
+233	16988	0.2	0
+233	25373	0.3	0
+233	33694	0.4	0
+233	42095	0.5	0
+233	50456	0.6	0
+233	58699	0.7	0
+233	66992	0.8	0
+234	8515	0.1	0
+234	16988	0.2	0
+234	25373	0.3	0
+234	33694	0.4	0
+234	42095	0.5	0
+234	50456	0.6	0
+234	58699	0.7	0
+234	66992	0.8	0
+235	8516	0.1	0
+235	16989	0.2	0
+235	25374	0.3	0
+235	33695	0.4	0
+235	42096	0.5	0
+235	50457	0.6	0
+235	58700	0.7	0
+235	66993	0.8	0
+236	8516	0.1	0
+236	16989	0.2	0
+236	25374	0.3	0
+236	33695	0.4	0
+236	42096	0.5	0
+236	50457	0.6	0
+236	58700	0.7	0
+236	66993	0.8	0
+237	8517	0.1	0
+237	16990	0.2	0
+237	25375	0.3	0
+237	33696	0.4	0
+237	42097	0.5	0
+237	50458	0.6	0
+237	58701	0.7	0
+237	66994	0.8	0
+238	8517	0.1	0
+238	16990	0.2	0
+238	25375	0.3	0
+238	33696	0.4	0
+238	42097	0.5	0
+238	50458	0.6	0
+238	58701	0.7	0
+238	66994	0.8	0
+239	8518	0.1	0
+239	16991	0.2	0
+239	25376	0.3	0
+239	33697	0.4	0
+239	42098	0.5	0
+239	50459	0.6	0
+239	58702	0.7	0
+239	66995	0.8	0
+240	8518	0.1	0
+240	16991	0.2	0
+240	25376	0.3	0
+240	33697	0.4	0
+240	42098	0.5	0
+240	50459	0.6	0
+240	58702	0.7	0
+240	66995	0.8	0
+241	8519	0.1	0
+241	16992	0.2	0
+241	25377	0.3	0
+241	33698	0.4	0
+241	42099	0.5	0
+241	50460	0.6	0
+241	58703	0.7	0
+241	66996	0.8	0
+242	8519	0.1	0
+242	16992	0.2	0
+242	25377	0.3	0
+242	33698	0.4	0
+242	42099	0.5	0
+242	50460	0.6	0
+242	58703	0.7	0
+242	66996	0.8	0
+243	8520	0.1	0
+243	16993	0.2	0
+243	25378	0.3	0
+243	33699	0.4	0
+243	42100	0.5	0
+243	50461	0.6	0
+243	58704	0.7	0
+243	66997	0.8	0
+244	8520	0.1	0
+244	16993	0.2	0
+244	25378	0.3	0
+244	33699	0.4	0
+244	42100	0.5	0
+244	50461	0.6	0
+244	58704	0.7	0
+244	66997	0.8	0
+245	8521	0.1	0
+245	16994	0.2	0
+245	25379	0.3	0
+245	33700	0.4	0
+245	42101	0.5	0
+245	50462	0.6	0
+245	58705	0.7	0
+245	66998	0.8	0
+246	8521	0.1	0
+246	16994	0.2	0
+246	25379	0.3	0
+246	33700	0.4	0
+246	42101	0.5	0
+246	50462	0.6	0
+246	58705	0.7	0
+246	66998	0.8	0
+247	8522	0.1	0
+247	16995	0.2	0
+247	25380	0.3	0
+247	33701	0.4	0
+247	42102	0.5	0
+247	50463	0.6	0
+247	58706	0.7	0
+247	66999	0.8	0
+248	8522	0.1	0
+248	16995	0.2	0
+248	25380	0.3	0
+248	33701	0.4	0
+248	42102	0.5	0
+248	50463	0.6	0
+248	58706	0.7	0
+248	66999	0.8	0
+249	8523	0.1	0
+249	16996	0.2	0
+249	25381	0.3	0
+249	33702	0.4	0
+249	42103	0.5	0
+249	50464	0.6	0
+249	58707	0.7	0
+249	67000	0.8	0
+250	8523	0.1	0
+250	16996	0.2	0
+250	25381	0.3	0
+250	33702	0.4	0
+250	42103	0.5	0
+250	50464	0.6	0
+250	58707	0.7	0
+250	67000	0.8	0
+251	8524	0.1	0
+251	16997	0.2	0
+251	25382	0.3	0
+251	33703	0.4	0
+251	42104	0.5	0
+251	50465	0.6	0
+251	58708	0.7	0
+251	67001	0.8	0
+252	8524	0.1	0
+252	16997	0.2	0
+252	25382	0.3	0
+252	33703	0.4	0
+252	42104	0.5	0
+252	50465	0.6	0
+252	58708	0.7	0
+252	67001	0.8	0
+253	8525	0.1	0
+253	16998	0.2	0
+253	25383	0.3	0
+253	33704	0.4	0
+253	42105	0.5	0
+253	50466	0.6	0
+253	58709	0.7	0
+253	67002	0.8	0
+254	8525	0.1	0
+254	16998	0.2	0
+254	25383	0.3	0
+254	33704	0.4	0
+254	42105	0.5	0
+254	50466	0.6	0
+254	58709	0.7	0
+254	67002	0.8	0
+255	8526	0.1	0
+255	16999	0.2	0
+255	25384	0.3	0
+255	33705	0.4	0
+255	42106	0.5	0
+255	50467	0.6	0
+255	58710	0.7	0
+255	67003	0.8	0
+256	8526	0.1	0
+256	16999	0.2	0
+256	25384	0.3	0
+256	33705	0.4	0
+256	42106	0.5	0
+256	50467	0.6	0
+256	58710	0.7	0
+256	67003	0.8	0
+257	8527	0.1	0
+257	17000	0.2	0
+257	25385	0.3	0
+257	33706	0.4	0
+257	42107	0.5	0
+257	50468	0.6	0
+257	58711	0.7	0
+257	67004	0.8	0
+258	8527	0.1	0
+258	17000	0.2	0
+258	25385	0.3	0
+258	33706	0.4	0
+258	42107	0.5	0
+258	50468	0.6	0
+258	58711	0.7	0
+258	67004	0.8	0
+259	8528	0.1	0
+259	17001	0.2	0
+259	25386	0.3	0
+259	33707	0.4	0
+259	42108	0.5	0
+259	50469	0.6	0
+259	58712	0.7	0
+259	67005	0.8	0
+260	8528	0.1	0
+260	17001	0.2	0
+260	25386	0.3	0
+260	33707	0.4	0
+260	42108	0.5	0
+260	50469	0.6	0
+260	58712	0.7	0
+260	67005	0.8	0
+261	8529	0.1	0
+261	17002	0.2	0
+261	25387	0.3	0
+261	33708	0.4	0
+261	42109	0.5	0
+261	50470	0.6	0
+261	58713	0.7	0
+261	67006	0.8	0
+262	8529	0.1	0
+262	17002	0.2	0
+262	25387	0.3	0
+262	33708	0.4	0
+262	42109	0.5	0
+262	50470	0.6	0
+262	58713	0.7	0
+262	67006	0.8	0
+263	8530	0.1	0
+263	17003	0.2	0
+263	25388	0.3	0
+263	33709	0.4	0
+263	42110	0.5	0
+263	50471	0.6	0
+263	58714	0.7	0
+263	67007	0.8	0
+264	8530	0.1	0
+264	17003	0.2	0
+264	25388	0.3	0
+264	33709	0.4	0
+264	42110	0.5	0
+264	50471	0.6	0
+264	58714	0.7	0
+264	67007	0.8	0
+265	8531	0.1	0
+265	17004	0.2	0
+265	25389	0.3	0
+265	33710	0.4	0
+265	42111	0.5	0
+265	50472	0.6	0
+265	58715	0.7	0
+265	67008	0.8	0
+266	8531	0.1	0
+266	17004	0.2	0
+266	25389	0.3	0
+266	33710	0.4	0
+266	42111	0.5	0
+266	50472	0.6	0
+266	58715	0.7	0
+266	67008	0.8	0
+267	8532	0.1	0
+267	17005	0.2	0
+267	25390	0.3	0
+267	33711	0.4	0
+267	42112	0.5	0
+267	50473	0.6	0
+267	58716	0.7	0
+267	67009	0.8	0
+268	8532	0.1	0
+268	17005	0.2	0
+268	25390	0.3	0
+268	33711	0.4	0
+268	42112	0.5	0
+268	50473	0.6	0
+268	58716	0.7	0
+268	67009	0.8	0
+269	8533	0.1	0
+269	17006	0.2	0
+269	25391	0.3	0
+269	33712	0.4	0
+269	42113	0.5	0
+269	50474	0.6	0
+269	58717	0.7	0
+269	67010	0.8	0
+270	8533	0.1	0
+270	17006	0.2	0
+270	25391	0.3	0
+270	33712	0.4	0
+270	42113	0.5	0
+270	50474	0.6	0
+270	58717	0.7	0
+270	67010	0.8	0
+271	8534	0.1	0
+271	17007	0.2	0
+271	25392	0.3	0
+271	33713	0.4	0
+271	42114	0.5	0
+271	50475	0.6	0
+271	58718	0.7	0
+271	67011	0.8	0
+272	8534	0.1	0
+272	17007	0.2	0
+272	25392	0.3	0
+272	33713	0.4	0
+272	42114	0.5	0
+272	50475	0.6	0
+272	58718	0.7	0
+272	67011	0.8	0
+273	8535	0.1	0
+273	17008	0.2	0
+273	25393	0.3	0
+273	33714	0.4	0
+273	42115	0.5	0
+273	50476	0.6	0
+273	58719	0.7	0
+273	67012	0.8	0
+274	8535	0.1	0
+274	17008	0.2	0
+274	25393	0.3	0
+274	33714	0.4	0
+274	42115	0.5	0
+274	50476	0.6	0
+274	58719	0.7	0
+274	67012	0.8	0
+275	8536	0.1	0
+275	17009	0.2	0
+275	25394	0.3	0
+275	33715	0.4	0
+275	42116	0.5	0
+275	50477	0.6	0
+275	58720	0.7	0
+275	67013	0.8	0
+276	8536	0.1	0
+276	17009	0.2	0
+276	25394	0.3	0
+276	33715	0.4	0
+276	42116	0.5	0
+276	50477	0.6	0
+276	58720	0.7	0
+276	67013	0.8	0
+277	8537	0.1	0
+277	17010	0.2	0
+277	25395	0.3	0
+277	33716	0.4	0
+277	42117	0.5	0
+277	50478	0.6	0
+277	58721	0.7	0
+277	67014	0.8	0
+278	8537	0.1	0
+278	17010	0.2	0
+278	25395	0.3	0
+278	33716	0.4	0
+278	42117	0.5	0
+278	50478	0.6	0
+278	58721	0.7	0
+278	67014	0.8	0
+279	8538	0.1	0
+279	17011	0.2	0
+279	25396	0.3	0
+279	33717	0.4	0
+279	42118	0.5	0
+279	50479	0.6	0
+279	58722	0.7	0
+279	67015	0.8	0
+280	8538	0.1	0
+280	17011	0.2	0
+280	25396	0.3	0
+280	33717	0.4	0
+280	42118	0.5	0
+280	50479	0.6	0
+280	58722	0.7	0
+280	67015	0.8	0
+281	8539	0.1	0
+281	17012	0.2	0
+281	25397	0.3	0
+281	33718	0.4	0
+281	42119	0.5	0
+281	50480	0.6	0
+281	58723	0.7	0
+281	67016	0.8	0
+282	8539	0.1	0
+282	17012	0.2	0
+282	25397	0.3	0
+282	33718	0.4	0
+282	42119	0.5	0
+282	50480	0.6	0
+282	58723	0.7	0
+282	67016	0.8	0
+283	8540	0.1	0
+283	17013	0.2	0
+283	25398	0.3	0
+283	33719	0.4	0
+283	42120	0.5	0
+283	50481	0.6	0
+283	58724	0.7	0
+283	67017	0.8	0
+284	8540	0.1	0
+284	17013	0.2	0
+284	25398	0.3	0
+284	33719	0.4	0
+284	42120	0.5	0
+284	50481	0.6	0
+284	58724	0.7	0
+284	67017	0.8	0
+285	8541	0.1	0
+285	17014	0.2	0
+285	25399	0.3	0
+285	33720	0.4	0
+285	42121	0.5	0
+285	50482	0.6	0
+285	58725	0.7	0
+285	67018	0.8	0
+286	8541	0.1	0
+286	17014	0.2	0
+286	25399	0.3	0
+286	33720	0.4	0
+286	42121	0.5	0
+286	50482	0.6	0
+286	58725	0.7	0
+286	67018	0.8	0
+287	8542	0.1	0
+287	17015	0.2	0
+287	25400	0.3	0
+287	33721	0.4	0
+287	42122	0.5	0
+287	50483	0.6	0
+287	58726	0.7	0
+287	67019	0.8	0
+288	8542	0.1	0
+288	17015	0.2	0
+288	25400	0.3	0
+288	33721	0.4	0
+288	42122	0.5	0
+288	50483	0.6	0
+288	58726	0.7	0
+288	67019	0.8	0
+289	8543	0.1	0
+289	17016	0.2	0
+289	25401	0.3	0
+289	33722	0.4	0
+289	42123	0.5	0
+289	50484	0.6	0
+289	58727	0.7	0
+289	67020	0.8	0
+290	8543	0.1	0
+290	17016	0.2	0
+290	25401	0.3	0
+290	33722	0.4	0
+290	42123	0.5	0
+290	50484	0.6	0
+290	58727	0.7	0
+290	67020	0.8	0
+291	8544	0.1	0
+291	17017	0.2	0
+291	25402	0.3	0
+291	33723	0.4	0
+291	42124	0.5	0
+291	50485	0.6	0
+291	58728	0.7	0
+291	67021	0.8	0
+292	8544	0.1	0
+292	17017	0.2	0
+292	25402	0.3	0
+292	33723	0.4	0
+292	42124	0.5	0
+292	50485	0.6	0
+292	58728	0.7	0
+292	67021	0.8	0
+293	8545	0.1	0
+293	17018	0.2	0
+293	25403	0.3	0
+293	33724	0.4	0
+293	42125	0.5	0
+293	50486	0.6	0
+293	58729	0.7	0
+293	67022	0.8	0
+294	8545	0.1	0
+294	17018	0.2	0
+294	25403	0.3	0
+294	33724	0.4	0
+294	42125	0.5	0
+294	50486	0.6	0
+294	58729	0.7	0
+294	67022	0.8	0
+295	8546	0.1	0
+295	17019	0.2	0
+295	25404	0.3	0
+295	33725	0.4	0
+295	42126	0.5	0
+295	50487	0.6	0
+295	58730	0.7	0
+295	67023	0.8	0
+296	8546	0.1	0
+296	17019	0.2	0
+296	25404	0.3	0
+296	33725	0.4	0
+296	42126	0.5	0
+296	50487	0.6	0
+296	58730	0.7	0
+296	67023	0.8	0
+297	8547	0.1	0
+297	17020	0.2	0
+297	25405	0.3	0
+297	33726	0.4	0
+297	42127	0.5	0
+297	50488	0.6	0
+297	58731	0.7	0
+297	67024	0.8	0
+298	8547	0.1	0
+298	17020	0.2	0
+298	25405	0.3	0
+298	33726	0.4	0
+298	42127	0.5	0
+298	50488	0.6	0
+298	58731	0.7	0
+298	67024	0.8	0
+299	8548	0.1	0
+299	17021	0.2	0
+299	25406	0.3	0
+299	33727	0.4	0
+299	42128	0.5	0
+299	50489	0.6	0
+299	58732	0.7	0
+299	67025	0.8	0
+300	8548	0.1	0
+300	17021	0.2	0
+300	25406	0.3	0
+300	33727	0.4	0
+300	42128	0.5	0
+300	50489	0.6	0
+300	58732	0.7	0
+300	67025	0.8	0
+301	8549	0.1	0
+301	17022	0.2	0
+301	25407	0.3	0
+301	33728	0.4	0
+301	42129	0.5	0
+301	50490	0.6	0
+301	58733	0.7	0
+301	67026	0.8	0
+302	8549	0.1	0
+302	17022	0.2	0
+302	25407	0.3	0
+302	33728	0.4	0
+302	42129	0.5	0
+302	50490	0.6	0
+302	58733	0.7	0
+302	67026	0.8	0
+303	8550	0.1	0
+303	17023	0.2	0
+303	25408	0.3	0
+303	33729	0.4	0
+303	42130	0.5	0
+303	50491	0.6	0
+303	58734	0.7	0
+303	67027	0.8	0
+304	8550	0.1	0
+304	17023	0.2	0
+304	25408	0.3	0
+304	33729	0.4	0
+304	42130	0.5	0
+304	50491	0.6	0
+304	58734	0.7	0
+304	67027	0.8	0
+305	8551	0.1	0
+305	17024	0.2	0
+305	25409	0.3	0
+305	33730	0.4	0
+305	42131	0.5	0
+305	50492	0.6	0
+305	58735	0.7	0
+305	67028	0.8	0
+306	8551	0.1	0
+306	17024	0.2	0
+306	25409	0.3	0
+306	33730	0.4	0
+306	42131	0.5	0
+306	50492	0.6	0
+306	58735	0.7	0
+306	67028	0.8	0
+307	8552	0.1	0
+307	17025	0.2	0
+307	25410	0.3	0
+307	33731	0.4	0
+307	42132	0.5	0
+307	50493	0.6	0
+307	58736	0.7	0
+307	67029	0.8	0
+308	8552	0.1	0
+308	17025	0.2	0
+308	25410	0.3	0
+308	33731	0.4	0
+308	42132	0.5	0
+308	50493	0.6	0
+308	58736	0.7	0
+308	67029	0.8	0
+309	8553	0.1	0
+309	17026	0.2	0
+309	25411	0.3	0
+309	33732	0.4	0
+309	42133	0.5	0
+309	50494	0.6	0
+309	58737	0.7	0
+309	67030	0.8	0
+310	8553	0.1	0
+310	17026	0.2	0
+310	25411	0.3	0
+310	33732	0.4	0
+310	42133	0.5	0
+310	50494	0.6	0
+310	58737	0.7	0
+310	67030	0.8	0
+311	8554	0.1	0
+311	17027	0.2	0
+311	25412	0.3	0
+311	33733	0.4	0
+311	42134	0.5	0
+311	50495	0.6	0
+311	58738	0.7	0
+311	67031	0.8	0
+312	8554	0.1	0
+312	17027	0.2	0
+312	25412	0.3	0
+312	33733	0.4	0
+312	42134	0.5	0
+312	50495	0.6	0
+312	58738	0.7	0
+312	67031	0.8	0
+313	8555	0.1	0
+313	17028	0.2	0
+313	25413	0.3	0
+313	33734	0.4	0
+313	42135	0.5	0
+313	50496	0.6	0
+313	58739	0.7	0
+313	67032	0.8	0
+314	8555	0.1	0
+314	17028	0.2	0
+314	25413	0.3	0
+314	33734	0.4	0
+314	42135	0.5	0
+314	50496	0.6	0
+314	58739	0.7	0
+314	67032	0.8	0
+315	8556	0.1	0
+315	17029	0.2	0
+315	25414	0.3	0
+315	33735	0.4	0
+315	42136	0.5	0
+315	50497	0.6	0
+315	58740	0.7	0
+315	67033	0.8	0
+316	8556	0.1	0
+316	17029	0.2	0
+316	25414	0.3	0
+316	33735	0.4	0
+316	42136	0.5	0
+316	50497	0.6	0
+316	58740	0.7	0
+316	67033	0.8	0
+317	8557	0.1	0
+317	17030	0.2	0
+317	25415	0.3	0
+317	33736	0.4	0
+317	42137	0.5	0
+317	50498	0.6	0
+317	58741	0.7	0
+317	67034	0.8	0
+318	8557	0.1	0
+318	17030	0.2	0
+318	25415	0.3	0
+318	33736	0.4	0
+318	42137	0.5	0
+318	50498	0.6	0
+318	58741	0.7	0
+318	67034	0.8	0
+319	8558	0.1	0
+319	17031	0.2	0
+319	25416	0.3	0
+319	33737	0.4	0
+319	42138	0.5	0
+319	50499	0.6	0
+319	58742	0.7	0
+319	67035	0.8	0
+320	8558	0.1	0
+320	17031	0.2	0
+320	25416	0.3	0
+320	33737	0.4	0
+320	42138	0.5	0
+320	50499	0.6	0
+320	58742	0.7	0
+320	67035	0.8	0
+321	8559	0.1	0
+321	17032	0.2	0
+321	25417	0.3	0
+321	33738	0.4	0
+321	42139	0.5	0
+321	50500	0.6	0
+321	58743	0.7	0
+321	67036	0.8	0
+322	8559	0.1	0
+322	17032	0.2	0
+322	25417	0.3	0
+322	33738	0.4	0
+322	42139	0.5	0
+322	50500	0.6	0
+322	58743	0.7	0
+322	67036	0.8	0
+323	8560	0.1	0
+323	17033	0.2	0
+323	25418	0.3	0
+323	33739	0.4	0
+323	42140	0.5	0
+323	50501	0.6	0
+323	58744	0.7	0
+323	67037	0.8	0
+324	8560	0.1	0
+324	17033	0.2	0
+324	25418	0.3	0
+324	33739	0.4	0
+324	42140	0.5	0
+324	50501	0.6	0
+324	58744	0.7	0
+324	67037	0.8	0
+325	8561	0.1	0
+325	17034	0.2	0
+325	25419	0.3	0
+325	33740	0.4	0
+325	42141	0.5	0
+325	50502	0.6	0
+325	58745	0.7	0
+325	67038	0.8	0
+326	8561	0.1	0
+326	17034	0.2	0
+326	25419	0.3	0
+326	33740	0.4	0
+326	42141	0.5	0
+326	50502	0.6	0
+326	58745	0.7	0
+326	67038	0.8	0
+327	8562	0.1	0
+327	17035	0.2	0
+327	25420	0.3	0
+327	33741	0.4	0
+327	42142	0.5	0
+327	50503	0.6	0
+327	58746	0.7	0
+327	67039	0.8	0
+328	8562	0.1	0
+328	17035	0.2	0
+328	25420	0.3	0
+328	33741	0.4	0
+328	42142	0.5	0
+328	50503	0.6	0
+328	58746	0.7	0
+328	67039	0.8	0
+329	8563	0.1	0
+329	17036	0.2	0
+329	25421	0.3	0
+329	33742	0.4	0
+329	42143	0.5	0
+329	50504	0.6	0
+329	58747	0.7	0
+329	67040	0.8	0
+330	8563	0.1	0
+330	17036	0.2	0
+330	25421	0.3	0
+330	33742	0.4	0
+330	42143	0.5	0
+330	50504	0.6	0
+330	58747	0.7	0
+330	67040	0.8	0
+331	8564	0.1	0
+331	17037	0.2	0
+331	25422	0.3	0
+331	33743	0.4	0
+331	42144	0.5	0
+331	50505	0.6	0
+331	58748	0.7	0
+331	67041	0.8	0
+332	8564	0.1	0
+332	17037	0.2	0
+332	25422	0.3	0
+332	33743	0.4	0
+332	42144	0.5	0
+332	50505	0.6	0
+332	58748	0.7	0
+332	67041	0.8	0
+333	8565	0.1	0
+333	17038	0.2	0
+333	25423	0.3	0
+333	33744	0.4	0
+333	42145	0.5	0
+333	50506	0.6	0
+333	58749	0.7	0
+333	67042	0.8	0
+334	8565	0.1	0
+334	17038	0.2	0
+334	25423	0.3	0
+334	33744	0.4	0
+334	42145	0.5	0
+334	50506	0.6	0
+334	58749	0.7	0
+334	67042	0.8	0
+335	8566	0.1	0
+335	17039	0.2	0
+335	25424	0.3	0
+335	33745	0.4	0
+335	42146	0.5	0
+335	50507	0.6	0
+335	58750	0.7	0
+335	67043	0.8	0
+336	8566	0.1	0
+336	17039	0.2	0
+336	25424	0.3	0
+336	33745	0.4	0
+336	42146	0.5	0
+336	50507	0.6	0
+336	58750	0.7	0
+336	67043	0.8	0
+337	8567	0.1	0
+337	17040	0.2	0
+337	25425	0.3	0
+337	33746	0.4	0
+337	42147	0.5	0
+337	50508	0.6	0
+337	58751	0.7	0
+337	67044	0.8	0
+338	8567	0.1	0
+338	17040	0.2	0
+338	25425	0.3	0
+338	33746	0.4	0
+338	42147	0.5	0
+338	50508	0.6	0
+338	58751	0.7	0
+338	67044	0.8	0
+339	8568	0.1	0
+339	17041	0.2	0
+339	25426	0.3	0
+339	33747	0.4	0
+339	42148	0.5	0
+339	50509	0.6	0
+339	58752	0.7	0
+339	67045	0.8	0
+340	8568	0.1	0
+340	17041	0.2	0
+340	25426	0.3	0
+340	33747	0.4	0
+340	42148	0.5	0
+340	50509	0.6	0
+340	58752	0.7	0
+340	67045	0.8	0
+341	8569	0.1	0
+341	17042	0.2	0
+341	25427	0.3	0
+341	33748	0.4	0
+341	42149	0.5	0
+341	50510	0.6	0
+341	58753	0.7	0
+341	67046	0.8	0
+342	8569	0.1	0
+342	17042	0.2	0
+342	25427	0.3	0
+342	33748	0.4	0
+342	42149	0.5	0
+342	50510	0.6	0
+342	58753	0.7	0
+342	67046	0.8	0
+343	8570	0.1	0
+343	17043	0.2	0
+343	25428	0.3	0
+343	33749	0.4	0
+343	42150	0.5	0
+343	50511	0.6	0
+343	58754	0.7	0
+343	67047	0.8	0
+344	8570	0.1	0
+344	17043	0.2	0
+344	25428	0.3	0
+344	33749	0.4	0
+344	42150	0.5	0
+344	50511	0.6	0
+344	58754	0.7	0
+344	67047	0.8	0
+345	8571	0.1	0
+345	17044	0.2	0
+345	25429	0.3	0
+345	33750	0.4	0
+345	42151	0.5	0
+345	50512	0.6	0
+345	58755	0.7	0
+345	67048	0.8	0
+346	8571	0.1	0
+346	17044	0.2	0
+346	25429	0.3	0
+346	33750	0.4	0
+346	42151	0.5	0
+346	50512	0.6	0
+346	58755	0.7	0
+346	67048	0.8	0
+347	8572	0.1	0
+347	17045	0.2	0
+347	25430	0.3	0
+347	33751	0.4	0
+347	42152	0.5	0
+347	50513	0.6	0
+347	58756	0.7	0
+347	67049	0.8	0
+348	8572	0.1	0
+348	17045	0.2	0
+348	25430	0.3	0
+348	33751	0.4	0
+348	42152	0.5	0
+348	50513	0.6	0
+348	58756	0.7	0
+348	67049	0.8	0
+349	8573	0.1	0
+349	17046	0.2	0
+349	25431	0.3	0
+349	33752	0.4	0
+349	42153	0.5	0
+349	50514	0.6	0
+349	58757	0.7	0
+349	67050	0.8	0
+350	8573	0.1	0
+350	17046	0.2	0
+350	25431	0.3	0
+350	33752	0.4	0
+350	42153	0.5	0
+350	50514	0.6	0
+350	58757	0.7	0
+350	67050	0.8	0
+351	8574	0.1	0
+351	17047	0.2	0
+351	25432	0.3	0
+351	33753	0.4	0
+351	42154	0.5	0
+351	50515	0.6	0
+351	58758	0.7	0
+351	67051	0.8	0
+352	8574	0.1	0
+352	17047	0.2	0
+352	25432	0.3	0
+352	33753	0.4	0
+352	42154	0.5	0
+352	50515	0.6	0
+352	58758	0.7	0
+352	67051	0.8	0
+353	8575	0.1	0
+353	17048	0.2	0
+353	25433	0.3	0
+353	33754	0.4	0
+353	42155	0.5	0
+353	50516	0.6	0
+353	58759	0.7	0
+353	67052	0.8	0
+354	8575	0.1	0
+354	17048	0.2	0
+354	25433	0.3	0
+354	33754	0.4	0
+354	42155	0.5	0
+354	50516	0.6	0
+354	58759	0.7	0
+354	67052	0.8	0
+355	8576	0.1	0
+355	17049	0.2	0
+355	25434	0.3	0
+355	33755	0.4	0
+355	42156	0.5	0
+355	50517	0.6	0
+355	58760	0.7	0
+355	67053	0.8	0
+356	8576	0.1	0
+356	17049	0.2	0
+356	25434	0.3	0
+356	33755	0.4	0
+356	42156	0.5	0
+356	50517	0.6	0
+356	58760	0.7	0
+356	67053	0.8	0
+357	8577	0.1	0
+357	17050	0.2	0
+357	25435	0.3	0
+357	33756	0.4	0
+357	42157	0.5	0
+357	50518	0.6	0
+357	58761	0.7	0
+357	67054	0.8	0
+358	8577	0.1	0
+358	17050	0.2	0
+358	25435	0.3	0
+358	33756	0.4	0
+358	42157	0.5	0
+358	50518	0.6	0
+358	58761	0.7	0
+358	67054	0.8	0
+359	8578	0.1	0
+359	17051	0.2	0
+359	25436	0.3	0
+359	33757	0.4	0
+359	42158	0.5	0
+359	50519	0.6	0
+359	58762	0.7	0
+359	67055	0.8	0
+360	8578	0.1	0
+360	17051	0.2	0
+360	25436	0.3	0
+360	33757	0.4	0
+360	42158	0.5	0
+360	50519	0.6	0
+360	58762	0.7	0
+360	67055	0.8	0
+361	8579	0.1	0
+361	17052	0.2	0
+361	25437	0.3	0
+361	33758	0.4	0
+361	42159	0.5	0
+361	50520	0.6	0
+361	58763	0.7	0
+361	67056	0.8	0
+362	8579	0.1	0
+362	17052	0.2	0
+362	25437	0.3	0
+362	33758	0.4	0
+362	42159	0.5	0
+362	50520	0.6	0
+362	58763	0.7	0
+362	67056	0.8	0
+363	8580	0.1	0
+363	17053	0.2	0
+363	25438	0.3	0
+363	33759	0.4	0
+363	42160	0.5	0
+363	50521	0.6	0
+363	58764	0.7	0
+363	67057	0.8	0
+364	8580	0.1	0
+364	17053	0.2	0
+364	25438	0.3	0
+364	33759	0.4	0
+364	42160	0.5	0
+364	50521	0.6	0
+364	58764	0.7	0
+364	67057	0.8	0
+365	8581	0.1	0
+365	17054	0.2	0
+365	25439	0.3	0
+365	33760	0.4	0
+365	42161	0.5	0
+365	50522	0.6	0
+365	58765	0.7	0
+365	67058	0.8	0
+366	8581	0.1	0
+366	17054	0.2	0
+366	25439	0.3	0
+366	33760	0.4	0
+366	42161	0.5	0
+366	50522	0.6	0
+366	58765	0.7	0
+366	67058	0.8	0
+367	8582	0.1	0
+367	17055	0.2	0
+367	25440	0.3	0
+367	33761	0.4	0
+367	42162	0.5	0
+367	50523	0.6	0
+367	58766	0.7	0
+367	67059	0.8	0
+368	8582	0.1	0
+368	17055	0.2	0
+368	25440	0.3	0
+368	33761	0.4	0
+368	42162	0.5	0
+368	50523	0.6	0
+368	58766	0.7	0
+368	67059	0.8	0
+369	8583	0.1	0
+369	17056	0.2	0
+369	25441	0.3	0
+369	33762	0.4	0
+369	42163	0.5	0
+369	50524	0.6	0
+369	58767	0.7	0
+369	67060	0.8	0
+370	8583	0.1	0
+370	17056	0.2	0
+370	25441	0.3	0
+370	33762	0.4	0
+370	42163	0.5	0
+370	50524	0.6	0
+370	58767	0.7	0
+370	67060	0.8	0
+371	8584	0.1	0
+371	17057	0.2	0
+371	25442	0.3	0
+371	33763	0.4	0
+371	42164	0.5	0
+371	50525	0.6	0
+371	58768	0.7	0
+371	67061	0.8	0
+372	8584	0.1	0
+372	17057	0.2	0
+372	25442	0.3	0
+372	33763	0.4	0
+372	42164	0.5	0
+372	50525	0.6	0
+372	58768	0.7	0
+372	67061	0.8	0
+373	8585	0.1	0
+373	17058	0.2	0
+373	25443	0.3	0
+373	33764	0.4	0
+373	42165	0.5	0
+373	50526	0.6	0
+373	58769	0.7	0
+373	67062	0.8	0
+374	8585	0.1	0
+374	17058	0.2	0
+374	25443	0.3	0
+374	33764	0.4	0
+374	42165	0.5	0
+374	50526	0.6	0
+374	58769	0.7	0
+374	67062	0.8	0
+375	8586	0.1	0
+375	17059	0.2	0
+375	25444	0.3	0
+375	33765	0.4	0
+375	42166	0.5	0
+375	50527	0.6	0
+375	58770	0.7	0
+375	67063	0.8	0
+376	8586	0.1	0
+376	17059	0.2	0
+376	25444	0.3	0
+376	33765	0.4	0
+376	42166	0.5	0
+376	50527	0.6	0
+376	58770	0.7	0
+376	67063	0.8	0
+377	8587	0.1	0
+377	17060	0.2	0
+377	25445	0.3	0
+377	33766	0.4	0
+377	42167	0.5	0
+377	50528	0.6	0
+377	58771	0.7	0
+377	67064	0.8	0
+378	8587	0.1	0
+378	17060	0.2	0
+378	25445	0.3	0
+378	33766	0.4	0
+378	42167	0.5	0
+378	50528	0.6	0
+378	58771	0.7	0
+378	67064	0.8	0
+379	8588	0.1	0
+379	17061	0.2	0
+379	25446	0.3	0
+379	33767	0.4	0
+379	42168	0.5	0
+379	50529	0.6	0
+379	58772	0.7	0
+379	67065	0.8	0
+380	8588	0.1	0
+380	17061	0.2	0
+380	25446	0.3	0
+380	33767	0.4	0
+380	42168	0.5	0
+380	50529	0.6	0
+380	58772	0.7	0
+380	67065	0.8	0
+381	8589	0.1	0
+381	17062	0.2	0
+381	25447	0.3	0
+381	33768	0.4	0
+381	42169	0.5	0
+381	50530	0.6	0
+381	58773	0.7	0
+381	67066	0.8	0
+382	8589	0.1	0
+382	17062	0.2	0
+382	25447	0.3	0
+382	33768	0.4	0
+382	42169	0.5	0
+382	50530	0.6	0
+382	58773	0.7	0
+382	67066	0.8	0
+383	8590	0.1	0
+383	17063	0.2	0
+383	25448	0.3	0
+383	33769	0.4	0
+383	42170	0.5	0
+383	50531	0.6	0
+383	58774	0.7	0
+383	67067	0.8	0
+384	8590	0.1	0
+384	17063	0.2	0
+384	25448	0.3	0
+384	33769	0.4	0
+384	42170	0.5	0
+384	50531	0.6	0
+384	58774	0.7	0
+384	67067	0.8	0
+385	8591	0.1	0
+385	17064	0.2	0
+385	25449	0.3	0
+385	33770	0.4	0
+385	42171	0.5	0
+385	50532	0.6	0
+385	58775	0.7	0
+385	67068	0.8	0
+386	8591	0.1	0
+386	17064	0.2	0
+386	25449	0.3	0
+386	33770	0.4	0
+386	42171	0.5	0
+386	50532	0.6	0
+386	58775	0.7	0
+386	67068	0.8	0
+387	8592	0.1	0
+387	17065	0.2	0
+387	25450	0.3	0
+387	33771	0.4	0
+387	42172	0.5	0
+387	50533	0.6	0
+387	58776	0.7	0
+387	67069	0.8	0
+388	8592	0.1	0
+388	17065	0.2	0
+388	25450	0.3	0
+388	33771	0.4	0
+388	42172	0.5	0
+388	50533	0.6	0
+388	58776	0.7	0
+388	67069	0.8	0
+389	8593	0.1	0
+389	17066	0.2	0
+389	25451	0.3	0
+389	33772	0.4	0
+389	42173	0.5	0
+389	50534	0.6	0
+389	58777	0.7	0
+389	67070	0.8	0
+390	8593	0.1	0
+390	17066	0.2	0
+390	25451	0.3	0
+390	33772	0.4	0
+390	42173	0.5	0
+390	50534	0.6	0
+390	58777	0.7	0
+390	67070	0.8	0
+391	8594	0.1	0
+391	17067	0.2	0
+391	25452	0.3	0
+391	33773	0.4	0
+391	42174	0.5	0
+391	50535	0.6	0
+391	58778	0.7	0
+391	67071	0.8	0
+392	8594	0.1	0
+392	17067	0.2	0
+392	25452	0.3	0
+392	33773	0.4	0
+392	42174	0.5	0
+392	50535	0.6	0
+392	58778	0.7	0
+392	67071	0.8	0
+393	8595	0.1	0
+393	17068	0.2	0
+393	25453	0.3	0
+393	33774	0.4	0
+393	42175	0.5	0
+393	50536	0.6	0
+393	58779	0.7	0
+393	67072	0.8	0
+394	8595	0.1	0
+394	17068	0.2	0
+394	25453	0.3	0
+394	33774	0.4	0
+394	42175	0.5	0
+394	50536	0.6	0
+394	58779	0.7	0
+394	67072	0.8	0
+395	8596	0.1	0
+395	17069	0.2	0
+395	25454	0.3	0
+395	33775	0.4	0
+395	42176	0.5	0
+395	50537	0.6	0
+395	58780	0.7	0
+395	67073	0.8	0
+396	8596	0.1	0
+396	17069	0.2	0
+396	25454	0.3	0
+396	33775	0.4	0
+396	42176	0.5	0
+396	50537	0.6	0
+396	58780	0.7	0
+396	67073	0.8	0
+397	8597	0.1	0
+397	17070	0.2	0
+397	25455	0.3	0
+397	33776	0.4	0
+397	42177	0.5	0
+397	50538	0.6	0
+397	58781	0.7	0
+397	67074	0.8	0
+398	8597	0.1	0
+398	17070	0.2	0
+398	25455	0.3	0
+398	33776	0.4	0
+398	42177	0.5	0
+398	50538	0.6	0
+398	58781	0.7	0
+398	67074	0.8	0
+399	8598	0.1	0
+399	17071	0.2	0
+399	25456	0.3	0
+399	33777	0.4	0
+399	42178	0.5	0
+399	50539	0.6	0
+399	58782	0.7	0
+399	67075	0.8	0
+400	8598	0.1	0
+400	17071	0.2	0
+400	25456	0.3	0
+400	33777	0.4	0
+400	42178	0.5	0
+400	50539	0.6	0
+400	58782	0.7	0
+400	67075	0.8	0
+401	8599	0.1	0
+401	17072	0.2	0
+401	25457	0.3	0
+401	33778	0.4	0
+401	42179	0.5	0
+401	50540	0.6	0
+401	58783	0.7	0
+401	67076	0.8	0
+402	8599	0.1	0
+402	17072	0.2	0
+402	25457	0.3	0
+402	33778	0.4	0
+402	42179	0.5	0
+402	50540	0.6	0
+402	58783	0.7	0
+402	67076	0.8	0
+403	16885	0.2	0.198674298781
+403	25270	0.3	0.266808017363
+403	25270	0.3	0.268457614241
+403	25270	0.3	0.270262059898
+403	25270	0.3	0.277342863722
+403	25270	0.3	0.279221820482
+403	25270	0.3	0.282999477679
+403	25270	0.3	0.283049766574
+403	25270	0.3	0.283778580551
+403	25270	0.3	0.284040472401
+403	25270	0.3	0.285628385958
+403	25270	0.3	0.297762871391
+403	33591	0.4	0.293435830988
+403	33591	0.4	0.303267843449
+403	33591	0.4	0.304443491486
+403	33591	0.4	0.304697881702
+403	33591	0.4	0.306271723395
+403	33591	0.4	0.314086453906
+403	33591	0.4	0.331969349684
+403	33591	0.4	0.354068757796
+403	33591	0.4	0.355447125161
+403	33591	0.4	0.35776887495
+403	33591	0.4	0.36001274472
+403	33591	0.4	0.366052728528
+403	41992	0.5	0.289035018664
+403	41992	0.5	0.289798805739
+403	41992	0.5	0.297192809825
+403	41992	0.5	0.304213962134
+403	41992	0.5	0.315240397579
+403	41992	0.5	0.316377593011
+403	41992	0.5	0.32479175557
+403	41992	0.5	0.333751008135
+403	41992	0.5	0.342836535257
+403	41992	0.5	0.342945881679
+403	41992	0.5	0.346224250218
+403	41992	0.5	0.348070077021
+403	41992	0.5	0.356033216513
+403	41992	0.5	0.368873416225
+403	41992	0.5	0.369437100109
+403	41992	0.5	0.374272202915
+403	41992	0.5	0.376809816507
+403	41992	0.5	0.385778059771
+403	41992	0.5	0.393253470406
+403	50353	0.6	0.324952202063
+403	50353	0.6	0.32510789574
+403	50353	0.6	0.329952604104
+403	50353	0.6	0.338927387895
+403	50353	0.6	0.351930366805
+403	50353	0.6	0.352167964325
+403	50353	0.6	0.352589093982
+403	50353	0.6	0.360549939686
+403	50353	0.6	0.368708969624
+403	50353	0.6	0.378172474834
+403	50353	0.6	0.378396333824
+403	50353	0.6	0.383049156556
+403	50353	0.6	0.38372299505
+403	58596	0.7	0.352087879929
+403	58596	0.7	0.355072486916
+403	58596	0.7	0.358656569611
+403	58596	0.7	0.359667333999
+403	58596	0.7	0.374219785074
+403	58596	0.7	0.38100436999
+403	58596	0.7	0.394452075644
+403	58596	0.7	0.399030671276
+403	58596	0.7	0.403605984253
+403	58596	0.7	0.418966244809
+403	66889	0.8	0.265335612539
+403	66889	0.8	0.269162972205
+403	66889	0.8	0.270288291771
+403	66889	0.8	0.272186350773
+403	66889	0.8	0.273874364473
+403	66889	0.8	0.278510504327
+403	66889	0.8	0.279153642135
+403	66889	0.8	0.295028348786
+403	66889	0.8	0.295442419868
+403	66889	0.8	0.297817963091
+403	66889	0.8	0.298698986405
+403	66889	0.8	0.300022801207
+403	66889	0.8	0.312727579582
+403	66889	0.8	0.314036193243
+403	66889	0.8	0.316955351895
+403	66889	0.8	0.32168905856
+403	66889	0.8	0.326289159317
+403	66889	0.8	0.332211830777
+403	66889	0.8	0.333250882384
+403	66889	0.8	0.336432348841
+403	66889	0.8	0.338733046664
+403	66889	0.8	0.341718426009
+403	66889	0.8	0.360454853898
+403	66889	0.8	0.360856379561
+403	66889	0.8	0.368405585246
+403	66889	0.8	0.373938742805
+403	66889	0.8	0.381511427029
+403	66889	0.8	0.38399876935
+403	66889	0.8	0.389787138702
+403	66889	0.8	0.390959155777
+403	66889	0.8	0.397726575774
+403	66889	0.8	0.398994071546
+403	66889	0.8	0.403542123034
+403	66889	0.8	0.420381231786
+403	66889	0.8	0.429999308272
+403	66889	0.8	0.432608740907
+403	66889	0.8	0.432616735063
+403	66889	0.8	0.442555638759
+403	66889	0.8	0.446752113495
+403	66889	0.8	0.449597367348
+vector 404 Network.Users[13] packetDelayStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetDelay
+attr title "Packet delay"
+vector 405 Network.Users[19] packetDelayStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetDelay
+attr title "Packet delay"
+vector 406 Network.Users[20] packetDelayStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetDelay
+attr title "Packet delay"
+vector 407 Network.Users[27] packetDelayStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetDelay
+attr title "Packet delay"
+vector 408 Network.Users[29] packetDelayStat:vector ETV
+attr "" ""
+attr recordingmode vector
+attr source packetDelay
+attr title "Packet delay"
+0	75467	0.9	25
+0	84068	1	25
+0	92385	1.1	25
+0	100768	1.2	25
+0	109061	1.3	25
+0	117372	1.4	25
+0	125833	1.5	25
+0	134350	1.6	25
+2	75468	0.9	0
+2	84069	1	0
+2	92386	1.1	0
+2	100769	1.2	0
+2	109062	1.3	0
+2	117373	1.4	0
+2	125834	1.5	0
+2	134351	1.6	0
+3	75468	0.9	0
+3	84069	1	0
+3	92386	1.1	0
+3	100769	1.2	0
+3	109062	1.3	0
+3	117373	1.4	0
+3	125834	1.5	0
+3	134351	1.6	0
+4	75469	0.9	0
+4	84070	1	0
+4	92387	1.1	0
+4	100770	1.2	0
+4	109063	1.3	0
+4	117374	1.4	0
+4	125835	1.5	0
+4	134352	1.6	0
+5	75469	0.9	0
+5	84070	1	0
+5	92387	1.1	0
+5	100770	1.2	0
+5	109063	1.3	0
+5	117374	1.4	0
+5	125835	1.5	0
+5	134352	1.6	0
+6	75470	0.9	0
+6	84071	1	0
+6	92388	1.1	0
+6	100771	1.2	0
+6	109064	1.3	0
+6	117375	1.4	0
+6	125836	1.5	0
+6	134353	1.6	0
+7	75470	0.9	0
+7	84071	1	0
+7	92388	1.1	0
+7	100771	1.2	0
+7	109064	1.3	0
+7	117375	1.4	0
+7	125836	1.5	0
+7	134353	1.6	0
+9	75471	0.9	0
+9	84072	1	0
+9	92389	1.1	0
+9	100772	1.2	0
+9	109065	1.3	0
+9	117376	1.4	0
+9	125837	1.5	0
+9	134354	1.6	0
+10	75471	0.9	0
+10	84072	1	0
+10	92389	1.1	0
+10	100772	1.2	0
+10	109065	1.3	0
+10	117376	1.4	0
+10	125837	1.5	0
+10	134354	1.6	0
+11	75472	0.9	0
+11	84073	1	0
+11	92390	1.1	0
+11	100773	1.2	0
+11	109066	1.3	0
+11	117377	1.4	0
+11	125838	1.5	0
+11	134355	1.6	0
+12	75472	0.9	0
+12	84073	1	0
+12	92390	1.1	0
+12	100773	1.2	0
+12	109066	1.3	0
+12	117377	1.4	0
+12	125838	1.5	0
+12	134355	1.6	0
+13	75473	0.9	0
+13	84074	1	0
+13	92391	1.1	0
+13	100774	1.2	0
+13	109067	1.3	0
+13	117378	1.4	0
+13	125839	1.5	0
+13	134356	1.6	0
+14	75473	0.9	0
+14	84074	1	0
+14	92391	1.1	0
+14	100774	1.2	0
+14	109067	1.3	0
+14	117378	1.4	0
+14	125839	1.5	0
+14	134356	1.6	0
+15	75474	0.9	0
+15	84075	1	0
+15	92392	1.1	0
+15	100775	1.2	0
+15	109068	1.3	0
+15	117379	1.4	0
+15	125840	1.5	0
+15	134357	1.6	0
+16	75474	0.9	0
+16	84075	1	0
+16	92392	1.1	0
+16	100775	1.2	0
+16	109068	1.3	0
+16	117379	1.4	0
+16	125840	1.5	0
+16	134357	1.6	0
+17	75475	0.9	0
+17	84076	1	0
+17	92393	1.1	0
+17	100776	1.2	0
+17	109069	1.3	0
+17	117380	1.4	0
+17	125841	1.5	0
+17	134358	1.6	0
+18	75475	0.9	0
+18	84076	1	0
+18	92393	1.1	0
+18	100776	1.2	0
+18	109069	1.3	0
+18	117380	1.4	0
+18	125841	1.5	0
+18	134358	1.6	0
+19	75476	0.9	0
+19	84077	1	0
+19	92394	1.1	0
+19	100777	1.2	0
+19	109070	1.3	0
+19	117381	1.4	0
+19	125842	1.5	0
+19	134359	1.6	0
+20	75476	0.9	0
+20	84077	1	0
+20	92394	1.1	0
+20	100777	1.2	0
+20	109070	1.3	0
+20	117381	1.4	0
+20	125842	1.5	0
+20	134359	1.6	0
+21	75477	0.9	0
+21	84078	1	0
+21	92395	1.1	0
+21	100778	1.2	0
+21	109071	1.3	0
+21	117382	1.4	0
+21	125843	1.5	0
+21	134360	1.6	0
+22	75477	0.9	0
+22	84078	1	0
+22	92395	1.1	0
+22	100778	1.2	0
+22	109071	1.3	0
+22	117382	1.4	0
+22	125843	1.5	0
+22	134360	1.6	0
+23	75478	0.9	0
+23	84079	1	0
+23	92396	1.1	0
+23	100779	1.2	0
+23	109072	1.3	0
+23	117383	1.4	0
+23	125844	1.5	0
+23	134361	1.6	0
+24	75478	0.9	0
+24	84079	1	0
+24	92396	1.1	0
+24	100779	1.2	0
+24	109072	1.3	0
+24	117383	1.4	0
+24	125844	1.5	0
+24	134361	1.6	0
+25	75479	0.9	0
+25	84080	1	0
+25	92397	1.1	0
+25	100780	1.2	0
+25	109073	1.3	0
+25	117384	1.4	0
+25	125845	1.5	0
+25	134362	1.6	0
+26	75479	0.9	0
+26	84080	1	0
+26	92397	1.1	0
+26	100780	1.2	0
+26	109073	1.3	0
+26	117384	1.4	0
+26	125845	1.5	0
+26	134362	1.6	0
+27	75480	0.9	40
+27	84081	1	9
+27	92398	1.1	0
+27	100781	1.2	0
+27	109074	1.3	0
+27	117385	1.4	0
+27	125846	1.5	0
+27	134363	1.6	0
+28	75480	0.9	282
+28	84081	1	81
+28	92398	1.1	0
+28	100781	1.2	0
+28	109074	1.3	0
+28	117385	1.4	0
+28	125846	1.5	0
+28	134363	1.6	0
+29	75481	0.9	0
+29	84082	1	1
+29	92399	1.1	7
+29	100782	1.2	0
+29	109075	1.3	0
+29	117386	1.4	0
+29	125847	1.5	0
+29	134364	1.6	0
+30	75481	0.9	0
+30	84082	1	8
+30	92399	1.1	79
+30	100782	1.2	0
+30	109075	1.3	0
+30	117386	1.4	0
+30	125847	1.5	0
+30	134364	1.6	0
+31	75482	0.9	0
+31	84083	1	0
+31	92400	1.1	0
+31	100783	1.2	0
+31	109076	1.3	0
+31	117387	1.4	0
+31	125848	1.5	0
+31	134365	1.6	0
+32	75482	0.9	0
+32	84083	1	0
+32	92400	1.1	0
+32	100783	1.2	0
+32	109076	1.3	0
+32	117387	1.4	0
+32	125848	1.5	0
+32	134365	1.6	0
+33	75483	0.9	0
+33	84084	1	0
+33	92401	1.1	0
+33	100784	1.2	0
+33	109077	1.3	0
+33	117388	1.4	0
+33	125849	1.5	0
+33	134366	1.6	0
+34	75483	0.9	0
+34	84084	1	0
+34	92401	1.1	0
+34	100784	1.2	0
+34	109077	1.3	0
+34	117388	1.4	0
+34	125849	1.5	0
+34	134366	1.6	0
+35	75484	0.9	0
+35	84085	1	0
+35	92402	1.1	0
+35	100785	1.2	0
+35	109078	1.3	0
+35	117389	1.4	0
+35	125850	1.5	0
+35	134367	1.6	0
+36	75484	0.9	0
+36	84085	1	0
+36	92402	1.1	0
+36	100785	1.2	0
+36	109078	1.3	0
+36	117389	1.4	0
+36	125850	1.5	0
+36	134367	1.6	0
+37	75485	0.9	0
+37	84086	1	0
+37	92403	1.1	0
+37	100786	1.2	0
+37	109079	1.3	0
+37	117390	1.4	0
+37	125851	1.5	0
+37	134368	1.6	0
+38	75485	0.9	0
+38	84086	1	0
+38	92403	1.1	0
+38	100786	1.2	0
+38	109079	1.3	0
+38	117390	1.4	0
+38	125851	1.5	0
+38	134368	1.6	0
+39	75486	0.9	0
+39	84087	1	0
+39	92404	1.1	0
+39	100787	1.2	0
+39	109080	1.3	0
+39	117391	1.4	0
+39	125852	1.5	0
+39	134369	1.6	0
+40	75486	0.9	0
+40	84087	1	0
+40	92404	1.1	0
+40	100787	1.2	0
+40	109080	1.3	0
+40	117391	1.4	0
+40	125852	1.5	0
+40	134369	1.6	0
+41	75487	0.9	0
+41	84088	1	0
+41	92405	1.1	1
+41	100788	1.2	10
+41	109081	1.3	26
+41	117392	1.4	0
+41	125853	1.5	0
+41	134370	1.6	0
+42	75487	0.9	0
+42	84088	1	0
+42	92405	1.1	3
+42	100788	1.2	79
+42	109081	1.3	164
+42	117392	1.4	0
+42	125853	1.5	0
+42	134370	1.6	0
+43	75488	0.9	0
+43	84089	1	0
+43	92406	1.1	0
+43	100789	1.2	0
+43	109082	1.3	1
+43	117393	1.4	8
+43	125854	1.5	0
+43	134371	1.6	0
+44	75488	0.9	0
+44	84089	1	0
+44	92406	1.1	0
+44	100789	1.2	0
+44	109082	1.3	2
+44	117393	1.4	76
+44	125854	1.5	0
+44	134371	1.6	0
+45	75489	0.9	0
+45	84090	1	0
+45	92407	1.1	0
+45	100790	1.2	0
+45	109083	1.3	0
+45	117394	1.4	0
+45	125855	1.5	0
+45	134372	1.6	0
+46	75489	0.9	0
+46	84090	1	0
+46	92407	1.1	0
+46	100790	1.2	0
+46	109083	1.3	0
+46	117394	1.4	0
+46	125855	1.5	0
+46	134372	1.6	0
+47	75490	0.9	0
+47	84091	1	0
+47	92408	1.1	0
+47	100791	1.2	0
+47	109084	1.3	0
+47	117395	1.4	0
+47	125856	1.5	0
+47	134373	1.6	0
+48	75490	0.9	0
+48	84091	1	0
+48	92408	1.1	0
+48	100791	1.2	0
+48	109084	1.3	0
+48	117395	1.4	0
+48	125856	1.5	0
+48	134373	1.6	0
+49	75491	0.9	0
+49	84092	1	0
+49	92409	1.1	0
+49	100792	1.2	0
+49	109085	1.3	0
+49	117396	1.4	0
+49	125857	1.5	0
+49	134374	1.6	0
+50	75491	0.9	0
+50	84092	1	0
+50	92409	1.1	0
+50	100792	1.2	0
+50	109085	1.3	0
+50	117396	1.4	0
+50	125857	1.5	0
+50	134374	1.6	0
+51	75492	0.9	0
+51	84093	1	0
+51	92410	1.1	0
+51	100793	1.2	0
+51	109086	1.3	0
+51	117397	1.4	0
+51	125858	1.5	0
+51	134375	1.6	0
+52	75492	0.9	0
+52	84093	1	0
+52	92410	1.1	0
+52	100793	1.2	0
+52	109086	1.3	0
+52	117397	1.4	0
+52	125858	1.5	0
+52	134375	1.6	0
+53	75493	0.9	0
+53	84094	1	0
+53	92411	1.1	0
+53	100794	1.2	0
+53	109087	1.3	0
+53	117398	1.4	0
+53	125859	1.5	0
+53	134376	1.6	0
+54	75493	0.9	0
+54	84094	1	0
+54	92411	1.1	0
+54	100794	1.2	0
+54	109087	1.3	0
+54	117398	1.4	0
+54	125859	1.5	0
+54	134376	1.6	0
+55	75494	0.9	0
+55	84095	1	0
+55	92412	1.1	0
+55	100795	1.2	0
+55	109088	1.3	0
+55	117399	1.4	0
+55	125860	1.5	0
+55	134377	1.6	0
+56	75494	0.9	0
+56	84095	1	0
+56	92412	1.1	0
+56	100795	1.2	0
+56	109088	1.3	0
+56	117399	1.4	0
+56	125860	1.5	0
+56	134377	1.6	0
+57	75495	0.9	0
+57	84096	1	0
+57	92413	1.1	0
+57	100796	1.2	0
+57	109089	1.3	0
+57	117400	1.4	1
+57	125861	1.5	10
+57	134378	1.6	0
+58	75495	0.9	0
+58	84096	1	0
+58	92413	1.1	0
+58	100796	1.2	0
+58	109089	1.3	0
+58	117400	1.4	3
+58	125861	1.5	79
+58	134378	1.6	0
+59	75496	0.9	0
+59	84097	1	0
+59	92414	1.1	0
+59	100797	1.2	0
+59	109090	1.3	0
+59	117401	1.4	0
+59	125862	1.5	0
+59	134379	1.6	0
+60	75496	0.9	0
+60	84097	1	0
+60	92414	1.1	0
+60	100797	1.2	0
+60	109090	1.3	0
+60	117401	1.4	0
+60	125862	1.5	0
+60	134379	1.6	0
+61	75497	0.9	0
+61	84098	1	0
+61	92415	1.1	0
+61	100798	1.2	0
+61	109091	1.3	0
+61	117402	1.4	0
+61	125863	1.5	2
+61	134380	1.6	41
+62	75497	0.9	0
+62	84098	1	0
+62	92415	1.1	0
+62	100798	1.2	0
+62	109091	1.3	0
+62	117402	1.4	0
+62	125863	1.5	9
+62	134380	1.6	284
+63	75498	0.9	0
+63	84099	1	0
+63	92416	1.1	0
+63	100799	1.2	0
+63	109092	1.3	0
+63	117403	1.4	0
+63	125864	1.5	0
+63	134381	1.6	0
+64	75498	0.9	0
+64	84099	1	0
+64	92416	1.1	0
+64	100799	1.2	0
+64	109092	1.3	0
+64	117403	1.4	0
+64	125864	1.5	0
+64	134381	1.6	0
+65	75499	0.9	0
+65	84100	1	0
+65	92417	1.1	0
+65	100800	1.2	0
+65	109093	1.3	0
+65	117404	1.4	0
+65	125865	1.5	0
+65	134382	1.6	0
+66	75499	0.9	0
+66	84100	1	0
+66	92417	1.1	0
+66	100800	1.2	0
+66	109093	1.3	0
+66	117404	1.4	0
+66	125865	1.5	0
+66	134382	1.6	0
+67	75500	0.9	0
+67	84101	1	0
+67	92418	1.1	0
+67	100801	1.2	0
+67	109094	1.3	0
+67	117405	1.4	0
+67	125866	1.5	0
+67	134383	1.6	0
+68	75500	0.9	0
+68	84101	1	0
+68	92418	1.1	0
+68	100801	1.2	0
+68	109094	1.3	0
+68	117405	1.4	0
+68	125866	1.5	0
+68	134383	1.6	0
+69	75501	0.9	0
+69	84102	1	0
+69	92419	1.1	0
+69	100802	1.2	0
+69	109095	1.3	0
+69	117406	1.4	0
+69	125867	1.5	0
+69	134384	1.6	0
+70	75501	0.9	0
+70	84102	1	0
+70	92419	1.1	0
+70	100802	1.2	0
+70	109095	1.3	0
+70	117406	1.4	0
+70	125867	1.5	0
+70	134384	1.6	0
+71	75502	0.9	0
+71	84103	1	0
+71	92420	1.1	0
+71	100803	1.2	0
+71	109096	1.3	0
+71	117407	1.4	0
+71	125868	1.5	0
+71	134385	1.6	0
+72	75502	0.9	0
+72	84103	1	0
+72	92420	1.1	0
+72	100803	1.2	0
+72	109096	1.3	0
+72	117407	1.4	0
+72	125868	1.5	0
+72	134385	1.6	0
+73	75503	0.9	0
+73	84104	1	0
+73	92421	1.1	0
+73	100804	1.2	0
+73	109097	1.3	0
+73	117408	1.4	0
+73	125869	1.5	0
+73	134386	1.6	0
+74	75503	0.9	0
+74	84104	1	0
+74	92421	1.1	0
+74	100804	1.2	0
+74	109097	1.3	0
+74	117408	1.4	0
+74	125869	1.5	0
+74	134386	1.6	0
+75	75504	0.9	0
+75	84105	1	0
+75	92422	1.1	0
+75	100805	1.2	0
+75	109098	1.3	0
+75	117409	1.4	0
+75	125870	1.5	0
+75	134387	1.6	0
+76	75504	0.9	0
+76	84105	1	0
+76	92422	1.1	0
+76	100805	1.2	0
+76	109098	1.3	0
+76	117409	1.4	0
+76	125870	1.5	0
+76	134387	1.6	0
+77	75505	0.9	0
+77	84106	1	0
+77	92423	1.1	0
+77	100806	1.2	0
+77	109099	1.3	0
+77	117410	1.4	0
+77	125871	1.5	0
+77	134388	1.6	0
+78	75505	0.9	0
+78	84106	1	0
+78	92423	1.1	0
+78	100806	1.2	0
+78	109099	1.3	0
+78	117410	1.4	0
+78	125871	1.5	0
+78	134388	1.6	0
+79	75506	0.9	0
+79	84107	1	0
+79	92424	1.1	0
+79	100807	1.2	0
+79	109100	1.3	0
+79	117411	1.4	0
+79	125872	1.5	0
+79	134389	1.6	0
+80	75506	0.9	0
+80	84107	1	0
+80	92424	1.1	0
+80	100807	1.2	0
+80	109100	1.3	0
+80	117411	1.4	0
+80	125872	1.5	0
+80	134389	1.6	0
+81	75507	0.9	0
+81	84108	1	0
+81	92425	1.1	0
+81	100808	1.2	0
+81	109101	1.3	0
+81	117412	1.4	0
+81	125873	1.5	0
+81	134390	1.6	0
+82	75507	0.9	0
+82	84108	1	0
+82	92425	1.1	0
+82	100808	1.2	0
+82	109101	1.3	0
+82	117412	1.4	0
+82	125873	1.5	0
+82	134390	1.6	0
+83	75508	0.9	0
+83	84109	1	0
+83	92426	1.1	0
+83	100809	1.2	0
+83	109102	1.3	0
+83	117413	1.4	0
+83	125874	1.5	0
+83	134391	1.6	0
+84	75508	0.9	0
+84	84109	1	0
+84	92426	1.1	0
+84	100809	1.2	0
+84	109102	1.3	0
+84	117413	1.4	0
+84	125874	1.5	0
+84	134391	1.6	0
+85	75509	0.9	0
+85	84110	1	0
+85	92427	1.1	0
+85	100810	1.2	0
+85	109103	1.3	0
+85	117414	1.4	0
+85	125875	1.5	0
+85	134392	1.6	0
+86	75509	0.9	0
+86	84110	1	0
+86	92427	1.1	0
+86	100810	1.2	0
+86	109103	1.3	0
+86	117414	1.4	0
+86	125875	1.5	0
+86	134392	1.6	0
+87	75510	0.9	0
+87	84111	1	0
+87	92428	1.1	0
+87	100811	1.2	0
+87	109104	1.3	0
+87	117415	1.4	0
+87	125876	1.5	0
+87	134393	1.6	0
+88	75510	0.9	0
+88	84111	1	0
+88	92428	1.1	0
+88	100811	1.2	0
+88	109104	1.3	0
+88	117415	1.4	0
+88	125876	1.5	0
+88	134393	1.6	0
+89	75511	0.9	0
+89	84112	1	0
+89	92429	1.1	0
+89	100812	1.2	0
+89	109105	1.3	0
+89	117416	1.4	0
+89	125877	1.5	0
+89	134394	1.6	0
+90	75511	0.9	0
+90	84112	1	0
+90	92429	1.1	0
+90	100812	1.2	0
+90	109105	1.3	0
+90	117416	1.4	0
+90	125877	1.5	0
+90	134394	1.6	0
+91	75512	0.9	0
+91	84113	1	0
+91	92430	1.1	0
+91	100813	1.2	0
+91	109106	1.3	0
+91	117417	1.4	0
+91	125878	1.5	0
+91	134395	1.6	0
+92	75512	0.9	0
+92	84113	1	0
+92	92430	1.1	0
+92	100813	1.2	0
+92	109106	1.3	0
+92	117417	1.4	0
+92	125878	1.5	0
+92	134395	1.6	0
+93	75513	0.9	0
+93	84114	1	0
+93	92431	1.1	0
+93	100814	1.2	0
+93	109107	1.3	0
+93	117418	1.4	0
+93	125879	1.5	0
+93	134396	1.6	0
+94	75513	0.9	0
+94	84114	1	0
+94	92431	1.1	0
+94	100814	1.2	0
+94	109107	1.3	0
+94	117418	1.4	0
+94	125879	1.5	0
+94	134396	1.6	0
+95	75514	0.9	0
+95	84115	1	0
+95	92432	1.1	0
+95	100815	1.2	0
+95	109108	1.3	0
+95	117419	1.4	0
+95	125880	1.5	0
+95	134397	1.6	0
+96	75514	0.9	0
+96	84115	1	0
+96	92432	1.1	0
+96	100815	1.2	0
+96	109108	1.3	0
+96	117419	1.4	0
+96	125880	1.5	0
+96	134397	1.6	0
+97	75515	0.9	0
+97	84116	1	0
+97	92433	1.1	0
+97	100816	1.2	0
+97	109109	1.3	0
+97	117420	1.4	0
+97	125881	1.5	0
+97	134398	1.6	0
+98	75515	0.9	0
+98	84116	1	0
+98	92433	1.1	0
+98	100816	1.2	0
+98	109109	1.3	0
+98	117420	1.4	0
+98	125881	1.5	0
+98	134398	1.6	0
+99	75516	0.9	0
+99	84117	1	0
+99	92434	1.1	0
+99	100817	1.2	0
+99	109110	1.3	0
+99	117421	1.4	0
+99	125882	1.5	0
+99	134399	1.6	0
+100	75516	0.9	0
+100	84117	1	0
+100	92434	1.1	0
+100	100817	1.2	0
+100	109110	1.3	0
+100	117421	1.4	0
+100	125882	1.5	0
+100	134399	1.6	0
+101	75517	0.9	0
+101	84118	1	0
+101	92435	1.1	0
+101	100818	1.2	0
+101	109111	1.3	0
+101	117422	1.4	0
+101	125883	1.5	0
+101	134400	1.6	0
+102	75517	0.9	0
+102	84118	1	0
+102	92435	1.1	0
+102	100818	1.2	0
+102	109111	1.3	0
+102	117422	1.4	0
+102	125883	1.5	0
+102	134400	1.6	0
+103	75518	0.9	0
+103	84119	1	0
+103	92436	1.1	0
+103	100819	1.2	0
+103	109112	1.3	0
+103	117423	1.4	0
+103	125884	1.5	0
+103	134401	1.6	0
+104	75518	0.9	0
+104	84119	1	0
+104	92436	1.1	0
+104	100819	1.2	0
+104	109112	1.3	0
+104	117423	1.4	0
+104	125884	1.5	0
+104	134401	1.6	0
+105	75519	0.9	0
+105	84120	1	0
+105	92437	1.1	0
+105	100820	1.2	0
+105	109113	1.3	0
+105	117424	1.4	0
+105	125885	1.5	0
+105	134402	1.6	0
+106	75519	0.9	0
+106	84120	1	0
+106	92437	1.1	0
+106	100820	1.2	0
+106	109113	1.3	0
+106	117424	1.4	0
+106	125885	1.5	0
+106	134402	1.6	0
+107	75520	0.9	0
+107	84121	1	0
+107	92438	1.1	0
+107	100821	1.2	0
+107	109114	1.3	0
+107	117425	1.4	0
+107	125886	1.5	0
+107	134403	1.6	0
+108	75520	0.9	0
+108	84121	1	0
+108	92438	1.1	0
+108	100821	1.2	0
+108	109114	1.3	0
+108	117425	1.4	0
+108	125886	1.5	0
+108	134403	1.6	0
+109	75521	0.9	0
+109	84122	1	0
+109	92439	1.1	0
+109	100822	1.2	0
+109	109115	1.3	0
+109	117426	1.4	0
+109	125887	1.5	0
+109	134404	1.6	0
+110	75521	0.9	0
+110	84122	1	0
+110	92439	1.1	0
+110	100822	1.2	0
+110	109115	1.3	0
+110	117426	1.4	0
+110	125887	1.5	0
+110	134404	1.6	0
+111	75522	0.9	0
+111	84123	1	0
+111	92440	1.1	0
+111	100823	1.2	0
+111	109116	1.3	0
+111	117427	1.4	0
+111	125888	1.5	0
+111	134405	1.6	0
+112	75522	0.9	0
+112	84123	1	0
+112	92440	1.1	0
+112	100823	1.2	0
+112	109116	1.3	0
+112	117427	1.4	0
+112	125888	1.5	0
+112	134405	1.6	0
+113	75523	0.9	0
+113	84124	1	0
+113	92441	1.1	0
+113	100824	1.2	0
+113	109117	1.3	0
+113	117428	1.4	0
+113	125889	1.5	0
+113	134406	1.6	0
+114	75523	0.9	0
+114	84124	1	0
+114	92441	1.1	0
+114	100824	1.2	0
+114	109117	1.3	0
+114	117428	1.4	0
+114	125889	1.5	0
+114	134406	1.6	0
+115	75524	0.9	0
+115	84125	1	0
+115	92442	1.1	0
+115	100825	1.2	0
+115	109118	1.3	0
+115	117429	1.4	0
+115	125890	1.5	0
+115	134407	1.6	0
+116	75524	0.9	0
+116	84125	1	0
+116	92442	1.1	0
+116	100825	1.2	0
+116	109118	1.3	0
+116	117429	1.4	0
+116	125890	1.5	0
+116	134407	1.6	0
+117	75525	0.9	0
+117	84126	1	0
+117	92443	1.1	0
+117	100826	1.2	0
+117	109119	1.3	0
+117	117430	1.4	0
+117	125891	1.5	0
+117	134408	1.6	0
+118	75525	0.9	0
+118	84126	1	0
+118	92443	1.1	0
+118	100826	1.2	0
+118	109119	1.3	0
+118	117430	1.4	0
+118	125891	1.5	0
+118	134408	1.6	0
+119	75526	0.9	0
+119	84127	1	0
+119	92444	1.1	0
+119	100827	1.2	0
+119	109120	1.3	0
+119	117431	1.4	0
+119	125892	1.5	0
+119	134409	1.6	0
+120	75526	0.9	0
+120	84127	1	0
+120	92444	1.1	0
+120	100827	1.2	0
+120	109120	1.3	0
+120	117431	1.4	0
+120	125892	1.5	0
+120	134409	1.6	0
+121	75527	0.9	0
+121	84128	1	0
+121	92445	1.1	0
+121	100828	1.2	0
+121	109121	1.3	0
+121	117432	1.4	0
+121	125893	1.5	0
+121	134410	1.6	0
+122	75527	0.9	0
+122	84128	1	0
+122	92445	1.1	0
+122	100828	1.2	0
+122	109121	1.3	0
+122	117432	1.4	0
+122	125893	1.5	0
+122	134410	1.6	0
+123	75528	0.9	0
+123	84129	1	0
+123	92446	1.1	0
+123	100829	1.2	0
+123	109122	1.3	0
+123	117433	1.4	0
+123	125894	1.5	0
+123	134411	1.6	0
+124	75528	0.9	0
+124	84129	1	0
+124	92446	1.1	0
+124	100829	1.2	0
+124	109122	1.3	0
+124	117433	1.4	0
+124	125894	1.5	0
+124	134411	1.6	0
+125	75529	0.9	0
+125	84130	1	0
+125	92447	1.1	0
+125	100830	1.2	0
+125	109123	1.3	0
+125	117434	1.4	0
+125	125895	1.5	0
+125	134412	1.6	0
+126	75529	0.9	0
+126	84130	1	0
+126	92447	1.1	0
+126	100830	1.2	0
+126	109123	1.3	0
+126	117434	1.4	0
+126	125895	1.5	0
+126	134412	1.6	0
+127	75530	0.9	0
+127	84131	1	0
+127	92448	1.1	0
+127	100831	1.2	0
+127	109124	1.3	0
+127	117435	1.4	0
+127	125896	1.5	0
+127	134413	1.6	0
+128	75530	0.9	0
+128	84131	1	0
+128	92448	1.1	0
+128	100831	1.2	0
+128	109124	1.3	0
+128	117435	1.4	0
+128	125896	1.5	0
+128	134413	1.6	0
+129	75531	0.9	0
+129	84132	1	0
+129	92449	1.1	0
+129	100832	1.2	0
+129	109125	1.3	0
+129	117436	1.4	0
+129	125897	1.5	0
+129	134414	1.6	0
+130	75531	0.9	0
+130	84132	1	0
+130	92449	1.1	0
+130	100832	1.2	0
+130	109125	1.3	0
+130	117436	1.4	0
+130	125897	1.5	0
+130	134414	1.6	0
+131	75532	0.9	0
+131	84133	1	0
+131	92450	1.1	0
+131	100833	1.2	0
+131	109126	1.3	0
+131	117437	1.4	0
+131	125898	1.5	0
+131	134415	1.6	0
+132	75532	0.9	0
+132	84133	1	0
+132	92450	1.1	0
+132	100833	1.2	0
+132	109126	1.3	0
+132	117437	1.4	0
+132	125898	1.5	0
+132	134415	1.6	0
+133	75533	0.9	0
+133	84134	1	0
+133	92451	1.1	0
+133	100834	1.2	0
+133	109127	1.3	0
+133	117438	1.4	0
+133	125899	1.5	0
+133	134416	1.6	0
+134	75533	0.9	0
+134	84134	1	0
+134	92451	1.1	0
+134	100834	1.2	0
+134	109127	1.3	0
+134	117438	1.4	0
+134	125899	1.5	0
+134	134416	1.6	0
+135	75534	0.9	0
+135	84135	1	0
+135	92452	1.1	0
+135	100835	1.2	0
+135	109128	1.3	0
+135	117439	1.4	0
+135	125900	1.5	0
+135	134417	1.6	0
+136	75534	0.9	0
+136	84135	1	0
+136	92452	1.1	0
+136	100835	1.2	0
+136	109128	1.3	0
+136	117439	1.4	0
+136	125900	1.5	0
+136	134417	1.6	0
+137	75535	0.9	0
+137	84136	1	0
+137	92453	1.1	0
+137	100836	1.2	0
+137	109129	1.3	0
+137	117440	1.4	0
+137	125901	1.5	0
+137	134418	1.6	0
+138	75535	0.9	0
+138	84136	1	0
+138	92453	1.1	0
+138	100836	1.2	0
+138	109129	1.3	0
+138	117440	1.4	0
+138	125901	1.5	0
+138	134418	1.6	0
+139	75536	0.9	0
+139	84137	1	0
+139	92454	1.1	0
+139	100837	1.2	0
+139	109130	1.3	0
+139	117441	1.4	0
+139	125902	1.5	0
+139	134419	1.6	0
+140	75536	0.9	0
+140	84137	1	0
+140	92454	1.1	0
+140	100837	1.2	0
+140	109130	1.3	0
+140	117441	1.4	0
+140	125902	1.5	0
+140	134419	1.6	0
+141	75537	0.9	0
+141	84138	1	0
+141	92455	1.1	0
+141	100838	1.2	0
+141	109131	1.3	0
+141	117442	1.4	0
+141	125903	1.5	0
+141	134420	1.6	0
+142	75537	0.9	0
+142	84138	1	0
+142	92455	1.1	0
+142	100838	1.2	0
+142	109131	1.3	0
+142	117442	1.4	0
+142	125903	1.5	0
+142	134420	1.6	0
+143	75538	0.9	0
+143	84139	1	0
+143	92456	1.1	0
+143	100839	1.2	0
+143	109132	1.3	0
+143	117443	1.4	0
+143	125904	1.5	0
+143	134421	1.6	0
+144	75538	0.9	0
+144	84139	1	0
+144	92456	1.1	0
+144	100839	1.2	0
+144	109132	1.3	0
+144	117443	1.4	0
+144	125904	1.5	0
+144	134421	1.6	0
+145	75539	0.9	0
+145	84140	1	0
+145	92457	1.1	0
+145	100840	1.2	0
+145	109133	1.3	0
+145	117444	1.4	0
+145	125905	1.5	0
+145	134422	1.6	0
+146	75539	0.9	0
+146	84140	1	0
+146	92457	1.1	0
+146	100840	1.2	0
+146	109133	1.3	0
+146	117444	1.4	0
+146	125905	1.5	0
+146	134422	1.6	0
+147	75540	0.9	0
+147	84141	1	0
+147	92458	1.1	0
+147	100841	1.2	0
+147	109134	1.3	0
+147	117445	1.4	0
+147	125906	1.5	0
+147	134423	1.6	0
+148	75540	0.9	0
+148	84141	1	0
+148	92458	1.1	0
+148	100841	1.2	0
+148	109134	1.3	0
+148	117445	1.4	0
+148	125906	1.5	0
+148	134423	1.6	0
+149	75541	0.9	0
+149	84142	1	0
+149	92459	1.1	0
+149	100842	1.2	0
+149	109135	1.3	0
+149	117446	1.4	0
+149	125907	1.5	0
+149	134424	1.6	0
+150	75541	0.9	0
+150	84142	1	0
+150	92459	1.1	0
+150	100842	1.2	0
+150	109135	1.3	0
+150	117446	1.4	0
+150	125907	1.5	0
+150	134424	1.6	0
+151	75542	0.9	0
+151	84143	1	0
+151	92460	1.1	0
+151	100843	1.2	0
+151	109136	1.3	0
+151	117447	1.4	0
+151	125908	1.5	0
+151	134425	1.6	0
+152	75542	0.9	0
+152	84143	1	0
+152	92460	1.1	0
+152	100843	1.2	0
+152	109136	1.3	0
+152	117447	1.4	0
+152	125908	1.5	0
+152	134425	1.6	0
+153	75543	0.9	0
+153	84144	1	0
+153	92461	1.1	0
+153	100844	1.2	0
+153	109137	1.3	0
+153	117448	1.4	0
+153	125909	1.5	0
+153	134426	1.6	0
+154	75543	0.9	0
+154	84144	1	0
+154	92461	1.1	0
+154	100844	1.2	0
+154	109137	1.3	0
+154	117448	1.4	0
+154	125909	1.5	0
+154	134426	1.6	0
+155	75544	0.9	0
+155	84145	1	0
+155	92462	1.1	0
+155	100845	1.2	0
+155	109138	1.3	0
+155	117449	1.4	0
+155	125910	1.5	0
+155	134427	1.6	0
+156	75544	0.9	0
+156	84145	1	0
+156	92462	1.1	0
+156	100845	1.2	0
+156	109138	1.3	0
+156	117449	1.4	0
+156	125910	1.5	0
+156	134427	1.6	0
+157	75545	0.9	0
+157	84146	1	0
+157	92463	1.1	0
+157	100846	1.2	0
+157	109139	1.3	0
+157	117450	1.4	0
+157	125911	1.5	0
+157	134428	1.6	0
+158	75545	0.9	0
+158	84146	1	0
+158	92463	1.1	0
+158	100846	1.2	0
+158	109139	1.3	0
+158	117450	1.4	0
+158	125911	1.5	0
+158	134428	1.6	0
+159	75546	0.9	0
+159	84147	1	0
+159	92464	1.1	0
+159	100847	1.2	0
+159	109140	1.3	0
+159	117451	1.4	0
+159	125912	1.5	0
+159	134429	1.6	0
+160	75546	0.9	0
+160	84147	1	0
+160	92464	1.1	0
+160	100847	1.2	0
+160	109140	1.3	0
+160	117451	1.4	0
+160	125912	1.5	0
+160	134429	1.6	0
+161	75547	0.9	0
+161	84148	1	0
+161	92465	1.1	0
+161	100848	1.2	0
+161	109141	1.3	0
+161	117452	1.4	0
+161	125913	1.5	0
+161	134430	1.6	0
+162	75547	0.9	0
+162	84148	1	0
+162	92465	1.1	0
+162	100848	1.2	0
+162	109141	1.3	0
+162	117452	1.4	0
+162	125913	1.5	0
+162	134430	1.6	0
+163	75548	0.9	0
+163	84149	1	0
+163	92466	1.1	0
+163	100849	1.2	0
+163	109142	1.3	0
+163	117453	1.4	0
+163	125914	1.5	0
+163	134431	1.6	0
+164	75548	0.9	0
+164	84149	1	0
+164	92466	1.1	0
+164	100849	1.2	0
+164	109142	1.3	0
+164	117453	1.4	0
+164	125914	1.5	0
+164	134431	1.6	0
+165	75549	0.9	0
+165	84150	1	0
+165	92467	1.1	0
+165	100850	1.2	0
+165	109143	1.3	0
+165	117454	1.4	0
+165	125915	1.5	0
+165	134432	1.6	0
+166	75549	0.9	0
+166	84150	1	0
+166	92467	1.1	0
+166	100850	1.2	0
+166	109143	1.3	0
+166	117454	1.4	0
+166	125915	1.5	0
+166	134432	1.6	0
+167	75550	0.9	0
+167	84151	1	0
+167	92468	1.1	0
+167	100851	1.2	0
+167	109144	1.3	0
+167	117455	1.4	0
+167	125916	1.5	0
+167	134433	1.6	0
+168	75550	0.9	0
+168	84151	1	0
+168	92468	1.1	0
+168	100851	1.2	0
+168	109144	1.3	0
+168	117455	1.4	0
+168	125916	1.5	0
+168	134433	1.6	0
+169	75551	0.9	0
+169	84152	1	0
+169	92469	1.1	0
+169	100852	1.2	0
+169	109145	1.3	0
+169	117456	1.4	0
+169	125917	1.5	0
+169	134434	1.6	0
+170	75551	0.9	0
+170	84152	1	0
+170	92469	1.1	0
+170	100852	1.2	0
+170	109145	1.3	0
+170	117456	1.4	0
+170	125917	1.5	0
+170	134434	1.6	0
+171	75552	0.9	0
+171	84153	1	0
+171	92470	1.1	0
+171	100853	1.2	0
+171	109146	1.3	0
+171	117457	1.4	0
+171	125918	1.5	0
+171	134435	1.6	0
+172	75552	0.9	0
+172	84153	1	0
+172	92470	1.1	0
+172	100853	1.2	0
+172	109146	1.3	0
+172	117457	1.4	0
+172	125918	1.5	0
+172	134435	1.6	0
+173	75553	0.9	0
+173	84154	1	0
+173	92471	1.1	0
+173	100854	1.2	0
+173	109147	1.3	0
+173	117458	1.4	0
+173	125919	1.5	0
+173	134436	1.6	0
+174	75553	0.9	0
+174	84154	1	0
+174	92471	1.1	0
+174	100854	1.2	0
+174	109147	1.3	0
+174	117458	1.4	0
+174	125919	1.5	0
+174	134436	1.6	0
+175	75554	0.9	0
+175	84155	1	0
+175	92472	1.1	0
+175	100855	1.2	0
+175	109148	1.3	0
+175	117459	1.4	0
+175	125920	1.5	0
+175	134437	1.6	0
+176	75554	0.9	0
+176	84155	1	0
+176	92472	1.1	0
+176	100855	1.2	0
+176	109148	1.3	0
+176	117459	1.4	0
+176	125920	1.5	0
+176	134437	1.6	0
+177	75555	0.9	0
+177	84156	1	0
+177	92473	1.1	0
+177	100856	1.2	0
+177	109149	1.3	0
+177	117460	1.4	0
+177	125921	1.5	0
+177	134438	1.6	0
+178	75555	0.9	0
+178	84156	1	0
+178	92473	1.1	0
+178	100856	1.2	0
+178	109149	1.3	0
+178	117460	1.4	0
+178	125921	1.5	0
+178	134438	1.6	0
+179	75556	0.9	0
+179	84157	1	0
+179	92474	1.1	0
+179	100857	1.2	0
+179	109150	1.3	0
+179	117461	1.4	0
+179	125922	1.5	0
+179	134439	1.6	0
+180	75556	0.9	0
+180	84157	1	0
+180	92474	1.1	0
+180	100857	1.2	0
+180	109150	1.3	0
+180	117461	1.4	0
+180	125922	1.5	0
+180	134439	1.6	0
+181	75557	0.9	0
+181	84158	1	0
+181	92475	1.1	0
+181	100858	1.2	0
+181	109151	1.3	0
+181	117462	1.4	0
+181	125923	1.5	0
+181	134440	1.6	0
+182	75557	0.9	0
+182	84158	1	0
+182	92475	1.1	0
+182	100858	1.2	0
+182	109151	1.3	0
+182	117462	1.4	0
+182	125923	1.5	0
+182	134440	1.6	0
+183	75558	0.9	0
+183	84159	1	0
+183	92476	1.1	0
+183	100859	1.2	0
+183	109152	1.3	0
+183	117463	1.4	0
+183	125924	1.5	0
+183	134441	1.6	0
+184	75558	0.9	0
+184	84159	1	0
+184	92476	1.1	0
+184	100859	1.2	0
+184	109152	1.3	0
+184	117463	1.4	0
+184	125924	1.5	0
+184	134441	1.6	0
+185	75559	0.9	0
+185	84160	1	0
+185	92477	1.1	0
+185	100860	1.2	0
+185	109153	1.3	0
+185	117464	1.4	0
+185	125925	1.5	0
+185	134442	1.6	0
+186	75559	0.9	0
+186	84160	1	0
+186	92477	1.1	0
+186	100860	1.2	0
+186	109153	1.3	0
+186	117464	1.4	0
+186	125925	1.5	0
+186	134442	1.6	0
+187	75560	0.9	0
+187	84161	1	0
+187	92478	1.1	0
+187	100861	1.2	0
+187	109154	1.3	0
+187	117465	1.4	0
+187	125926	1.5	0
+187	134443	1.6	0
+188	75560	0.9	0
+188	84161	1	0
+188	92478	1.1	0
+188	100861	1.2	0
+188	109154	1.3	0
+188	117465	1.4	0
+188	125926	1.5	0
+188	134443	1.6	0
+189	75561	0.9	0
+189	84162	1	0
+189	92479	1.1	0
+189	100862	1.2	0
+189	109155	1.3	0
+189	117466	1.4	0
+189	125927	1.5	0
+189	134444	1.6	0
+190	75561	0.9	0
+190	84162	1	0
+190	92479	1.1	0
+190	100862	1.2	0
+190	109155	1.3	0
+190	117466	1.4	0
+190	125927	1.5	0
+190	134444	1.6	0
+191	75562	0.9	0
+191	84163	1	0
+191	92480	1.1	0
+191	100863	1.2	0
+191	109156	1.3	0
+191	117467	1.4	0
+191	125928	1.5	0
+191	134445	1.6	0
+192	75562	0.9	0
+192	84163	1	0
+192	92480	1.1	0
+192	100863	1.2	0
+192	109156	1.3	0
+192	117467	1.4	0
+192	125928	1.5	0
+192	134445	1.6	0
+193	75563	0.9	0
+193	84164	1	0
+193	92481	1.1	0
+193	100864	1.2	0
+193	109157	1.3	0
+193	117468	1.4	0
+193	125929	1.5	0
+193	134446	1.6	0
+194	75563	0.9	0
+194	84164	1	0
+194	92481	1.1	0
+194	100864	1.2	0
+194	109157	1.3	0
+194	117468	1.4	0
+194	125929	1.5	0
+194	134446	1.6	0
+195	75564	0.9	0
+195	84165	1	0
+195	92482	1.1	0
+195	100865	1.2	0
+195	109158	1.3	0
+195	117469	1.4	0
+195	125930	1.5	0
+195	134447	1.6	0
+196	75564	0.9	0
+196	84165	1	0
+196	92482	1.1	0
+196	100865	1.2	0
+196	109158	1.3	0
+196	117469	1.4	0
+196	125930	1.5	0
+196	134447	1.6	0
+197	75565	0.9	0
+197	84166	1	0
+197	92483	1.1	0
+197	100866	1.2	0
+197	109159	1.3	0
+197	117470	1.4	0
+197	125931	1.5	0
+197	134448	1.6	0
+198	75565	0.9	0
+198	84166	1	0
+198	92483	1.1	0
+198	100866	1.2	0
+198	109159	1.3	0
+198	117470	1.4	0
+198	125931	1.5	0
+198	134448	1.6	0
+199	75566	0.9	0
+199	84167	1	0
+199	92484	1.1	0
+199	100867	1.2	0
+199	109160	1.3	0
+199	117471	1.4	0
+199	125932	1.5	0
+199	134449	1.6	0
+200	75566	0.9	0
+200	84167	1	0
+200	92484	1.1	0
+200	100867	1.2	0
+200	109160	1.3	0
+200	117471	1.4	0
+200	125932	1.5	0
+200	134449	1.6	0
+201	75567	0.9	0
+201	84168	1	0
+201	92485	1.1	0
+201	100868	1.2	0
+201	109161	1.3	0
+201	117472	1.4	0
+201	125933	1.5	0
+201	134450	1.6	0
+202	75567	0.9	0
+202	84168	1	0
+202	92485	1.1	0
+202	100868	1.2	0
+202	109161	1.3	0
+202	117472	1.4	0
+202	125933	1.5	0
+202	134450	1.6	0
+203	75568	0.9	0
+203	84169	1	0
+203	92486	1.1	0
+203	100869	1.2	0
+203	109162	1.3	0
+203	117473	1.4	0
+203	125934	1.5	0
+203	134451	1.6	0
+204	75568	0.9	0
+204	84169	1	0
+204	92486	1.1	0
+204	100869	1.2	0
+204	109162	1.3	0
+204	117473	1.4	0
+204	125934	1.5	0
+204	134451	1.6	0
+205	75569	0.9	0
+205	84170	1	0
+205	92487	1.1	0
+205	100870	1.2	0
+205	109163	1.3	0
+205	117474	1.4	0
+205	125935	1.5	0
+205	134452	1.6	0
+206	75569	0.9	0
+206	84170	1	0
+206	92487	1.1	0
+206	100870	1.2	0
+206	109163	1.3	0
+206	117474	1.4	0
+206	125935	1.5	0
+206	134452	1.6	0
+207	75570	0.9	0
+207	84171	1	0
+207	92488	1.1	0
+207	100871	1.2	0
+207	109164	1.3	0
+207	117475	1.4	0
+207	125936	1.5	0
+207	134453	1.6	0
+208	75570	0.9	0
+208	84171	1	0
+208	92488	1.1	0
+208	100871	1.2	0
+208	109164	1.3	0
+208	117475	1.4	0
+208	125936	1.5	0
+208	134453	1.6	0
+209	75571	0.9	0
+209	84172	1	0
+209	92489	1.1	0
+209	100872	1.2	0
+209	109165	1.3	0
+209	117476	1.4	0
+209	125937	1.5	0
+209	134454	1.6	0
+210	75571	0.9	0
+210	84172	1	0
+210	92489	1.1	0
+210	100872	1.2	0
+210	109165	1.3	0
+210	117476	1.4	0
+210	125937	1.5	0
+210	134454	1.6	0
+211	75572	0.9	0
+211	84173	1	0
+211	92490	1.1	0
+211	100873	1.2	0
+211	109166	1.3	0
+211	117477	1.4	0
+211	125938	1.5	0
+211	134455	1.6	0
+212	75572	0.9	0
+212	84173	1	0
+212	92490	1.1	0
+212	100873	1.2	0
+212	109166	1.3	0
+212	117477	1.4	0
+212	125938	1.5	0
+212	134455	1.6	0
+213	75573	0.9	0
+213	84174	1	0
+213	92491	1.1	0
+213	100874	1.2	0
+213	109167	1.3	0
+213	117478	1.4	0
+213	125939	1.5	0
+213	134456	1.6	0
+214	75573	0.9	0
+214	84174	1	0
+214	92491	1.1	0
+214	100874	1.2	0
+214	109167	1.3	0
+214	117478	1.4	0
+214	125939	1.5	0
+214	134456	1.6	0
+215	75574	0.9	0
+215	84175	1	0
+215	92492	1.1	0
+215	100875	1.2	0
+215	109168	1.3	0
+215	117479	1.4	0
+215	125940	1.5	0
+215	134457	1.6	0
+216	75574	0.9	0
+216	84175	1	0
+216	92492	1.1	0
+216	100875	1.2	0
+216	109168	1.3	0
+216	117479	1.4	0
+216	125940	1.5	0
+216	134457	1.6	0
+217	75575	0.9	0
+217	84176	1	0
+217	92493	1.1	0
+217	100876	1.2	0
+217	109169	1.3	0
+217	117480	1.4	0
+217	125941	1.5	0
+217	134458	1.6	0
+218	75575	0.9	0
+218	84176	1	0
+218	92493	1.1	0
+218	100876	1.2	0
+218	109169	1.3	0
+218	117480	1.4	0
+218	125941	1.5	0
+218	134458	1.6	0
+219	75576	0.9	0
+219	84177	1	0
+219	92494	1.1	0
+219	100877	1.2	0
+219	109170	1.3	0
+219	117481	1.4	0
+219	125942	1.5	0
+219	134459	1.6	0
+220	75576	0.9	0
+220	84177	1	0
+220	92494	1.1	0
+220	100877	1.2	0
+220	109170	1.3	0
+220	117481	1.4	0
+220	125942	1.5	0
+220	134459	1.6	0
+221	75577	0.9	0
+221	84178	1	0
+221	92495	1.1	0
+221	100878	1.2	0
+221	109171	1.3	0
+221	117482	1.4	0
+221	125943	1.5	0
+221	134460	1.6	0
+222	75577	0.9	0
+222	84178	1	0
+222	92495	1.1	0
+222	100878	1.2	0
+222	109171	1.3	0
+222	117482	1.4	0
+222	125943	1.5	0
+222	134460	1.6	0
+223	75578	0.9	0
+223	84179	1	0
+223	92496	1.1	0
+223	100879	1.2	0
+223	109172	1.3	0
+223	117483	1.4	0
+223	125944	1.5	0
+223	134461	1.6	0
+224	75578	0.9	0
+224	84179	1	0
+224	92496	1.1	0
+224	100879	1.2	0
+224	109172	1.3	0
+224	117483	1.4	0
+224	125944	1.5	0
+224	134461	1.6	0
+225	75579	0.9	0
+225	84180	1	0
+225	92497	1.1	0
+225	100880	1.2	0
+225	109173	1.3	0
+225	117484	1.4	0
+225	125945	1.5	0
+225	134462	1.6	0
+226	75579	0.9	0
+226	84180	1	0
+226	92497	1.1	0
+226	100880	1.2	0
+226	109173	1.3	0
+226	117484	1.4	0
+226	125945	1.5	0
+226	134462	1.6	0
+227	75580	0.9	0
+227	84181	1	0
+227	92498	1.1	0
+227	100881	1.2	0
+227	109174	1.3	0
+227	117485	1.4	0
+227	125946	1.5	0
+227	134463	1.6	0
+228	75580	0.9	0
+228	84181	1	0
+228	92498	1.1	0
+228	100881	1.2	0
+228	109174	1.3	0
+228	117485	1.4	0
+228	125946	1.5	0
+228	134463	1.6	0
+229	75581	0.9	0
+229	84182	1	0
+229	92499	1.1	0
+229	100882	1.2	0
+229	109175	1.3	0
+229	117486	1.4	0
+229	125947	1.5	0
+229	134464	1.6	0
+230	75581	0.9	0
+230	84182	1	0
+230	92499	1.1	0
+230	100882	1.2	0
+230	109175	1.3	0
+230	117486	1.4	0
+230	125947	1.5	0
+230	134464	1.6	0
+231	75582	0.9	0
+231	84183	1	0
+231	92500	1.1	0
+231	100883	1.2	0
+231	109176	1.3	0
+231	117487	1.4	0
+231	125948	1.5	0
+231	134465	1.6	0
+232	75582	0.9	0
+232	84183	1	0
+232	92500	1.1	0
+232	100883	1.2	0
+232	109176	1.3	0
+232	117487	1.4	0
+232	125948	1.5	0
+232	134465	1.6	0
+233	75583	0.9	0
+233	84184	1	0
+233	92501	1.1	0
+233	100884	1.2	0
+233	109177	1.3	0
+233	117488	1.4	0
+233	125949	1.5	0
+233	134466	1.6	0
+234	75583	0.9	0
+234	84184	1	0
+234	92501	1.1	0
+234	100884	1.2	0
+234	109177	1.3	0
+234	117488	1.4	0
+234	125949	1.5	0
+234	134466	1.6	0
+235	75584	0.9	0
+235	84185	1	0
+235	92502	1.1	0
+235	100885	1.2	0
+235	109178	1.3	0
+235	117489	1.4	0
+235	125950	1.5	0
+235	134467	1.6	0
+236	75584	0.9	0
+236	84185	1	0
+236	92502	1.1	0
+236	100885	1.2	0
+236	109178	1.3	0
+236	117489	1.4	0
+236	125950	1.5	0
+236	134467	1.6	0
+237	75585	0.9	0
+237	84186	1	0
+237	92503	1.1	0
+237	100886	1.2	0
+237	109179	1.3	0
+237	117490	1.4	0
+237	125951	1.5	0
+237	134468	1.6	0
+238	75585	0.9	0
+238	84186	1	0
+238	92503	1.1	0
+238	100886	1.2	0
+238	109179	1.3	0
+238	117490	1.4	0
+238	125951	1.5	0
+238	134468	1.6	0
+239	75586	0.9	0
+239	84187	1	0
+239	92504	1.1	0
+239	100887	1.2	0
+239	109180	1.3	0
+239	117491	1.4	0
+239	125952	1.5	0
+239	134469	1.6	0
+240	75586	0.9	0
+240	84187	1	0
+240	92504	1.1	0
+240	100887	1.2	0
+240	109180	1.3	0
+240	117491	1.4	0
+240	125952	1.5	0
+240	134469	1.6	0
+241	75587	0.9	0
+241	84188	1	0
+241	92505	1.1	0
+241	100888	1.2	0
+241	109181	1.3	0
+241	117492	1.4	0
+241	125953	1.5	0
+241	134470	1.6	0
+242	75587	0.9	0
+242	84188	1	0
+242	92505	1.1	0
+242	100888	1.2	0
+242	109181	1.3	0
+242	117492	1.4	0
+242	125953	1.5	0
+242	134470	1.6	0
+243	75588	0.9	0
+243	84189	1	0
+243	92506	1.1	0
+243	100889	1.2	0
+243	109182	1.3	0
+243	117493	1.4	0
+243	125954	1.5	0
+243	134471	1.6	0
+244	75588	0.9	0
+244	84189	1	0
+244	92506	1.1	0
+244	100889	1.2	0
+244	109182	1.3	0
+244	117493	1.4	0
+244	125954	1.5	0
+244	134471	1.6	0
+245	75589	0.9	0
+245	84190	1	0
+245	92507	1.1	0
+245	100890	1.2	0
+245	109183	1.3	0
+245	117494	1.4	0
+245	125955	1.5	0
+245	134472	1.6	0
+246	75589	0.9	0
+246	84190	1	0
+246	92507	1.1	0
+246	100890	1.2	0
+246	109183	1.3	0
+246	117494	1.4	0
+246	125955	1.5	0
+246	134472	1.6	0
+247	75590	0.9	0
+247	84191	1	0
+247	92508	1.1	0
+247	100891	1.2	0
+247	109184	1.3	0
+247	117495	1.4	0
+247	125956	1.5	0
+247	134473	1.6	0
+248	75590	0.9	0
+248	84191	1	0
+248	92508	1.1	0
+248	100891	1.2	0
+248	109184	1.3	0
+248	117495	1.4	0
+248	125956	1.5	0
+248	134473	1.6	0
+249	75591	0.9	0
+249	84192	1	0
+249	92509	1.1	0
+249	100892	1.2	0
+249	109185	1.3	0
+249	117496	1.4	0
+249	125957	1.5	0
+249	134474	1.6	0
+250	75591	0.9	0
+250	84192	1	0
+250	92509	1.1	0
+250	100892	1.2	0
+250	109185	1.3	0
+250	117496	1.4	0
+250	125957	1.5	0
+250	134474	1.6	0
+251	75592	0.9	0
+251	84193	1	0
+251	92510	1.1	0
+251	100893	1.2	0
+251	109186	1.3	0
+251	117497	1.4	0
+251	125958	1.5	0
+251	134475	1.6	0
+252	75592	0.9	0
+252	84193	1	0
+252	92510	1.1	0
+252	100893	1.2	0
+252	109186	1.3	0
+252	117497	1.4	0
+252	125958	1.5	0
+252	134475	1.6	0
+253	75593	0.9	0
+253	84194	1	0
+253	92511	1.1	0
+253	100894	1.2	0
+253	109187	1.3	0
+253	117498	1.4	0
+253	125959	1.5	0
+253	134476	1.6	0
+254	75593	0.9	0
+254	84194	1	0
+254	92511	1.1	0
+254	100894	1.2	0
+254	109187	1.3	0
+254	117498	1.4	0
+254	125959	1.5	0
+254	134476	1.6	0
+255	75594	0.9	0
+255	84195	1	0
+255	92512	1.1	0
+255	100895	1.2	0
+255	109188	1.3	0
+255	117499	1.4	0
+255	125960	1.5	0
+255	134477	1.6	0
+256	75594	0.9	0
+256	84195	1	0
+256	92512	1.1	0
+256	100895	1.2	0
+256	109188	1.3	0
+256	117499	1.4	0
+256	125960	1.5	0
+256	134477	1.6	0
+257	75595	0.9	0
+257	84196	1	0
+257	92513	1.1	0
+257	100896	1.2	0
+257	109189	1.3	0
+257	117500	1.4	0
+257	125961	1.5	0
+257	134478	1.6	0
+258	75595	0.9	0
+258	84196	1	0
+258	92513	1.1	0
+258	100896	1.2	0
+258	109189	1.3	0
+258	117500	1.4	0
+258	125961	1.5	0
+258	134478	1.6	0
+259	75596	0.9	0
+259	84197	1	0
+259	92514	1.1	0
+259	100897	1.2	0
+259	109190	1.3	0
+259	117501	1.4	0
+259	125962	1.5	0
+259	134479	1.6	0
+260	75596	0.9	0
+260	84197	1	0
+260	92514	1.1	0
+260	100897	1.2	0
+260	109190	1.3	0
+260	117501	1.4	0
+260	125962	1.5	0
+260	134479	1.6	0
+261	75597	0.9	0
+261	84198	1	0
+261	92515	1.1	0
+261	100898	1.2	0
+261	109191	1.3	0
+261	117502	1.4	0
+261	125963	1.5	0
+261	134480	1.6	0
+262	75597	0.9	0
+262	84198	1	0
+262	92515	1.1	0
+262	100898	1.2	0
+262	109191	1.3	0
+262	117502	1.4	0
+262	125963	1.5	0
+262	134480	1.6	0
+263	75598	0.9	0
+263	84199	1	0
+263	92516	1.1	0
+263	100899	1.2	0
+263	109192	1.3	0
+263	117503	1.4	0
+263	125964	1.5	0
+263	134481	1.6	0
+264	75598	0.9	0
+264	84199	1	0
+264	92516	1.1	0
+264	100899	1.2	0
+264	109192	1.3	0
+264	117503	1.4	0
+264	125964	1.5	0
+264	134481	1.6	0
+265	75599	0.9	0
+265	84200	1	0
+265	92517	1.1	0
+265	100900	1.2	0
+265	109193	1.3	0
+265	117504	1.4	0
+265	125965	1.5	0
+265	134482	1.6	0
+266	75599	0.9	0
+266	84200	1	0
+266	92517	1.1	0
+266	100900	1.2	0
+266	109193	1.3	0
+266	117504	1.4	0
+266	125965	1.5	0
+266	134482	1.6	0
+267	75600	0.9	0
+267	84201	1	0
+267	92518	1.1	0
+267	100901	1.2	0
+267	109194	1.3	0
+267	117505	1.4	0
+267	125966	1.5	0
+267	134483	1.6	0
+268	75600	0.9	0
+268	84201	1	0
+268	92518	1.1	0
+268	100901	1.2	0
+268	109194	1.3	0
+268	117505	1.4	0
+268	125966	1.5	0
+268	134483	1.6	0
+269	75601	0.9	0
+269	84202	1	0
+269	92519	1.1	0
+269	100902	1.2	0
+269	109195	1.3	0
+269	117506	1.4	0
+269	125967	1.5	0
+269	134484	1.6	0
+270	75601	0.9	0
+270	84202	1	0
+270	92519	1.1	0
+270	100902	1.2	0
+270	109195	1.3	0
+270	117506	1.4	0
+270	125967	1.5	0
+270	134484	1.6	0
+271	75602	0.9	0
+271	84203	1	0
+271	92520	1.1	0
+271	100903	1.2	0
+271	109196	1.3	0
+271	117507	1.4	0
+271	125968	1.5	0
+271	134485	1.6	0
+272	75602	0.9	0
+272	84203	1	0
+272	92520	1.1	0
+272	100903	1.2	0
+272	109196	1.3	0
+272	117507	1.4	0
+272	125968	1.5	0
+272	134485	1.6	0
+273	75603	0.9	0
+273	84204	1	0
+273	92521	1.1	0
+273	100904	1.2	0
+273	109197	1.3	0
+273	117508	1.4	0
+273	125969	1.5	0
+273	134486	1.6	0
+274	75603	0.9	0
+274	84204	1	0
+274	92521	1.1	0
+274	100904	1.2	0
+274	109197	1.3	0
+274	117508	1.4	0
+274	125969	1.5	0
+274	134486	1.6	0
+275	75604	0.9	0
+275	84205	1	0
+275	92522	1.1	0
+275	100905	1.2	0
+275	109198	1.3	0
+275	117509	1.4	0
+275	125970	1.5	0
+275	134487	1.6	0
+276	75604	0.9	0
+276	84205	1	0
+276	92522	1.1	0
+276	100905	1.2	0
+276	109198	1.3	0
+276	117509	1.4	0
+276	125970	1.5	0
+276	134487	1.6	0
+277	75605	0.9	0
+277	84206	1	0
+277	92523	1.1	0
+277	100906	1.2	0
+277	109199	1.3	0
+277	117510	1.4	0
+277	125971	1.5	0
+277	134488	1.6	0
+278	75605	0.9	0
+278	84206	1	0
+278	92523	1.1	0
+278	100906	1.2	0
+278	109199	1.3	0
+278	117510	1.4	0
+278	125971	1.5	0
+278	134488	1.6	0
+279	75606	0.9	0
+279	84207	1	0
+279	92524	1.1	0
+279	100907	1.2	0
+279	109200	1.3	0
+279	117511	1.4	0
+279	125972	1.5	0
+279	134489	1.6	0
+280	75606	0.9	0
+280	84207	1	0
+280	92524	1.1	0
+280	100907	1.2	0
+280	109200	1.3	0
+280	117511	1.4	0
+280	125972	1.5	0
+280	134489	1.6	0
+281	75607	0.9	0
+281	84208	1	0
+281	92525	1.1	0
+281	100908	1.2	0
+281	109201	1.3	0
+281	117512	1.4	0
+281	125973	1.5	0
+281	134490	1.6	0
+282	75607	0.9	0
+282	84208	1	0
+282	92525	1.1	0
+282	100908	1.2	0
+282	109201	1.3	0
+282	117512	1.4	0
+282	125973	1.5	0
+282	134490	1.6	0
+283	75608	0.9	0
+283	84209	1	0
+283	92526	1.1	0
+283	100909	1.2	0
+283	109202	1.3	0
+283	117513	1.4	0
+283	125974	1.5	0
+283	134491	1.6	0
+284	75608	0.9	0
+284	84209	1	0
+284	92526	1.1	0
+284	100909	1.2	0
+284	109202	1.3	0
+284	117513	1.4	0
+284	125974	1.5	0
+284	134491	1.6	0
+285	75609	0.9	0
+285	84210	1	0
+285	92527	1.1	0
+285	100910	1.2	0
+285	109203	1.3	0
+285	117514	1.4	0
+285	125975	1.5	0
+285	134492	1.6	0
+286	75609	0.9	0
+286	84210	1	0
+286	92527	1.1	0
+286	100910	1.2	0
+286	109203	1.3	0
+286	117514	1.4	0
+286	125975	1.5	0
+286	134492	1.6	0
+287	75610	0.9	0
+287	84211	1	0
+287	92528	1.1	0
+287	100911	1.2	0
+287	109204	1.3	0
+287	117515	1.4	0
+287	125976	1.5	0
+287	134493	1.6	0
+288	75610	0.9	0
+288	84211	1	0
+288	92528	1.1	0
+288	100911	1.2	0
+288	109204	1.3	0
+288	117515	1.4	0
+288	125976	1.5	0
+288	134493	1.6	0
+289	75611	0.9	0
+289	84212	1	0
+289	92529	1.1	0
+289	100912	1.2	0
+289	109205	1.3	0
+289	117516	1.4	0
+289	125977	1.5	0
+289	134494	1.6	0
+290	75611	0.9	0
+290	84212	1	0
+290	92529	1.1	0
+290	100912	1.2	0
+290	109205	1.3	0
+290	117516	1.4	0
+290	125977	1.5	0
+290	134494	1.6	0
+291	75612	0.9	0
+291	84213	1	0
+291	92530	1.1	0
+291	100913	1.2	0
+291	109206	1.3	0
+291	117517	1.4	0
+291	125978	1.5	0
+291	134495	1.6	0
+292	75612	0.9	0
+292	84213	1	0
+292	92530	1.1	0
+292	100913	1.2	0
+292	109206	1.3	0
+292	117517	1.4	0
+292	125978	1.5	0
+292	134495	1.6	0
+293	75613	0.9	0
+293	84214	1	0
+293	92531	1.1	0
+293	100914	1.2	0
+293	109207	1.3	0
+293	117518	1.4	0
+293	125979	1.5	0
+293	134496	1.6	0
+294	75613	0.9	0
+294	84214	1	0
+294	92531	1.1	0
+294	100914	1.2	0
+294	109207	1.3	0
+294	117518	1.4	0
+294	125979	1.5	0
+294	134496	1.6	0
+295	75614	0.9	0
+295	84215	1	0
+295	92532	1.1	0
+295	100915	1.2	0
+295	109208	1.3	0
+295	117519	1.4	0
+295	125980	1.5	0
+295	134497	1.6	0
+296	75614	0.9	0
+296	84215	1	0
+296	92532	1.1	0
+296	100915	1.2	0
+296	109208	1.3	0
+296	117519	1.4	0
+296	125980	1.5	0
+296	134497	1.6	0
+297	75615	0.9	0
+297	84216	1	0
+297	92533	1.1	0
+297	100916	1.2	0
+297	109209	1.3	0
+297	117520	1.4	0
+297	125981	1.5	0
+297	134498	1.6	0
+298	75615	0.9	0
+298	84216	1	0
+298	92533	1.1	0
+298	100916	1.2	0
+298	109209	1.3	0
+298	117520	1.4	0
+298	125981	1.5	0
+298	134498	1.6	0
+299	75616	0.9	0
+299	84217	1	0
+299	92534	1.1	0
+299	100917	1.2	0
+299	109210	1.3	0
+299	117521	1.4	0
+299	125982	1.5	0
+299	134499	1.6	0
+300	75616	0.9	0
+300	84217	1	0
+300	92534	1.1	0
+300	100917	1.2	0
+300	109210	1.3	0
+300	117521	1.4	0
+300	125982	1.5	0
+300	134499	1.6	0
+301	75617	0.9	0
+301	84218	1	0
+301	92535	1.1	0
+301	100918	1.2	0
+301	109211	1.3	0
+301	117522	1.4	0
+301	125983	1.5	0
+301	134500	1.6	0
+302	75617	0.9	0
+302	84218	1	0
+302	92535	1.1	0
+302	100918	1.2	0
+302	109211	1.3	0
+302	117522	1.4	0
+302	125983	1.5	0
+302	134500	1.6	0
+303	75618	0.9	0
+303	84219	1	0
+303	92536	1.1	0
+303	100919	1.2	0
+303	109212	1.3	0
+303	117523	1.4	0
+303	125984	1.5	0
+303	134501	1.6	0
+304	75618	0.9	0
+304	84219	1	0
+304	92536	1.1	0
+304	100919	1.2	0
+304	109212	1.3	0
+304	117523	1.4	0
+304	125984	1.5	0
+304	134501	1.6	0
+305	75619	0.9	0
+305	84220	1	0
+305	92537	1.1	0
+305	100920	1.2	0
+305	109213	1.3	0
+305	117524	1.4	0
+305	125985	1.5	0
+305	134502	1.6	0
+306	75619	0.9	0
+306	84220	1	0
+306	92537	1.1	0
+306	100920	1.2	0
+306	109213	1.3	0
+306	117524	1.4	0
+306	125985	1.5	0
+306	134502	1.6	0
+307	75620	0.9	0
+307	84221	1	0
+307	92538	1.1	0
+307	100921	1.2	0
+307	109214	1.3	0
+307	117525	1.4	0
+307	125986	1.5	0
+307	134503	1.6	0
+308	75620	0.9	0
+308	84221	1	0
+308	92538	1.1	0
+308	100921	1.2	0
+308	109214	1.3	0
+308	117525	1.4	0
+308	125986	1.5	0
+308	134503	1.6	0
+309	75621	0.9	0
+309	84222	1	0
+309	92539	1.1	0
+309	100922	1.2	0
+309	109215	1.3	0
+309	117526	1.4	0
+309	125987	1.5	0
+309	134504	1.6	0
+310	75621	0.9	0
+310	84222	1	0
+310	92539	1.1	0
+310	100922	1.2	0
+310	109215	1.3	0
+310	117526	1.4	0
+310	125987	1.5	0
+310	134504	1.6	0
+311	75622	0.9	0
+311	84223	1	0
+311	92540	1.1	0
+311	100923	1.2	0
+311	109216	1.3	0
+311	117527	1.4	0
+311	125988	1.5	0
+311	134505	1.6	0
+312	75622	0.9	0
+312	84223	1	0
+312	92540	1.1	0
+312	100923	1.2	0
+312	109216	1.3	0
+312	117527	1.4	0
+312	125988	1.5	0
+312	134505	1.6	0
+313	75623	0.9	0
+313	84224	1	0
+313	92541	1.1	0
+313	100924	1.2	0
+313	109217	1.3	0
+313	117528	1.4	0
+313	125989	1.5	0
+313	134506	1.6	0
+314	75623	0.9	0
+314	84224	1	0
+314	92541	1.1	0
+314	100924	1.2	0
+314	109217	1.3	0
+314	117528	1.4	0
+314	125989	1.5	0
+314	134506	1.6	0
+315	75624	0.9	0
+315	84225	1	0
+315	92542	1.1	0
+315	100925	1.2	0
+315	109218	1.3	0
+315	117529	1.4	0
+315	125990	1.5	0
+315	134507	1.6	0
+316	75624	0.9	0
+316	84225	1	0
+316	92542	1.1	0
+316	100925	1.2	0
+316	109218	1.3	0
+316	117529	1.4	0
+316	125990	1.5	0
+316	134507	1.6	0
+317	75625	0.9	0
+317	84226	1	0
+317	92543	1.1	0
+317	100926	1.2	0
+317	109219	1.3	0
+317	117530	1.4	0
+317	125991	1.5	0
+317	134508	1.6	0
+318	75625	0.9	0
+318	84226	1	0
+318	92543	1.1	0
+318	100926	1.2	0
+318	109219	1.3	0
+318	117530	1.4	0
+318	125991	1.5	0
+318	134508	1.6	0
+319	75626	0.9	0
+319	84227	1	0
+319	92544	1.1	0
+319	100927	1.2	0
+319	109220	1.3	0
+319	117531	1.4	0
+319	125992	1.5	0
+319	134509	1.6	0
+320	75626	0.9	0
+320	84227	1	0
+320	92544	1.1	0
+320	100927	1.2	0
+320	109220	1.3	0
+320	117531	1.4	0
+320	125992	1.5	0
+320	134509	1.6	0
+321	75627	0.9	0
+321	84228	1	0
+321	92545	1.1	0
+321	100928	1.2	0
+321	109221	1.3	0
+321	117532	1.4	0
+321	125993	1.5	0
+321	134510	1.6	0
+322	75627	0.9	0
+322	84228	1	0
+322	92545	1.1	0
+322	100928	1.2	0
+322	109221	1.3	0
+322	117532	1.4	0
+322	125993	1.5	0
+322	134510	1.6	0
+323	75628	0.9	0
+323	84229	1	0
+323	92546	1.1	0
+323	100929	1.2	0
+323	109222	1.3	0
+323	117533	1.4	0
+323	125994	1.5	0
+323	134511	1.6	0
+324	75628	0.9	0
+324	84229	1	0
+324	92546	1.1	0
+324	100929	1.2	0
+324	109222	1.3	0
+324	117533	1.4	0
+324	125994	1.5	0
+324	134511	1.6	0
+325	75629	0.9	0
+325	84230	1	0
+325	92547	1.1	0
+325	100930	1.2	0
+325	109223	1.3	0
+325	117534	1.4	0
+325	125995	1.5	0
+325	134512	1.6	0
+326	75629	0.9	0
+326	84230	1	0
+326	92547	1.1	0
+326	100930	1.2	0
+326	109223	1.3	0
+326	117534	1.4	0
+326	125995	1.5	0
+326	134512	1.6	0
+327	75630	0.9	0
+327	84231	1	0
+327	92548	1.1	0
+327	100931	1.2	0
+327	109224	1.3	0
+327	117535	1.4	0
+327	125996	1.5	0
+327	134513	1.6	0
+328	75630	0.9	0
+328	84231	1	0
+328	92548	1.1	0
+328	100931	1.2	0
+328	109224	1.3	0
+328	117535	1.4	0
+328	125996	1.5	0
+328	134513	1.6	0
+329	75631	0.9	0
+329	84232	1	0
+329	92549	1.1	0
+329	100932	1.2	0
+329	109225	1.3	0
+329	117536	1.4	0
+329	125997	1.5	0
+329	134514	1.6	0
+330	75631	0.9	0
+330	84232	1	0
+330	92549	1.1	0
+330	100932	1.2	0
+330	109225	1.3	0
+330	117536	1.4	0
+330	125997	1.5	0
+330	134514	1.6	0
+331	75632	0.9	0
+331	84233	1	0
+331	92550	1.1	0
+331	100933	1.2	0
+331	109226	1.3	0
+331	117537	1.4	0
+331	125998	1.5	0
+331	134515	1.6	0
+332	75632	0.9	0
+332	84233	1	0
+332	92550	1.1	0
+332	100933	1.2	0
+332	109226	1.3	0
+332	117537	1.4	0
+332	125998	1.5	0
+332	134515	1.6	0
+333	75633	0.9	0
+333	84234	1	0
+333	92551	1.1	0
+333	100934	1.2	0
+333	109227	1.3	0
+333	117538	1.4	0
+333	125999	1.5	0
+333	134516	1.6	0
+334	75633	0.9	0
+334	84234	1	0
+334	92551	1.1	0
+334	100934	1.2	0
+334	109227	1.3	0
+334	117538	1.4	0
+334	125999	1.5	0
+334	134516	1.6	0
+335	75634	0.9	0
+335	84235	1	0
+335	92552	1.1	0
+335	100935	1.2	0
+335	109228	1.3	0
+335	117539	1.4	0
+335	126000	1.5	0
+335	134517	1.6	0
+336	75634	0.9	0
+336	84235	1	0
+336	92552	1.1	0
+336	100935	1.2	0
+336	109228	1.3	0
+336	117539	1.4	0
+336	126000	1.5	0
+336	134517	1.6	0
+337	75635	0.9	0
+337	84236	1	0
+337	92553	1.1	0
+337	100936	1.2	0
+337	109229	1.3	0
+337	117540	1.4	0
+337	126001	1.5	0
+337	134518	1.6	0
+338	75635	0.9	0
+338	84236	1	0
+338	92553	1.1	0
+338	100936	1.2	0
+338	109229	1.3	0
+338	117540	1.4	0
+338	126001	1.5	0
+338	134518	1.6	0
+339	75636	0.9	0
+339	84237	1	0
+339	92554	1.1	0
+339	100937	1.2	0
+339	109230	1.3	0
+339	117541	1.4	0
+339	126002	1.5	0
+339	134519	1.6	0
+340	75636	0.9	0
+340	84237	1	0
+340	92554	1.1	0
+340	100937	1.2	0
+340	109230	1.3	0
+340	117541	1.4	0
+340	126002	1.5	0
+340	134519	1.6	0
+341	75637	0.9	0
+341	84238	1	0
+341	92555	1.1	0
+341	100938	1.2	0
+341	109231	1.3	0
+341	117542	1.4	0
+341	126003	1.5	0
+341	134520	1.6	0
+342	75637	0.9	0
+342	84238	1	0
+342	92555	1.1	0
+342	100938	1.2	0
+342	109231	1.3	0
+342	117542	1.4	0
+342	126003	1.5	0
+342	134520	1.6	0
+343	75638	0.9	0
+343	84239	1	0
+343	92556	1.1	0
+343	100939	1.2	0
+343	109232	1.3	0
+343	117543	1.4	0
+343	126004	1.5	0
+343	134521	1.6	0
+344	75638	0.9	0
+344	84239	1	0
+344	92556	1.1	0
+344	100939	1.2	0
+344	109232	1.3	0
+344	117543	1.4	0
+344	126004	1.5	0
+344	134521	1.6	0
+345	75639	0.9	0
+345	84240	1	0
+345	92557	1.1	0
+345	100940	1.2	0
+345	109233	1.3	0
+345	117544	1.4	0
+345	126005	1.5	0
+345	134522	1.6	0
+346	75639	0.9	0
+346	84240	1	0
+346	92557	1.1	0
+346	100940	1.2	0
+346	109233	1.3	0
+346	117544	1.4	0
+346	126005	1.5	0
+346	134522	1.6	0
+347	75640	0.9	0
+347	84241	1	0
+347	92558	1.1	0
+347	100941	1.2	0
+347	109234	1.3	0
+347	117545	1.4	0
+347	126006	1.5	0
+347	134523	1.6	0
+348	75640	0.9	0
+348	84241	1	0
+348	92558	1.1	0
+348	100941	1.2	0
+348	109234	1.3	0
+348	117545	1.4	0
+348	126006	1.5	0
+348	134523	1.6	0
+349	75641	0.9	0
+349	84242	1	0
+349	92559	1.1	0
+349	100942	1.2	0
+349	109235	1.3	0
+349	117546	1.4	0
+349	126007	1.5	0
+349	134524	1.6	0
+350	75641	0.9	0
+350	84242	1	0
+350	92559	1.1	0
+350	100942	1.2	0
+350	109235	1.3	0
+350	117546	1.4	0
+350	126007	1.5	0
+350	134524	1.6	0
+351	75642	0.9	0
+351	84243	1	0
+351	92560	1.1	0
+351	100943	1.2	0
+351	109236	1.3	0
+351	117547	1.4	0
+351	126008	1.5	0
+351	134525	1.6	0
+352	75642	0.9	0
+352	84243	1	0
+352	92560	1.1	0
+352	100943	1.2	0
+352	109236	1.3	0
+352	117547	1.4	0
+352	126008	1.5	0
+352	134525	1.6	0
+353	75643	0.9	0
+353	84244	1	0
+353	92561	1.1	0
+353	100944	1.2	0
+353	109237	1.3	0
+353	117548	1.4	0
+353	126009	1.5	0
+353	134526	1.6	0
+354	75643	0.9	0
+354	84244	1	0
+354	92561	1.1	0
+354	100944	1.2	0
+354	109237	1.3	0
+354	117548	1.4	0
+354	126009	1.5	0
+354	134526	1.6	0
+355	75644	0.9	0
+355	84245	1	0
+355	92562	1.1	0
+355	100945	1.2	0
+355	109238	1.3	0
+355	117549	1.4	0
+355	126010	1.5	0
+355	134527	1.6	0
+356	75644	0.9	0
+356	84245	1	0
+356	92562	1.1	0
+356	100945	1.2	0
+356	109238	1.3	0
+356	117549	1.4	0
+356	126010	1.5	0
+356	134527	1.6	0
+357	75645	0.9	0
+357	84246	1	0
+357	92563	1.1	0
+357	100946	1.2	0
+357	109239	1.3	0
+357	117550	1.4	0
+357	126011	1.5	0
+357	134528	1.6	0
+358	75645	0.9	0
+358	84246	1	0
+358	92563	1.1	0
+358	100946	1.2	0
+358	109239	1.3	0
+358	117550	1.4	0
+358	126011	1.5	0
+358	134528	1.6	0
+359	75646	0.9	0
+359	84247	1	0
+359	92564	1.1	0
+359	100947	1.2	0
+359	109240	1.3	0
+359	117551	1.4	0
+359	126012	1.5	0
+359	134529	1.6	0
+360	75646	0.9	0
+360	84247	1	0
+360	92564	1.1	0
+360	100947	1.2	0
+360	109240	1.3	0
+360	117551	1.4	0
+360	126012	1.5	0
+360	134529	1.6	0
+361	75647	0.9	0
+361	84248	1	0
+361	92565	1.1	0
+361	100948	1.2	0
+361	109241	1.3	0
+361	117552	1.4	0
+361	126013	1.5	0
+361	134530	1.6	0
+362	75647	0.9	0
+362	84248	1	0
+362	92565	1.1	0
+362	100948	1.2	0
+362	109241	1.3	0
+362	117552	1.4	0
+362	126013	1.5	0
+362	134530	1.6	0
+363	75648	0.9	0
+363	84249	1	0
+363	92566	1.1	0
+363	100949	1.2	0
+363	109242	1.3	0
+363	117553	1.4	0
+363	126014	1.5	0
+363	134531	1.6	0
+364	75648	0.9	0
+364	84249	1	0
+364	92566	1.1	0
+364	100949	1.2	0
+364	109242	1.3	0
+364	117553	1.4	0
+364	126014	1.5	0
+364	134531	1.6	0
+365	75649	0.9	0
+365	84250	1	0
+365	92567	1.1	0
+365	100950	1.2	0
+365	109243	1.3	0
+365	117554	1.4	0
+365	126015	1.5	0
+365	134532	1.6	0
+366	75649	0.9	0
+366	84250	1	0
+366	92567	1.1	0
+366	100950	1.2	0
+366	109243	1.3	0
+366	117554	1.4	0
+366	126015	1.5	0
+366	134532	1.6	0
+367	75650	0.9	0
+367	84251	1	0
+367	92568	1.1	0
+367	100951	1.2	0
+367	109244	1.3	0
+367	117555	1.4	0
+367	126016	1.5	0
+367	134533	1.6	0
+368	75650	0.9	0
+368	84251	1	0
+368	92568	1.1	0
+368	100951	1.2	0
+368	109244	1.3	0
+368	117555	1.4	0
+368	126016	1.5	0
+368	134533	1.6	0
+369	75651	0.9	0
+369	84252	1	0
+369	92569	1.1	0
+369	100952	1.2	0
+369	109245	1.3	0
+369	117556	1.4	0
+369	126017	1.5	0
+369	134534	1.6	0
+370	75651	0.9	0
+370	84252	1	0
+370	92569	1.1	0
+370	100952	1.2	0
+370	109245	1.3	0
+370	117556	1.4	0
+370	126017	1.5	0
+370	134534	1.6	0
+371	75652	0.9	0
+371	84253	1	0
+371	92570	1.1	0
+371	100953	1.2	0
+371	109246	1.3	0
+371	117557	1.4	0
+371	126018	1.5	0
+371	134535	1.6	0
+372	75652	0.9	0
+372	84253	1	0
+372	92570	1.1	0
+372	100953	1.2	0
+372	109246	1.3	0
+372	117557	1.4	0
+372	126018	1.5	0
+372	134535	1.6	0
+373	75653	0.9	0
+373	84254	1	0
+373	92571	1.1	0
+373	100954	1.2	0
+373	109247	1.3	0
+373	117558	1.4	0
+373	126019	1.5	0
+373	134536	1.6	0
+374	75653	0.9	0
+374	84254	1	0
+374	92571	1.1	0
+374	100954	1.2	0
+374	109247	1.3	0
+374	117558	1.4	0
+374	126019	1.5	0
+374	134536	1.6	0
+375	75654	0.9	0
+375	84255	1	0
+375	92572	1.1	0
+375	100955	1.2	0
+375	109248	1.3	0
+375	117559	1.4	0
+375	126020	1.5	0
+375	134537	1.6	0
+376	75654	0.9	0
+376	84255	1	0
+376	92572	1.1	0
+376	100955	1.2	0
+376	109248	1.3	0
+376	117559	1.4	0
+376	126020	1.5	0
+376	134537	1.6	0
+377	75655	0.9	0
+377	84256	1	0
+377	92573	1.1	0
+377	100956	1.2	0
+377	109249	1.3	0
+377	117560	1.4	0
+377	126021	1.5	0
+377	134538	1.6	0
+378	75655	0.9	0
+378	84256	1	0
+378	92573	1.1	0
+378	100956	1.2	0
+378	109249	1.3	0
+378	117560	1.4	0
+378	126021	1.5	0
+378	134538	1.6	0
+379	75656	0.9	0
+379	84257	1	0
+379	92574	1.1	0
+379	100957	1.2	0
+379	109250	1.3	0
+379	117561	1.4	0
+379	126022	1.5	0
+379	134539	1.6	0
+380	75656	0.9	0
+380	84257	1	0
+380	92574	1.1	0
+380	100957	1.2	0
+380	109250	1.3	0
+380	117561	1.4	0
+380	126022	1.5	0
+380	134539	1.6	0
+381	75657	0.9	0
+381	84258	1	0
+381	92575	1.1	0
+381	100958	1.2	0
+381	109251	1.3	0
+381	117562	1.4	0
+381	126023	1.5	0
+381	134540	1.6	0
+382	75657	0.9	0
+382	84258	1	0
+382	92575	1.1	0
+382	100958	1.2	0
+382	109251	1.3	0
+382	117562	1.4	0
+382	126023	1.5	0
+382	134540	1.6	0
+383	75658	0.9	0
+383	84259	1	0
+383	92576	1.1	0
+383	100959	1.2	0
+383	109252	1.3	0
+383	117563	1.4	0
+383	126024	1.5	0
+383	134541	1.6	0
+384	75658	0.9	0
+384	84259	1	0
+384	92576	1.1	0
+384	100959	1.2	0
+384	109252	1.3	0
+384	117563	1.4	0
+384	126024	1.5	0
+384	134541	1.6	0
+385	75659	0.9	0
+385	84260	1	0
+385	92577	1.1	0
+385	100960	1.2	0
+385	109253	1.3	0
+385	117564	1.4	0
+385	126025	1.5	0
+385	134542	1.6	0
+386	75659	0.9	0
+386	84260	1	0
+386	92577	1.1	0
+386	100960	1.2	0
+386	109253	1.3	0
+386	117564	1.4	0
+386	126025	1.5	0
+386	134542	1.6	0
+387	75660	0.9	0
+387	84261	1	0
+387	92578	1.1	0
+387	100961	1.2	0
+387	109254	1.3	0
+387	117565	1.4	0
+387	126026	1.5	0
+387	134543	1.6	0
+388	75660	0.9	0
+388	84261	1	0
+388	92578	1.1	0
+388	100961	1.2	0
+388	109254	1.3	0
+388	117565	1.4	0
+388	126026	1.5	0
+388	134543	1.6	0
+389	75661	0.9	0
+389	84262	1	0
+389	92579	1.1	0
+389	100962	1.2	0
+389	109255	1.3	0
+389	117566	1.4	0
+389	126027	1.5	0
+389	134544	1.6	0
+390	75661	0.9	0
+390	84262	1	0
+390	92579	1.1	0
+390	100962	1.2	0
+390	109255	1.3	0
+390	117566	1.4	0
+390	126027	1.5	0
+390	134544	1.6	0
+391	75662	0.9	0
+391	84263	1	0
+391	92580	1.1	0
+391	100963	1.2	0
+391	109256	1.3	0
+391	117567	1.4	0
+391	126028	1.5	0
+391	134545	1.6	0
+392	75662	0.9	0
+392	84263	1	0
+392	92580	1.1	0
+392	100963	1.2	0
+392	109256	1.3	0
+392	117567	1.4	0
+392	126028	1.5	0
+392	134545	1.6	0
+393	75663	0.9	0
+393	84264	1	0
+393	92581	1.1	0
+393	100964	1.2	0
+393	109257	1.3	0
+393	117568	1.4	0
+393	126029	1.5	0
+393	134546	1.6	0
+394	75663	0.9	0
+394	84264	1	0
+394	92581	1.1	0
+394	100964	1.2	0
+394	109257	1.3	0
+394	117568	1.4	0
+394	126029	1.5	0
+394	134546	1.6	0
+395	75664	0.9	0
+395	84265	1	0
+395	92582	1.1	0
+395	100965	1.2	0
+395	109258	1.3	0
+395	117569	1.4	0
+395	126030	1.5	0
+395	134547	1.6	0
+396	75664	0.9	0
+396	84265	1	0
+396	92582	1.1	0
+396	100965	1.2	0
+396	109258	1.3	0
+396	117569	1.4	0
+396	126030	1.5	0
+396	134547	1.6	0
+397	75665	0.9	0
+397	84266	1	0
+397	92583	1.1	0
+397	100966	1.2	0
+397	109259	1.3	0
+397	117570	1.4	0
+397	126031	1.5	0
+397	134548	1.6	0
+398	75665	0.9	0
+398	84266	1	0
+398	92583	1.1	0
+398	100966	1.2	0
+398	109259	1.3	0
+398	117570	1.4	0
+398	126031	1.5	0
+398	134548	1.6	0
+399	75666	0.9	0
+399	84267	1	0
+399	92584	1.1	0
+399	100967	1.2	0
+399	109260	1.3	0
+399	117571	1.4	0
+399	126032	1.5	0
+399	134549	1.6	0
+400	75666	0.9	0
+400	84267	1	0
+400	92584	1.1	0
+400	100967	1.2	0
+400	109260	1.3	0
+400	117571	1.4	0
+400	126032	1.5	0
+400	134549	1.6	0
+401	75667	0.9	0
+401	84268	1	0
+401	92585	1.1	0
+401	100968	1.2	0
+401	109261	1.3	0
+401	117572	1.4	0
+401	126033	1.5	0
+401	134550	1.6	0
+402	75667	0.9	0
+402	84268	1	0
+402	92585	1.1	0
+402	100968	1.2	0
+402	109261	1.3	0
+402	117572	1.4	0
+402	126033	1.5	0
+402	134550	1.6	0
+403	75480	0.9	0.098718259812
+403	75480	0.9	0.104104777526
+403	75480	0.9	0.11114487168
+403	75480	0.9	0.111571102343
+403	75480	0.9	0.118488981664
+403	75480	0.9	0.119583650776
+403	75480	0.9	0.143877137797
+403	75480	0.9	0.144696431554
+403	75480	0.9	0.147010745767
+403	75480	0.9	0.149943466992
+403	75480	0.9	0.164553341231
+403	75480	0.9	0.18652590966
+403	75480	0.9	0.1909308841
+403	75480	0.9	0.201708033216
+403	75480	0.9	0.206795213669
+403	75480	0.9	0.229202892735
+403	75480	0.9	0.231898218416
+403	75480	0.9	0.239739567701
+403	75480	0.9	0.240327024178
+403	75480	0.9	0.243374946935
+403	75480	0.9	0.248483362773
+403	75480	0.9	0.257110624523
+403	75480	0.9	0.257563371466
+403	75480	0.9	0.257599056974
+403	75480	0.9	0.268290371856
+403	75480	0.9	0.270558156921
+403	75480	0.9	0.274965407244
+403	75480	0.9	0.27726554957
+403	75480	0.9	0.281222980764
+403	75480	0.9	0.290176921471
+403	75480	0.9	0.309770129487
+403	75480	0.9	0.318399518787
+403	75480	0.9	0.321212264905
+403	75480	0.9	0.325381707309
+403	75480	0.9	0.331637180634
+403	75480	0.9	0.339804418132
+403	75480	0.9	0.340531032409
+403	75480	0.9	0.341920097726
+403	75480	0.9	0.345859839257
+403	75480	0.9	0.352983607603
+403	84081	1	0.155490208626
+403	84081	1	0.163160539476
+403	84081	1	0.165288044912
+403	84081	1	0.171422918032
+403	84081	1	0.173496054603
+403	84081	1	0.180077575896
+403	84081	1	0.184138817446
+403	84081	1	0.186450001146
+403	84081	1	0.197355404433
+404	84082	1	0.998767769354
+404	92399	1.1	1.056627902352
+404	92399	1.1	1.058302561303
+404	92399	1.1	1.062895618704
+404	92399	1.1	1.063564261765
+404	92399	1.1	1.078014139993
+404	92399	1.1	1.081816384062
+404	92399	1.1	1.094385777523
+405	92405	1.1	1.099932073663
+405	100788	1.2	1.161372878021
+405	100788	1.2	1.16741194225
+405	100788	1.2	1.173535215517
+405	100788	1.2	1.185671972285
+405	100788	1.2	1.192205851243
+405	100788	1.2	1.193790768359
+405	100788	1.2	1.193890562443
+405	100788	1.2	1.194885597974
+405	100788	1.2	1.197658319016
+405	100788	1.2	1.199274294161
+405	109081	1.3	1.100063691915
+405	109081	1.3	1.100642771128
+405	109081	1.3	1.123147959518
+405	109081	1.3	1.124125028202
+405	109081	1.3	1.129250623953
+405	109081	1.3	1.129524721946
+405	109081	1.3	1.131243765328
+405	109081	1.3	1.133840456319
+405	109081	1.3	1.135718810429
+405	109081	1.3	1.136161771788
+405	109081	1.3	1.140440946686
+405	109081	1.3	1.141896752601
+405	109081	1.3	1.146715650688
+405	109081	1.3	1.15570440048
+405	109081	1.3	1.173041741042
+405	109081	1.3	1.187552879267
+405	109081	1.3	1.197013480453
+405	109081	1.3	1.206649787639
+405	109081	1.3	1.20819297886
+405	109081	1.3	1.215643650032
+405	109081	1.3	1.219685970337
+405	109081	1.3	1.223620198385
+405	109081	1.3	1.228031232195
+405	109081	1.3	1.237826340802
+405	109081	1.3	1.250893660619
+405	109081	1.3	1.253606482991
+406	109082	1.3	1.297767375191
+406	117393	1.4	1.365586509857
+406	117393	1.4	1.367607555273
+406	117393	1.4	1.376416509077
+406	117393	1.4	1.377728142579
+406	117393	1.4	1.379420428603
+406	117393	1.4	1.384542736684
+406	117393	1.4	1.392498815165
+406	117393	1.4	1.394838072223
+407	117400	1.4	1.399318200458
+407	125861	1.5	1.468207222399
+407	125861	1.5	1.476935943261
+407	125861	1.5	1.481705336272
+407	125861	1.5	1.48232848484
+407	125861	1.5	1.484500654449
+407	125861	1.5	1.48750864173
+407	125861	1.5	1.488200024003
+407	125861	1.5	1.493339882201
+407	125861	1.5	1.494443169342
+407	125861	1.5	1.498787439136
+408	125863	1.5	1.475318353806
+408	125863	1.5	1.499489697954
+408	134380	1.6	1.371984165946
+408	134380	1.6	1.373876848315
+408	134380	1.6	1.376004911524
+408	134380	1.6	1.391573334331
+408	134380	1.6	1.402208472608
+408	134380	1.6	1.407743236583
+408	134380	1.6	1.409017644687
+408	134380	1.6	1.417348165962
+408	134380	1.6	1.417381976129
+408	134380	1.6	1.422581309453
+408	134380	1.6	1.423817315121
+408	134380	1.6	1.425205062234
+408	134380	1.6	1.432814392328
+408	134380	1.6	1.438746239445
+408	134380	1.6	1.443067769698
+408	134380	1.6	1.444160894215
+408	134380	1.6	1.446960350555
+408	134380	1.6	1.448712457948
+408	134380	1.6	1.455786415792
+408	134380	1.6	1.467504111001
+408	134380	1.6	1.473345332266
+408	134380	1.6	1.477726839817
+408	134380	1.6	1.479438253507
+408	134380	1.6	1.484012884691
+408	134380	1.6	1.487444068387
+408	134380	1.6	1.504350909997
+408	134380	1.6	1.510371584055
+408	134380	1.6	1.512557607784
+408	134380	1.6	1.515503596233
+408	134380	1.6	1.521040706503
+408	134380	1.6	1.532848026942
+408	134380	1.6	1.535173033883
+408	134380	1.6	1.536355130045
+408	134380	1.6	1.53953389544
+408	134380	1.6	1.548487422095
+408	134380	1.6	1.556045842492
+408	134380	1.6	1.557923054689
+408	134380	1.6	1.559345107441
+408	134380	1.6	1.56096174532
+408	134380	1.6	1.566639949842
+408	134380	1.6	1.568610654806
+
