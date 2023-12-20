@@ -211,6 +211,7 @@ void BaseStation::updateCQI(int cqi, int id){
 }
 
 void BaseStation::handleMessage(cMessage *msg){
+    const char* o = msg->getName();
     if (msg->isSelfMessage()){
         sendFrame();
     }
@@ -220,9 +221,9 @@ void BaseStation::handleMessage(cMessage *msg){
         CQImsg *m = check_and_cast<CQImsg*>(msg);
 
         updateCQI(m->getNewCQI(), m->getArrivalGate()->getIndex());
-        //delete(msg);
+        delete(msg);
     }
-    if (strcmp(msg->getName(), "Packet") == 0){
+    if (strcmp(o, "Packet") == 0){
         storePacket(msg);
     }
 }
