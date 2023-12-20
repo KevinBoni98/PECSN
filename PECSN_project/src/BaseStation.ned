@@ -8,7 +8,7 @@ simple BaseStation
     parameters:
         @signal[packetsInSpecificQueue*](type="int");
         @statisticTemplate[packetsInSpecificQueueStat](title="Packets In a specific Queue"; record=vector,stats;);
-        @signal[packetsInQueue](type="int");
+        @signal[packetsInQueue](type="double");
         @statistic[packetsInQueueStat](title="Packets In Queue"; source="packetsInQueue"; record=vector,stats;);
         @signal[simFrame](type="int");
         @statistic[simFrameStat](title="Occupied frame slots"; source="simFrame"; record=vector,stats;);

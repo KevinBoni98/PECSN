@@ -31,6 +31,7 @@ BaseStation::~BaseStation() {
 
 void BaseStation::initialize(){
     simFrame = registerSignal("simFrame");
+    packetsInQueue = registerSignal("packetsInQueue");
     beep = new cMessage("beep");
     nUsers = getParentModule()->par("NUM_USER");
     packetsInSpecificQueue = new simsignal_t[nUsers];
@@ -174,15 +175,20 @@ void BaseStation::assembleFrame(){
     EV<<"entro nel loop"<<endl;
     while (!readyToSend && fullLoop < nUsers){
         UserQueue *queue = check_and_cast<UserQueue*>(RRqueues->get(toServe));
+        EV<<"sto servendo l'utente con id "<<toServe<<endl;
         if(queue->isEmpty()){
             EV<<"niente da trasmettere"<<endl;
+            if (toServe == nUsers-1)
+                toServe = 0;
+            else
+                toServe++; //toServe tracks the next user that needs serving
             fullLoop++;
             continue;
         }
         // no packets to transmit
         EV<<"qualcosa vedo"<<endl;
         readyToSend = insertIntoFrame(frame, queue);
-        EV<<"ho servito l'utente con id "<<toServe<<endl;
+
         if (toServe == nUsers-1) 
             toServe = 0;
         else 
@@ -210,6 +216,8 @@ void BaseStation::storePacket(cMessage *msg){
     Packet *packet = check_and_cast<Packet*>(msg);
     packet->setArrivalTime(simTime());
     queues[packet->getDestination()]->insert(packet);
+    int len = queues[packet->getDestination()]->getLength();
+    EV<<"pacchetti in coda di id = "<<packet->getDestination()<<": "<<len<<endl;
 }
 
 
@@ -224,7 +232,7 @@ void BaseStation::handleMessage(cMessage *msg){
     if (msg->isSelfMessage()){
         sendFrame();
         int nQueues = getParentModule()->par("NUM_USER");
-        int numPacketInQueue = 0;
+        double numPacketInQueue = 0;
         for(int i = 0; i < nQueues; i++){
             numPacketInQueue += queues[i]->getLength();
             emit(packetsInSpecificQueue[i],queues[i]->getLength());
@@ -241,6 +249,7 @@ void BaseStation::handleMessage(cMessage *msg){
     }
     if (strcmp(o, "Packet") == 0){
         storePacket(msg);
+
     }
 }
 } /* namespace pecsn_project */
