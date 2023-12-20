@@ -31,6 +31,7 @@ BaseStation::~BaseStation() {
 
 void BaseStation::initialize(){
     simFrame = registerSignal("simFrame");
+    packetsInQueue = registerSignal("packetsInQueue");
     beep = new cMessage("beep");
     nUsers = getParentModule()->par("NUM_USER");
     packetsInSpecificQueue = new simsignal_t[nUsers];
@@ -231,7 +232,7 @@ void BaseStation::handleMessage(cMessage *msg){
     if (msg->isSelfMessage()){
         sendFrame();
         int nQueues = getParentModule()->par("NUM_USER");
-        int numPacketInQueue = 0;
+        double numPacketInQueue = 0;
         for(int i = 0; i < nQueues; i++){
             numPacketInQueue += queues[i]->getLength();
             emit(packetsInSpecificQueue[i],queues[i]->getLength());
