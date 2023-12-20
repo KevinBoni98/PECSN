@@ -38,6 +38,8 @@ private:
     cQueue *RRqueues;
     Frame *frame;
     simsignal_t simFrame;
+    simsignal_t packetsInQueue;
+    simsignal_t *packetsInSpecificQueue;
 
 
 public:
