@@ -27,6 +27,7 @@ namespace pecsn_project;
 // TODO generated message class
 //
 packet Packet {
+   
     int destination;
     int length;
     IntVector RBs;

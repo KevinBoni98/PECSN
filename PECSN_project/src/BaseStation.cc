@@ -35,6 +35,15 @@ void BaseStation::initialize(){
     packetsInQueue = registerSignal("packetsInQueue");
     beep = new cMessage("beep");
     nUsers = getParentModule()->par("NUM_USER");
+    packetsInSpecificQueue = new simsignal_t[nUsers];
+    for (int i = 0; i < nUsers; i++){
+        char signalName[32];
+            sprintf(signalName, "packetsInSpecificQueue%d", i);
+            simsignal_t signal = registerSignal(signalName);
+            cProperty *statisticTemplate = getProperties()->get("statisticTemplate", "packetsInSpecificQueueStat");
+            getEnvir()->addResultRecorders(this, signal, signalName,  statisticTemplate);
+            packetsInSpecificQueue[i] = signal;
+    }
     currentCQI = new int[nUsers];
     for (int i = 0; i < nUsers; i++){
         currentCQI[i] = 0;
@@ -212,14 +221,19 @@ void BaseStation::updateCQI(int cqi, int id){
 }
 
 void BaseStation::handleMessage(cMessage *msg){
+    const char * o = msg->getName();
     if (msg->isSelfMessage()){
         sendFrame();
         int nQueues = getParentModule()->par("NUM_USER");
         double numPacketInQueue = 0;
-        for(int i = 0; i < nQueues; i++)
+        for(int i = 0; i < nQueues; i++){
             numPacketInQueue += queues[i]->getLength();
+            emit(packetsInSpecificQueue[i],queues[i]->getLength());
+        }
+
 
        emit(packetsInQueue, numPacketInQueue);
+
     }
 
     if(strcmp(msg->getName(),"CQI") == 0){
@@ -228,9 +242,14 @@ void BaseStation::handleMessage(cMessage *msg){
 
         updateCQI(m->getNewCQI(), m->getArrivalGate()->getIndex());
         delete(msg);
+
     }
-    if (strcmp(msg->getName(), "Packet") == 0){
+
+
+
+    if (strcmp(o, "Packet") == 0){
         storePacket(msg);
+
     }
 }
 } /* namespace pecsn_project */

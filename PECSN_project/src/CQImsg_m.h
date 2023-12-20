@@ -36,6 +36,7 @@ namespace pecsn_project {
  * {
  *     int newCQI;
  * 
+ * 
  * }
  * </pre>
  */

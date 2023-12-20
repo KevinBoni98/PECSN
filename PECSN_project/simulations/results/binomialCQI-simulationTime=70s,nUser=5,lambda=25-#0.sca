@@ -1,8 +1,8 @@
 version 3
-run binomialCQI-0-20231218-16:49:25-15892
+run binomialCQI-0-20231218-21:08:58-20344
 attr configname binomialCQI
-attr datetime 20231218-16:49:25
-attr datetimef 20231218-164925
+attr datetime 20231218-21:08:58
+attr datetimef 20231218-210858
 attr experiment binomialCQI
 attr inifile omnetpp.ini
 attr iterationvars "$simulationTime=70s, $nUser=5, $lambda=25"
@@ -10,7 +10,7 @@ attr iterationvarsd simulationTime=70s/nUser=5/lambda=25
 attr iterationvarsf simulationTime=70s,nUser=5,lambda=25-
 attr measurement "$simulationTime=70s, $nUser=5, $lambda=25"
 attr network Network
-attr processid 15892
+attr processid 20344
 attr repetition 0
 attr replication #0
 attr resultdir results
@@ -19,6 +19,10 @@ attr seedset 0
 itervar lambda 25
 itervar nUser 5
 itervar simulationTime 70s
+config cmdenv-express-mode true
+config cmdenv-stop-batch-on-error true
+config **.scalar-recording true
+config **.vector-recording true
 config **.Users[*].CQIdistribution "\"binomial\""
 config network Network
 config sim-time-limit 70s
@@ -37,6 +41,61 @@ par Network.BS CQIValues "\" 3 3 6 11 15 20 25 36 39 50 63 72 80 93 93 \""
 par Network.BS CQIArrayLength 15
 par Network.BS frameSize 25
 par Network.BS timeSlot 0.001
+statistic Network.BS packetsInSpecificQueue4:stats
+field count 70000
+field mean 2.8571428571429e-05
+field stddev 0.0053451866573893
+field min 0
+field max 1
+field sum 2
+field sqrsum 2
+attr "" ""
+attr recordingmode stats
+attr title "Packets In a specific Queue"
+statistic Network.BS packetsInSpecificQueue3:stats
+field count 70000
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr title "Packets In a specific Queue"
+statistic Network.BS packetsInSpecificQueue2:stats
+field count 70000
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr "" ""
+attr recordingmode stats
+attr title "Packets In a specific Queue"
+statistic Network.BS packetsInSpecificQueue1:stats
+field count 70000
+field mean 1.4285714285714e-05
+field stddev 0.0037796447300923
+field min 0
+field max 1
+field sum 1
+field sqrsum 1
+attr "" ""
+attr recordingmode stats
+attr title "Packets In a specific Queue"
+statistic Network.BS packetsInSpecificQueue0:stats
+field count 70000
+field mean 1.4285714285714e-05
+field stddev 0.0037796447300923
+field min 0
+field max 1
+field sum 1
+field sqrsum 1
+attr "" ""
+attr recordingmode stats
+attr title "Packets In a specific Queue"
 statistic Network.BS simFrameStat:stats
 field count 70000
 field mean 0.30028571428571

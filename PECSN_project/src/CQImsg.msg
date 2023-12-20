@@ -21,4 +21,5 @@ namespace pecsn_project;
 packet CQImsg {
     int newCQI;
     
+    
 }
