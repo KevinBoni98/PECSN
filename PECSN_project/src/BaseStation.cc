@@ -33,6 +33,15 @@ void BaseStation::initialize(){
     simFrame = registerSignal("simFrame");
     beep = new cMessage("beep");
     nUsers = getParentModule()->par("NUM_USER");
+    packetsInSpecificQueue = new simsignal_t[nUsers];
+    for (int i = 0; i < nUsers; i++){
+        char signalName[32];
+        sprintf(signalName, "packetsInSpecificQueue%d", i);
+        simsignal_t signal = registerSignal(signalName);
+        cProperty *statisticTemplate = getProperties()->get("statisticTemplate", "packetsInSpecificQueueStat");
+        getEnvir()->addResultRecorders(this, signal, signalName,  statisticTemplate);
+        packetsInSpecificQueue[i] = signal;
+    }
     currentCQI = new int[nUsers];
     for (int i = 0; i < nUsers; i++){
         currentCQI[i] = 0;
@@ -214,6 +223,13 @@ void BaseStation::handleMessage(cMessage *msg){
     const char* o = msg->getName();
     if (msg->isSelfMessage()){
         sendFrame();
+        int nQueues = getParentModule()->par("NUM_USER");
+        int numPacketInQueue = 0;
+        for(int i = 0; i < nQueues; i++){
+            numPacketInQueue += queues[i]->getLength();
+            emit(packetsInSpecificQueue[i],queues[i]->getLength());
+        }
+        emit(packetsInQueue, numPacketInQueue);
     }
 
     if(strcmp(msg->getName(),"CQI") == 0){
