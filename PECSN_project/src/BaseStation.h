@@ -32,6 +32,7 @@ private:
     int *CQITable;
     int *currentCQI;
     int nUsers;
+    int frameSize;
     cMessage *beep;
     int toServe;
     UserQueue** queues;

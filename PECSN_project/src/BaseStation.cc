@@ -33,6 +33,7 @@ void BaseStation::initialize(){
     simFrame = registerSignal("simFrame");
     packetsInQueue = registerSignal("packetsInQueue");
     beep = new cMessage("beep");
+    frameSize = par("frameSize"); 
     nUsers = getParentModule()->par("NUM_USER");
     packetsInSpecificQueue = new simsignal_t[nUsers];
     for (int i = 0; i < nUsers; i++){
@@ -47,7 +48,7 @@ void BaseStation::initialize(){
     for (int i = 0; i < nUsers; i++){
         currentCQI[i] = 0;
     }
-    toServe = 0;
+    toServe = 1;
     //inizializzo array dei valori in byte dei CQI
     EV<<"CQIArrayLength:\t"<<par("CQIArrayLength").intValue()<<endl;
     int len = par("CQIArrayLength").intValue();
@@ -118,8 +119,8 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
     Packet* currentPacket;
     while(!queue->isEmpty()){
-        // each frame is composed by 25 RBs
-        emptySlots = 25 - occupiedSlots;
+        // each frame is composed by 25 RBs by default
+        emptySlots = frameSize - occupiedSlots;
         freeSpace = emptySlots * RBsize;
 
         currentPacket = check_and_cast<Packet*>(queue->get(0));
@@ -141,6 +142,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
             occupiedSlots += RBoccupied;
             // compute #freeBytes left from the last occupied RB
             freeBytesFromLastRB = (RBsize - ((packetSize - freeBytesFromLastRB) % RBsize));
+            if ((packetSize - freeBytesFromLastRB) == RBsize) freeBytesFromLastRB = 0;
         } else {
             // the new packet fits into the current RB of the frame
             freeBytesFromLastRB -= packetSize;
@@ -156,6 +158,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
     }
     if (isInsertOne && occupiedSlots == frame->getRBslotsUsed()){
         occupiedSlots++;
+        emptySlots--;
     }
     frame->setRBslotsUsed(occupiedSlots);
 
@@ -169,6 +172,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 }
 
 void BaseStation::assembleFrame(){
+    EV<<"toServe"<<toServe<<endl;
     clearFrame();
     bool readyToSend = false;
     int fullLoop = 0; //exit loop if i have checked all users and they have nothing to send
@@ -188,7 +192,7 @@ void BaseStation::assembleFrame(){
         // no packets to transmit
         EV<<"qualcosa vedo"<<endl;
         readyToSend = insertIntoFrame(frame, queue);
-
+        EV<<"readyToSend:\t "<<readyToSend<<endl;
         if (toServe == nUsers-1) 
             toServe = 0;
         else 
