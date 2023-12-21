@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<analysis version="2">
-    <inputs>
-        <input pattern="/PECSN_project/simulations/results/uniformCQI-*.vec"/>
-        <input pattern="/PECSN_project/simulations/results/uniformCQI-*.sca"/>
-    </inputs>
-    <charts/>
-</analysis>

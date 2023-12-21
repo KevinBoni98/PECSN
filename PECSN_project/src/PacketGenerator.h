@@ -28,6 +28,7 @@ private:
     int indexArrivalTimeGen;
     int indexPkgSizeGen;
     double  lambda;
+    bool constantValues;
 public:
     PacketGenerator();
     virtual ~PacketGenerator();

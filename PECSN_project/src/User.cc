@@ -36,12 +36,14 @@ void User::initialize()
     packetDelay = registerSignal("packetDelay");
     throughput = registerSignal("throughput");
     packetsReceived = registerSignal("packetsReceived");
+    frameReceived = registerSignal("frameReceived");
     int multiplier = getParentModule()->par("CQIRngMultiplier");
     nUsers = getParentModule()->par("NUM_USER");
     id = getIndex();
 
     rngIndex = id + multiplier*nUsers;
     distribution = par("CQIdistribution").stringValue();
+    EV<<"distribution"<<distribution<<endl;
     p = (double)(id+1)/(double)nUsers;
     EV<<"p = "<<p<<endl;
     sendCQI();
@@ -53,10 +55,12 @@ void User::handleMessage(cMessage *msg){
     EV<<"total size:\t"<<pl.size()<<endl;
     int bytesReceived = 0;
     int pR = 0;
+    int fR = 0;
     while(pl.size() != 0){
         Packet * p = pl.back();
         pl.pop_back();
         if (p->getDestination() == id){
+            if (fR == 0) fR++;
             pR++;
             simtime_t elapsed = simTime() - p->getArrivalTime();//arrival time = generation time = arrival at base station
             emit(packetDelay, elapsed.dbl());
@@ -66,6 +70,7 @@ void User::handleMessage(cMessage *msg){
     }
     EV<<"packets received by id = "<<id<<": "<<pR<<endl;
     emit(packetsReceived, pR);
+    emit(frameReceived, fR);
     emit(throughput, bytesReceived);
     delete(msg);
     sendCQI();
@@ -81,6 +86,9 @@ void User::sendCQI(){
         cqi = binomial(14, p, rngIndex);
         cqi +=1;
     }
+    else if (distribution.compare("constat") == 0){
+        cqi = 1;
+    } 
 
     CQImsg * msg = new CQImsg("CQI");
     msg->setNewCQI(cqi);

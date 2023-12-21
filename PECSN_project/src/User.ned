@@ -9,7 +9,9 @@ simple User
         @signal[packetDelay](type="double");
         @statistic[packetDelayStat](title="Packet delay"; source="packetDelay"; record=vector,stats;);
         @signal[packetsReceived](type="int");
-        @statistic[packetsReceivedStat](title="Packets received per timeslot"; source="packetsReceived"; record=vector,stats;);
+        @signal[frameReceived](type="int");
+        @statistic[frameReceivedStat](title="Packets received per timeslot with packets for him"; source="frameReceived"; record=vector,stats;);
+        @statistic[packetsReceivedStat](title="Frame received per timeslot "; source="packetsReceived"; record=vector,stats;);
         @signal[throughput](type="int");
         @statistic[throughputStat](title="Throughput"; source="throughput"; record=vector,stats;);
         
