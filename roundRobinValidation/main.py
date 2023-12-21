@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # Leggi il JSON da un file
-file_path = 'result_ok.json'
+file_path = 'result.json'
 with open(file_path, 'r') as file:
     json_data = json.load(file)
 

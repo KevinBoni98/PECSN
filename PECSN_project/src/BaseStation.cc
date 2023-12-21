@@ -137,13 +137,18 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
 
         if (RBoccupiedByPacket > 0) {
+            EV<<"1"<<endl;
             // we start filling a new RB of the frame
             int RBoccupied = std::floor(RBoccupiedByPacket);
             occupiedSlots += RBoccupied;
             // compute #freeBytes left from the last occupied RB
-            freeBytesFromLastRB = (RBsize - ((packetSize - freeBytesFromLastRB) % RBsize));
-            if ((packetSize - freeBytesFromLastRB) == RBsize) freeBytesFromLastRB = 0;
+            if ((packetSize - freeBytesFromLastRB) == RBsize){ 
+                freeBytesFromLastRB = 0;
+            }else{
+                freeBytesFromLastRB = (RBsize - ((packetSize - freeBytesFromLastRB) % RBsize));
+            }
         } else {
+            EV<<"2"<<endl;
             // the new packet fits into the current RB of the frame
             freeBytesFromLastRB -= packetSize;
         }
@@ -164,7 +169,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
     // update packets in the frame
     frame->setPacketList(packets);
-    if (emptySlots == 0)
+    if (frameSize - occupiedSlots == 0)
         // frame is ready
         return true;
     // otherwise the frame has still some empty spot to fill
