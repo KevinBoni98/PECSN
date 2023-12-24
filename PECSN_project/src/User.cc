@@ -33,6 +33,7 @@ User::~User() {
 }
 void User::initialize()
 {
+    warmup = getParentModule()->par("warmup").doubleValueInUnit("s");
     packetDelay = registerSignal("packetDelay");
     throughput = registerSignal("throughput");
     packetsReceived = registerSignal("packetsReceived");
@@ -40,19 +41,18 @@ void User::initialize()
     int multiplier = getParentModule()->par("CQIRngMultiplier");
     nUsers = getParentModule()->par("NUM_USER");
     id = getIndex();
-
     rngIndex = id + multiplier*nUsers;
     distribution = par("CQIdistribution").stringValue();
-    EV<<"distribution"<<distribution<<endl;
+    //EV<<"distribution"<<distribution<<endl;
     p = (double)(id+1)/(double)nUsers;
-    EV<<"p = "<<p<<endl;
+    //EV<<"p = "<<p<<endl;
     sendCQI();
 }
 
 void User::handleMessage(cMessage *msg){
     Frame *frame = check_and_cast<Frame*>(msg);
     std::vector<Packet*> pl = frame->getPacketList();
-    EV<<"total size:\t"<<pl.size()<<endl;
+    //EV<<"total size:\t"<<pl.size()<<endl;
     int bytesReceived = 0;
     int pR = 0;
     int fR = 0;
@@ -62,16 +62,21 @@ void User::handleMessage(cMessage *msg){
         if (p->getDestination() == id){
             if (fR == 0) fR++;
             pR++;
-            simtime_t elapsed = simTime() - p->getArrivalTime();//arrival time = generation time = arrival at base station
-            emit(packetDelay, elapsed.dbl());
+            if (simTime() >= warmup){
+                simtime_t elapsed = simTime() - p->getArrivalTime();//arrival time = generation time = arrival at base station
+                emit(packetDelay, elapsed.dbl());
+            }
+
             bytesReceived += p->getLength();
-            EV<<"packet size: "<<p->getLength()<<endl;
+            //EV<<"packet size: "<<p->getLength()<<endl;
         }
     }
-    EV<<"packets received by id = "<<id<<": "<<pR<<endl;
-    emit(packetsReceived, pR);
-    emit(frameReceived, fR);
-    emit(throughput, bytesReceived);
+   // EV<<"packets received by id = "<<id<<": "<<pR<<endl;
+    if (simTime() >= warmup){
+        emit(packetsReceived, pR);
+        emit(frameReceived, fR);
+        emit(throughput, bytesReceived);
+    }
     delete(msg);
     sendCQI();
 
@@ -92,9 +97,9 @@ void User::sendCQI(){
 
     CQImsg * msg = new CQImsg("CQI");
     msg->setNewCQI(cqi);
-    EV<<"packet name: "<<msg->getName()<<endl;
+    //EV<<"packet name: "<<msg->getName()<<endl;
     send(msg,"CQI_out");
-    EV<<"sending cqi = "<<msg->getNewCQI()<<endl;
+    //EV<<"sending cqi = "<<msg->getNewCQI()<<endl;
 
 }
 

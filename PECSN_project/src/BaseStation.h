@@ -33,6 +33,7 @@ private:
     int *currentCQI;
     int nUsers;
     int frameSize;
+    double warmup;
     cMessage *beep;
     int toServe;
     UserQueue** queues;

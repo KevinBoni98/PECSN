@@ -16,6 +16,7 @@ simple BaseStation
         int CQIArrayLength = default(15);
         int frameSize = default(25);
         double timeSlot = default(2);
+        
     gates:
         input packet_in[];
         input CQI_in[];

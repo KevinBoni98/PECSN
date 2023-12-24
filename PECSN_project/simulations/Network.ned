@@ -13,6 +13,7 @@ network Network
 		int CQIRngMultiplier = default(0);
 		int PktSizeRngMultiplier = CQIRngMultiplier+1;
 		int PktGenerationRngMultiplier = PktSizeRngMultiplier+1;
+		double warmup @unit(s) = default(7s);
 		
         @display("bgb=764,368");
     submodules:
