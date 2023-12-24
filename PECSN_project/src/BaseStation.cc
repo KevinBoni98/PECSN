@@ -34,6 +34,7 @@ void BaseStation::initialize(){
     packetsInQueue = registerSignal("packetsInQueue");
     beep = new cMessage("beep");
     frameSize = par("frameSize"); 
+    warmup = getParentModule()->par("warmup").doubleValueInUnit("s");
     nUsers = getParentModule()->par("NUM_USER");
     packetsInSpecificQueue = new simsignal_t[nUsers];
     for (int i = 0; i < nUsers; i++){
@@ -48,7 +49,7 @@ void BaseStation::initialize(){
     for (int i = 0; i < nUsers; i++){
         currentCQI[i] = 0;
     }
-    toServe = 1;
+    toServe = 0;
     //inizializzo array dei valori in byte dei CQI
     EV<<"CQIArrayLength:\t"<<par("CQIArrayLength").intValue()<<endl;
     int len = par("CQIArrayLength").intValue();
@@ -118,6 +119,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
     int packetSize;
 
     Packet* currentPacket;
+    EV<<"lenghth of this queue: "<<queue->getLength()<<endl;
     while(!queue->isEmpty()){
         // each frame is composed by 25 RBs by default
         emptySlots = frameSize - occupiedSlots;
@@ -125,7 +127,7 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
 
         currentPacket = check_and_cast<Packet*>(queue->get(0));
         packetSize = currentPacket->getLength();
-
+        EV<<"packet size: "<<packetSize<<endl;
         EV<<"freeBytesFromLastRB\t"<<freeBytesFromLastRB<<endl;
         EV<<"occupiedSlots\t"<<occupiedSlots<<endl;
         if(packetSize > freeSpace + freeBytesFromLastRB){
@@ -134,13 +136,15 @@ bool BaseStation::insertIntoFrame(Frame *frame, UserQueue *queue){
         isInsertOne = true;
         // #RBs occupied by current packet (packets from the same user can share the same RB)
         float RBoccupiedByPacket = ((float)(packetSize - freeBytesFromLastRB)) / RBsize;
-
+        EV<<"Rbs occupied by packet: "<<RBoccupiedByPacket<<endl;
 
         if (RBoccupiedByPacket > 0) {
             EV<<"1"<<endl;
             // we start filling a new RB of the frame
-            int RBoccupied = std::floor(RBoccupiedByPacket);
+            int RBoccupied = std::ceil(RBoccupiedByPacket);
+            EV<<"Rbs occupied are then "<<RBoccupied<<endl;
             occupiedSlots += RBoccupied;
+            EV<<"Now occupied slots are "<<occupiedSlots<<endl;
             // compute #freeBytes left from the last occupied RB
             if ((packetSize - freeBytesFromLastRB) == RBsize){ 
                 freeBytesFromLastRB = 0;
@@ -211,7 +215,9 @@ void BaseStation::sendFrame(){
     assembleFrame();
     int occupiedSlots = frame->getRBslotsUsed();
     EV<<"occupiedSlots:\t"<<occupiedSlots<<endl;
-    emit(simFrame, occupiedSlots);
+    if (simTime() >= warmup){
+        emit(simFrame, occupiedSlots);
+    }
 
     for (int i = 0; i < nUsers; i++){
         Frame *f = new Frame(*frame);
@@ -233,7 +239,7 @@ void BaseStation::storePacket(cMessage *msg){
 void BaseStation::updateCQI(int cqi, int id){
     UserQueue *uq = queues[id];
     uq->RBsize = CQITable[cqi-1];
-    EV<<"ora l'utente con id "<<id<<" ha cqi = "<<cqi<<", che corrisponde a "<<CQITable[cqi-1]<<" RBsize"<<endl;
+    //EV<<"ora l'utente con id "<<id<<" ha cqi = "<<cqi<<", che corrisponde a "<<CQITable[cqi-1]<<" RBsize"<<endl;
 }
 
 void BaseStation::handleMessage(cMessage *msg){
@@ -242,11 +248,14 @@ void BaseStation::handleMessage(cMessage *msg){
         sendFrame();
         int nQueues = getParentModule()->par("NUM_USER");
         double numPacketInQueue = 0;
-        for(int i = 0; i < nQueues; i++){
-            numPacketInQueue += queues[i]->getLength();
-            emit(packetsInSpecificQueue[i],queues[i]->getLength());
+        if (simTime()>=warmup){
+            for(int i = 0; i < nQueues; i++){
+                numPacketInQueue += queues[i]->getLength();
+                emit(packetsInSpecificQueue[i],queues[i]->getLength());
+            }
+            emit(packetsInQueue, numPacketInQueue);
         }
-        emit(packetsInQueue, numPacketInQueue);
+
     }
 
     if(strcmp(msg->getName(),"CQI") == 0){

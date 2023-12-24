@@ -35,6 +35,7 @@ private:
     int cqi;
     std::string distribution;
     double p;
+    double warmup;
 public:
     User();
     virtual ~User();
