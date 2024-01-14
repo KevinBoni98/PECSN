@@ -91,8 +91,9 @@ void User::sendCQI(){
         cqi = binomial(14, p, rngIndex);
         cqi +=1;
     }
-    else if (distribution.compare("constat") == 0){
-        cqi = 1;
+    else if (distribution.compare("constant") == 0){
+        cqi = id+1;
+        // cqi = 1;
     } 
 
     CQImsg * msg = new CQImsg("CQI");

@@ -42,8 +42,8 @@ void PacketGenerator::initialize(){
     lambda =  par("LAMBDA").doubleValue();
     EV<<"lambda"<<lambda<<endl;
     constantValues = par("ConstantValues").boolValue();
-    simtime_t time = 0.5;
-    if (!constantValues) time = exponential(1/lambda,indexArrivalTimeGen);
+    simtime_t time = exponential(1/lambda,indexArrivalTimeGen);
+    if (constantValues) time = 0.02;
     EV<<"time"<<time<<endl;
     scheduleAt(simTime()+time,beep);
 }
@@ -55,12 +55,12 @@ void PacketGenerator::handleMessage(cMessage *msg){
         // destination
         packet->setDestination(getIndex());
         // arrivaltime
-        simtime_t arrivalTime = 1;
-        if (!constantValues) arrivalTime = exponential(1/lambda,indexArrivalTimeGen);     
+        simtime_t arrivalTime = exponential(1/lambda,indexArrivalTimeGen);
+        if (constantValues) arrivalTime = 0.02;  
         packet->setArrivalTime(simTime());
         // size
-        int size = 25;
-        if (!constantValues) size = intuniform(1/* min size */, 75/* max size */, indexPkgSizeGen);
+        int size = intuniform(1/* min size */, 75/* max size */, indexPkgSizeGen);
+        if (constantValues) size = 25;
         packet->setLength(size);
         // Send packet
         send(packet, "packet_out");
