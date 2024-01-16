@@ -93,7 +93,6 @@ void User::sendCQI(){
     }
     else if (distribution.compare("constant") == 0){
         cqi = id+1;
-        // cqi = 1;
     } 
 
     CQImsg * msg = new CQImsg("CQI");
